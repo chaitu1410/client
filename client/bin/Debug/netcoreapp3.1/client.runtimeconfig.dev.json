@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\adina\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\adina\\.nuget\\packages"
+    ]
+  }
+}
