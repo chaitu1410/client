@@ -16,6 +16,9 @@ bld/
 [Oo]bj/
 [Ll]og/
 
+#cache folder
+client/obj/
+
 # Visual Studio 2015/2017 cache/options directory
 .vs/
 
