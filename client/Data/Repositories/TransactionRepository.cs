@@ -21,7 +21,7 @@ namespace client.Data
             return _db.Transactions;
         }
 
-        public string Add(Transaction transaction) 
+        public bool Add(Transaction transaction) 
         {
             ValidationContext context = new ValidationContext(transaction, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
@@ -29,18 +29,11 @@ namespace client.Data
 
             if (!isValid) 
             {
-                if (validationResults.Count > 0) 
-                {
-                    return validationResults[0].ErrorMessage;
-                }
-                else
-                {
-                    return "Please Enter Valid Information.";
-                }
+                return false;
             }
             _db.Transactions.Add(transaction);
             _db.SaveChanges();
-            return "Record Inserted Successfully!";
+            return true;
         }
 
         public Transaction Find(int id) 
@@ -48,7 +41,7 @@ namespace client.Data
             return _db.Transactions.Find(id);
         }
 
-        public string Update(Transaction transaction) 
+        public bool Update(Transaction transaction) 
         {
             ValidationContext context = new ValidationContext(transaction, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
@@ -56,24 +49,17 @@ namespace client.Data
 
             if (!isValid)
             {
-                if (validationResults.Count > 0)
-                {
-                    return validationResults[0].ErrorMessage;
-                }
-                else
-                {
-                    return "Please Enter Valid Updated Information.";
-                }
+                return false;
             }
             _db.Transactions.Update(transaction);
             _db.SaveChanges();
-            return "Record Updated Successfully!";
+            return true;
         }
 
-        public string Remove(Transaction transaction) 
+        public bool Remove(Transaction transaction) 
         {
             _db.Transactions.Remove(transaction);
-            return "Record Deleted Successfully!";
+            return true;
         }
     }
 }
