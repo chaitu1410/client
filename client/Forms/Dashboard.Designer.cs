@@ -37,6 +37,10 @@ namespace client.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.pbxCredentials = new System.Windows.Forms.PictureBox();
             this.btnCredentials = new System.Windows.Forms.Button();
@@ -47,11 +51,11 @@ namespace client.Forms
             this.pnlTopDashboard = new System.Windows.Forms.Panel();
             this.lblAllRecords = new System.Windows.Forms.Label();
             this.pnlRecords = new System.Windows.Forms.Panel();
+            this.dgvRecords = new System.Windows.Forms.DataGridView();
             this.btnAddRecords = new System.Windows.Forms.Button();
             this.btnAddPayment = new System.Windows.Forms.Button();
             this.btnAddBorrow = new System.Windows.Forms.Button();
             this.btnSaleReturn = new System.Windows.Forms.Button();
-            this.dgvRecords = new System.Windows.Forms.DataGridView();
             this.pnlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCredentials)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDailySale)).BeginInit();
@@ -186,6 +190,48 @@ namespace client.Forms
             this.pnlRecords.Size = new System.Drawing.Size(893, 420);
             this.pnlRecords.TabIndex = 2;
             // 
+            // dgvRecords
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dgvRecords.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvRecords.BackgroundColor = System.Drawing.Color.White;
+            this.dgvRecords.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecords.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvRecords.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvRecords.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvRecords.Location = new System.Drawing.Point(0, 0);
+            this.dgvRecords.Name = "dgvRecords";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvRecords.RowTemplate.Height = 25;
+            this.dgvRecords.Size = new System.Drawing.Size(893, 420);
+            this.dgvRecords.TabIndex = 0;
+            // 
             // btnAddRecords
             // 
             this.btnAddRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
@@ -197,6 +243,7 @@ namespace client.Forms
             this.btnAddRecords.TabIndex = 0;
             this.btnAddRecords.Text = "+Add New Records";
             this.btnAddRecords.UseVisualStyleBackColor = false;
+            this.btnAddRecords.Click += new System.EventHandler(this.btnAddRecords_Click);
             // 
             // btnAddPayment
             // 
@@ -234,16 +281,6 @@ namespace client.Forms
             this.btnSaleReturn.Text = "Sale Return";
             this.btnSaleReturn.UseVisualStyleBackColor = false;
             // 
-            // dgvRecords
-            // 
-            this.dgvRecords.BackgroundColor = System.Drawing.Color.White;
-            this.dgvRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRecords.Location = new System.Drawing.Point(0, 0);
-            this.dgvRecords.Name = "dgvRecords";
-            this.dgvRecords.RowTemplate.Height = 25;
-            this.dgvRecords.Size = new System.Drawing.Size(893, 420);
-            this.dgvRecords.TabIndex = 0;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -259,6 +296,7 @@ namespace client.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
             this.Text = "Dashboard";
+            this.Load += new System.EventHandler(this.Dashboard_Load);
             this.pnlDashboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxCredentials)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDailySale)).EndInit();
