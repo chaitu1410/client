@@ -15,7 +15,6 @@ namespace client.Data
         [Column(TypeName = "decimal(10, 2)")]
         public decimal Amount { get; set; }
 
-        [Timestamp]
         public DateTime Date { get; set; }
     }
 }

@@ -31,7 +31,6 @@ namespace client.Data
         [Column(TypeName = "decimal(10, 2)")]
         public decimal TotalSaleAmount { get; set; }
 
-        [Timestamp]
         public DateTime Date { get; set; }
 
     }

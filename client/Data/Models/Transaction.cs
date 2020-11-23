@@ -22,7 +22,6 @@ namespace client.Data
         [Required(ErrorMessage = "Please Select Valid Payment Method.")]
         public PaymentMethods PaymentMethod { get; set; } = PaymentMethods.Card;
 
-        [Timestamp]
         public DateTime Date { get; set; }
     }
 }

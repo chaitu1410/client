@@ -19,7 +19,6 @@ namespace client.Data
         [StringLength(100)]
         public string CustomerName { get; set; }
 
-        [Timestamp]
         public DateTime Date { get; set; }
 
         public bool IsReturned { get; set; } = false;
