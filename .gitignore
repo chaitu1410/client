@@ -15,6 +15,7 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+Migrations/
 
 #cache folder
 client/obj/
@@ -61,3 +62,5 @@ artifacts/
 *.[Cc]ache
 # but keep track of directories ending in .cache
 !*.[Cc]ache/
+client/bin/Debug/netcoreapp3.1/Database.mdf
+client/bin/Debug/netcoreapp3.1/Database_log.ldf
