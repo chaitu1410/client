@@ -126,6 +126,7 @@ namespace client.Forms
             this.btnCancel.TabIndex = 8;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // cbxPaymentMethod
             // 
@@ -155,7 +156,11 @@ namespace client.Forms
             this.Controls.Add(this.lblAddNewRecord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewRecordsForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNewRecordsForm";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddNewRecordsForm_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AddNewRecordsForm_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.AddNewRecordsForm_MouseUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 

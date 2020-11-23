@@ -52,8 +52,14 @@ namespace client.Forms
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-           
-             var source = new BindingSource();
+            Load_Datagridview_Data();
+
+
+
+        }
+        private void Load_Datagridview_Data()
+        {
+            var source = new BindingSource();
             source.DataSource = _transactionRepository.GetAll().ToList();
             dgvRecords.AutoGenerateColumns = true;
             dgvRecords.DataSource = source;
@@ -65,6 +71,38 @@ namespace client.Forms
             AddNewRecordsForm frm = new AddNewRecordsForm();
             frm.Show();
 
+        }
+
+        private void dgvRecords_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(dgvRecords.CurrentRow!=null)
+            {
+                var row = dgvRecords.CurrentRow.Cells;
+                ///int id = Convert.ToInt32(row["TransactionId"].Value);
+                //Console.WriteLine(id);
+                EditRecordsForm f1 = new EditRecordsForm();
+                f1.cbxPaymentMethod.Text = this.dgvRecords.CurrentRow.Cells[3].Value.ToString();
+                f1.txtAmount.Text = this.dgvRecords.CurrentRow.Cells[1].Value.ToString();
+                f1.txtExtra.Text = this.dgvRecords.CurrentRow.Cells[2].Value.ToString();
+                f1.Show();
+
+            }
+            
+        }
+
+        private void Dashboard_Activated(object sender, EventArgs e)
+        {
+            Load_Datagridview_Data();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

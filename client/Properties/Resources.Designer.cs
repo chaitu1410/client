@@ -63,6 +63,16 @@ namespace client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap download {
+            get {
+                object obj = ResourceManager.GetObject("download", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap My_Post {
             get {
                 object obj = ResourceManager.GetObject("My Post", resourceCulture);
@@ -96,6 +106,16 @@ namespace client.Properties {
         internal static System.Drawing.Bitmap My_Post__3_ {
             get {
                 object obj = ResourceManager.GetObject("My Post (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap My_Post__4_ {
+            get {
+                object obj = ResourceManager.GetObject("My Post (4)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
