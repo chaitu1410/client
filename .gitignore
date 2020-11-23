@@ -15,6 +15,7 @@ bld/
 [Bb]in/
 [Oo]bj/
 [Ll]og/
+Migrations/
 
 #cache folder
 client/obj/
