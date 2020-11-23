@@ -5,7 +5,7 @@ using System.Text;
 
 namespace client.Data
 {
-    class User
+    public class User
     {
         [Key]
         [Required]

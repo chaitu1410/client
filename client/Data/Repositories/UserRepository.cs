@@ -4,7 +4,7 @@ using System.Text;
 
 namespace client.Data.Repositories
 {
-    class UserRepository
+    public class UserRepository
     {
         private readonly AppDbContext _db;
 

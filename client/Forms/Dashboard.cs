@@ -78,12 +78,10 @@ namespace client.Forms
             if(dgvRecords.CurrentRow!=null)
             {
                 var row = dgvRecords.CurrentRow.Cells;
-                ///int id = Convert.ToInt32(row["TransactionId"].Value);
+                int id = Convert.ToInt32(row["TransactionId"].Value);
                 //Console.WriteLine(id);
-                EditRecordsForm f1 = new EditRecordsForm();
-                f1.cbxPaymentMethod.Text = this.dgvRecords.CurrentRow.Cells[3].Value.ToString();
-                f1.txtAmount.Text = this.dgvRecords.CurrentRow.Cells[1].Value.ToString();
-                f1.txtExtra.Text = this.dgvRecords.CurrentRow.Cells[2].Value.ToString();
+                Transaction transaction = _transactionRepository.Find(id);
+                EditRecordsForm f1 = new EditRecordsForm(transaction);
                 f1.Show();
 
             }
@@ -102,7 +100,7 @@ namespace client.Forms
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }

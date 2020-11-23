@@ -6,7 +6,7 @@ using System.Text;
 
 namespace client.Data
 {
-    class BorrowRepository
+    public class BorrowRepository
     {
         AppDbContext _db;
         public BorrowRepository()

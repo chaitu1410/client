@@ -66,6 +66,7 @@ namespace client.Data
         public bool Remove(Transaction transaction) 
         {
             _db.Transactions.Remove(transaction);
+            _db.SaveChanges();
             return true;
         }
     }

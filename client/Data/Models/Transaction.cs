@@ -7,7 +7,7 @@ using System.Text;
 
 namespace client.Data
 {
-    class Transaction
+    public class Transaction
     {
         [Key]
         public int TransactionId { get; set; }

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace client.Data
 {
-    class TotalSaleRepository
+    public class TotalSaleRepository
     {
         AppDbContext _db;
         public TotalSaleRepository()

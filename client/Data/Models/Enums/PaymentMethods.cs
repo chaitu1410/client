@@ -4,7 +4,7 @@ using System.Text;
 
 namespace client.Data
 {
-    enum PaymentMethods
+    public enum PaymentMethods
     {
         Cash, Card, UPI
     }

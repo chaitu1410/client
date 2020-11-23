@@ -6,7 +6,7 @@ using System.Text;
 
 namespace client.Data
 {
-    class SaleReturnRepository
+    public class SaleReturnRepository
     {
         AppDbContext _db;
         public SaleReturnRepository()

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace client.Data
 {
-    class AuthRepository
+    public class AuthRepository
     {
         private readonly AppDbContext _db;
 

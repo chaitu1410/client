@@ -6,7 +6,7 @@ using System.Text;
 
 namespace client.Data
 {
-    class Borrow
+    public class Borrow
     {
         [Key]
         public int Id { get; set; }
