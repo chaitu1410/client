@@ -37,10 +37,10 @@ namespace client.Forms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlDashboard = new System.Windows.Forms.Panel();
             this.pbxCredentials = new System.Windows.Forms.PictureBox();
             this.btnCredentials = new System.Windows.Forms.Button();
@@ -56,6 +56,9 @@ namespace client.Forms
             this.btnAddPayment = new System.Windows.Forms.Button();
             this.btnAddBorrow = new System.Windows.Forms.Button();
             this.btnSaleReturn = new System.Windows.Forms.Button();
+            this.lblFilterBy = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnClose = new System.Windows.Forms.Button();
             this.pnlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCredentials)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDailySale)).BeginInit();
@@ -78,7 +81,7 @@ namespace client.Forms
             this.pnlDashboard.Controls.Add(this.pnlTopDashboard);
             this.pnlDashboard.Location = new System.Drawing.Point(1, 0);
             this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(283, 720);
+            this.pnlDashboard.Size = new System.Drawing.Size(283, 701);
             this.pnlDashboard.TabIndex = 0;
             // 
             // pbxCredentials
@@ -192,45 +195,48 @@ namespace client.Forms
             // 
             // dgvRecords
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            this.dgvRecords.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvRecords.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecords.BackgroundColor = System.Drawing.Color.White;
             this.dgvRecords.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvRecords.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecords.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecords.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvRecords.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvRecords.GridColor = System.Drawing.SystemColors.Control;
+            this.dgvRecords.GridColor = System.Drawing.SystemColors.ControlLight;
             this.dgvRecords.Location = new System.Drawing.Point(0, 0);
             this.dgvRecords.Name = "dgvRecords";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvRecords.RowTemplate.Height = 25;
             this.dgvRecords.Size = new System.Drawing.Size(893, 420);
             this.dgvRecords.TabIndex = 0;
+            this.dgvRecords.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecords_CellDoubleClick);
             // 
             // btnAddRecords
             // 
@@ -281,11 +287,45 @@ namespace client.Forms
             this.btnSaleReturn.Text = "Sale Return";
             this.btnSaleReturn.UseVisualStyleBackColor = false;
             // 
+            // lblFilterBy
+            // 
+            this.lblFilterBy.AutoSize = true;
+            this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.lblFilterBy.ForeColor = System.Drawing.Color.Black;
+            this.lblFilterBy.Location = new System.Drawing.Point(290, 110);
+            this.lblFilterBy.Name = "lblFilterBy";
+            this.lblFilterBy.Size = new System.Drawing.Size(61, 17);
+            this.lblFilterBy.TabIndex = 1;
+            this.lblFilterBy.Text = "Filter by";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.Location = new System.Drawing.Point(357, 106);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
+            this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // btnClose
+            // 
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
+            this.btnClose.Location = new System.Drawing.Point(1149, 0);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(27, 26);
+            this.btnClose.TabIndex = 7;
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1177, 723);
+            this.ClientSize = new System.Drawing.Size(1177, 704);
+            this.Controls.Add(this.btnClose);
+            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.lblFilterBy);
             this.Controls.Add(this.btnSaleReturn);
             this.Controls.Add(this.btnAddBorrow);
             this.Controls.Add(this.btnAddPayment);
@@ -295,7 +335,9 @@ namespace client.Forms
             this.Controls.Add(this.pnlDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Dashboard";
+            this.Activated += new System.EventHandler(this.Dashboard_Activated);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.pnlDashboard.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxCredentials)).EndInit();
@@ -324,6 +366,9 @@ namespace client.Forms
         private Button btnAddPayment;
         private Button btnAddBorrow;
         private Button btnSaleReturn;
-        private DataGridView dgvRecords;
+        public DataGridView dgvRecords;
+        private Label lblFilterBy;
+        private DateTimePicker dateTimePicker1;
+        private Button btnClose;
     }
 }
