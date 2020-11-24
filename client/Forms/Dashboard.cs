@@ -59,11 +59,16 @@ namespace client.Forms
         }
         private void Load_Datagridview_Data()
         {
+            DateTime dt = Convert.ToDateTime(dateTimePicker1.Value);
+            String s1 = dt.ToString("yyyy-MM-dd");
+            DateTime dtnew = Convert.ToDateTime(s1);
+
+                var source = new BindingSource();
+                source.DataSource = _transactionRepository.GetAllByDate(dtnew).ToList();
+                dgvRecords.AutoGenerateColumns = true;
+                dgvRecords.DataSource = source;
+
            
-            var source = new BindingSource();
-            source.DataSource = _transactionRepository.GetAll().ToList();
-            dgvRecords.AutoGenerateColumns = true;
-            dgvRecords.DataSource = source;
 
         }
 
@@ -96,12 +101,18 @@ namespace client.Forms
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
-
+            Load_Datagridview_Data();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnAddBorrow_Click(object sender, EventArgs e)
+        {
+            AddBorrowForm frm=new AddBorrowForm();
+            frm.Show();
         }
     }
 }

@@ -45,9 +45,9 @@ namespace client.Forms
             this.lblAddNewRecord.AutoSize = true;
             this.lblAddNewRecord.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblAddNewRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblAddNewRecord.Location = new System.Drawing.Point(171, 39);
+            this.lblAddNewRecord.Location = new System.Drawing.Point(150, 29);
             this.lblAddNewRecord.Name = "lblAddNewRecord";
-            this.lblAddNewRecord.Size = new System.Drawing.Size(204, 30);
+            this.lblAddNewRecord.Size = new System.Drawing.Size(161, 23);
             this.lblAddNewRecord.TabIndex = 0;
             this.lblAddNewRecord.Text = "Add New Record";
             // 
@@ -56,9 +56,9 @@ namespace client.Forms
             this.lblPaymetMethod.AutoSize = true;
             this.lblPaymetMethod.Font = new System.Drawing.Font("Cambria", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPaymetMethod.ForeColor = System.Drawing.Color.Black;
-            this.lblPaymetMethod.Location = new System.Drawing.Point(29, 136);
+            this.lblPaymetMethod.Location = new System.Drawing.Point(25, 102);
             this.lblPaymetMethod.Name = "lblPaymetMethod";
-            this.lblPaymetMethod.Size = new System.Drawing.Size(184, 26);
+            this.lblPaymetMethod.Size = new System.Drawing.Size(139, 20);
             this.lblPaymetMethod.TabIndex = 1;
             this.lblPaymetMethod.Text = "Payment Method";
             // 
@@ -67,19 +67,18 @@ namespace client.Forms
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Cambria", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblAmount.ForeColor = System.Drawing.Color.Black;
-            this.lblAmount.Location = new System.Drawing.Point(106, 247);
+            this.lblAmount.Location = new System.Drawing.Point(93, 185);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(93, 26);
+            this.lblAmount.Size = new System.Drawing.Size(71, 20);
             this.lblAmount.TabIndex = 3;
             this.lblAmount.Text = "Amount";
             // 
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtAmount.Location = new System.Drawing.Point(229, 247);
-            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtAmount.Location = new System.Drawing.Point(200, 185);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(271, 31);
+            this.txtAmount.Size = new System.Drawing.Size(238, 26);
             this.txtAmount.TabIndex = 1;
             // 
             // lblExtras
@@ -87,19 +86,18 @@ namespace client.Forms
             this.lblExtras.AutoSize = true;
             this.lblExtras.Font = new System.Drawing.Font("Cambria", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblExtras.ForeColor = System.Drawing.Color.Black;
-            this.lblExtras.Location = new System.Drawing.Point(120, 381);
+            this.lblExtras.Location = new System.Drawing.Point(105, 286);
             this.lblExtras.Name = "lblExtras";
-            this.lblExtras.Size = new System.Drawing.Size(77, 26);
+            this.lblExtras.Size = new System.Drawing.Size(59, 20);
             this.lblExtras.TabIndex = 5;
             this.lblExtras.Text = "Extras";
             // 
             // txtExtra
             // 
             this.txtExtra.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtExtra.Location = new System.Drawing.Point(229, 376);
-            this.txtExtra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtExtra.Location = new System.Drawing.Point(200, 282);
             this.txtExtra.Name = "txtExtra";
-            this.txtExtra.Size = new System.Drawing.Size(271, 31);
+            this.txtExtra.Size = new System.Drawing.Size(238, 26);
             this.txtExtra.TabIndex = 2;
             this.txtExtra.Text = "0";
             // 
@@ -108,10 +106,9 @@ namespace client.Forms
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnSave.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(64, 523);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSave.Location = new System.Drawing.Point(56, 392);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(123, 53);
+            this.btnSave.Size = new System.Drawing.Size(108, 40);
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
@@ -122,10 +119,9 @@ namespace client.Forms
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnCancel.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(208, 523);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCancel.Location = new System.Drawing.Point(181, 392);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(128, 53);
+            this.btnCancel.Size = new System.Drawing.Size(112, 40);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -137,17 +133,16 @@ namespace client.Forms
             this.cbxPaymentMethod.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             this.cbxPaymentMethod.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.cbxPaymentMethod.FormattingEnabled = true;
-            this.cbxPaymentMethod.Location = new System.Drawing.Point(229, 132);
-            this.cbxPaymentMethod.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbxPaymentMethod.Location = new System.Drawing.Point(200, 99);
             this.cbxPaymentMethod.Name = "cbxPaymentMethod";
-            this.cbxPaymentMethod.Size = new System.Drawing.Size(271, 30);
+            this.cbxPaymentMethod.Size = new System.Drawing.Size(238, 25);
             this.cbxPaymentMethod.TabIndex = 0;
             // 
             // AddNewRecordsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(570, 672);
+            this.ClientSize = new System.Drawing.Size(499, 504);
             this.Controls.Add(this.cbxPaymentMethod);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
@@ -158,7 +153,6 @@ namespace client.Forms
             this.Controls.Add(this.lblPaymetMethod);
             this.Controls.Add(this.lblAddNewRecord);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "AddNewRecordsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNewRecordsForm";
