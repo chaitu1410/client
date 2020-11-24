@@ -59,6 +59,7 @@ namespace client.Forms
         }
         private void Load_Datagridview_Data()
         {
+           
             var source = new BindingSource();
             source.DataSource = _transactionRepository.GetAll().ToList();
             dgvRecords.AutoGenerateColumns = true;

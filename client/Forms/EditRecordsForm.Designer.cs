@@ -46,7 +46,7 @@ namespace client.Forms
             this.lblEditRecord.AutoSize = true;
             this.lblEditRecord.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblEditRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblEditRecord.Location = new System.Drawing.Point(156, 26);
+            this.lblEditRecord.Location = new System.Drawing.Point(174, 26);
             this.lblEditRecord.Name = "lblEditRecord";
             this.lblEditRecord.Size = new System.Drawing.Size(116, 23);
             this.lblEditRecord.TabIndex = 0;
