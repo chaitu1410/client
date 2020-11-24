@@ -25,6 +25,10 @@ namespace client.Data
 
         [Required]
         [Column(TypeName = "decimal(10, 2)")]
+        public decimal UPIAmount { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(10, 2)")]
         public decimal ExtraAmount { get; set; }
 
         [Required]
