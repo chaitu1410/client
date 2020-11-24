@@ -108,5 +108,11 @@ namespace client.Forms
         {
             Application.Exit();
         }
+
+        private void btnAddBorrow_Click(object sender, EventArgs e)
+        {
+            AddBorrowForm frm=new AddBorrowForm();
+            frm.Show();
+        }
     }
 }
