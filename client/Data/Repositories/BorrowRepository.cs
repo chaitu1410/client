@@ -19,9 +19,29 @@ namespace client.Data
             return _db.Borrows;
         }
 
+        public IEnumerable<Borrow> GetAllDeposited()
+        {
+            return _db.Borrows.Where(row => row.IsReturned == true);
+        }
+
+        public IEnumerable<Borrow> GetAllUndeposited()
+        {
+            return _db.Borrows.Where(row => row.IsReturned == false);
+        }
+
         public IEnumerable<Borrow> GetAllByDate(DateTime date)
         {
             return _db.Borrows.Where(t => t.Date.Date.Equals(date.Date));
+        }
+
+        public IEnumerable<Borrow> GetAllDepositedByDate(DateTime date)
+        {
+            return _db.Borrows.Where(row => row.Date.Date.Equals(date.Date) && row.IsReturned == true);
+        }
+
+        public IEnumerable<Borrow> GetAllUndepositedByDate(DateTime date)
+        {
+            return _db.Borrows.Where(row => row.Date.Date.Equals(date.Date) && row.IsReturned == false);
         }
 
         public bool Add(Borrow borrow) 
@@ -66,7 +86,7 @@ namespace client.Data
             return true;
         }
 
-        public bool MarkReturned(Borrow borrow) 
+        public bool MarkAsDeposited(Borrow borrow) 
         {
             borrow.IsReturned = true;
             borrow.ReturnDate = DateTime.Now;
