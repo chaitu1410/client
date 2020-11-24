@@ -12,37 +12,40 @@ namespace client.Forms
     public partial class AddNewRecordsForm : Form
     {
         TransactionRepository _transactionRepository;
-        
+        bool flag = false;
+
         public AddNewRecordsForm()
         {
             InitializeComponent();
             _transactionRepository = new TransactionRepository();
         }
-        bool flag = false;
+        
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            
+
             Transaction transaction = new Transaction()
             {
                 Amount = (decimal)Convert.ToDouble(txtAmount.Text),
                 Extras = (double)Convert.ToDouble(txtExtra.Text),
-                PaymentMethod = PaymentMethods.Cash,
+                PaymentMethod = GetSelectedPaymentMethod(),
                 Date = DateTime.Now
-
-
-        };
+            };
              _transactionRepository.Add(transaction);
-            this.Close();
-            
+            this.Dispose();
+        }
 
-            
-            
-
+        private PaymentMethods GetSelectedPaymentMethod()
+        {
+            PaymentMethods paymentMethod;
+            Enum.TryParse<PaymentMethods>(cbxPaymentMethod.SelectedValue.ToString(), out paymentMethod);
+            return paymentMethod;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void AddNewRecordsForm_MouseDown(object sender, MouseEventArgs e)
@@ -61,6 +64,20 @@ namespace client.Forms
         private void AddNewRecordsForm_MouseUp(object sender, MouseEventArgs e)
         {
             flag = false;
+        }
+
+        private void AddNewRecordsForm_Load(object sender, EventArgs e)
+        {
+            SetupComboBox();
+        }
+
+        private void SetupComboBox()
+        {
+            cbxPaymentMethod.DataSource = Enum.GetValues(typeof(PaymentMethods));
+            AutoCompleteStringCollection cbPaymentMethodsAutoCompleteStrings = new AutoCompleteStringCollection();
+            cbPaymentMethodsAutoCompleteStrings.AddRange(Enum.GetNames(typeof(PaymentMethods)));
+            cbxPaymentMethod.AutoCompleteCustomSource = cbPaymentMethodsAutoCompleteStrings;
+            cbxPaymentMethod.SelectedIndex = 0;
         }
     }
 }
