@@ -45,9 +45,9 @@ namespace client.Forms
             this.pbxCredentials = new System.Windows.Forms.PictureBox();
             this.btnCredentials = new System.Windows.Forms.Button();
             this.pbxDailySale = new System.Windows.Forms.PictureBox();
-            this.btnDailySale = new System.Windows.Forms.Button();
+            this.btnViewTotalSale = new System.Windows.Forms.Button();
             this.pbxRecords = new System.Windows.Forms.PictureBox();
-            this.btnRecords = new System.Windows.Forms.Button();
+            this.btnViewBorrows = new System.Windows.Forms.Button();
             this.pnlTopDashboard = new System.Windows.Forms.Panel();
             this.lblAllRecords = new System.Windows.Forms.Label();
             this.pnlRecords = new System.Windows.Forms.Panel();
@@ -75,9 +75,9 @@ namespace client.Forms
             this.pnlDashboard.Controls.Add(this.pbxCredentials);
             this.pnlDashboard.Controls.Add(this.btnCredentials);
             this.pnlDashboard.Controls.Add(this.pbxDailySale);
-            this.pnlDashboard.Controls.Add(this.btnDailySale);
+            this.pnlDashboard.Controls.Add(this.btnViewTotalSale);
             this.pnlDashboard.Controls.Add(this.pbxRecords);
-            this.pnlDashboard.Controls.Add(this.btnRecords);
+            this.pnlDashboard.Controls.Add(this.btnViewBorrows);
             this.pnlDashboard.Controls.Add(this.pnlTopDashboard);
             this.pnlDashboard.Location = new System.Drawing.Point(1, 0);
             this.pnlDashboard.Name = "pnlDashboard";
@@ -87,7 +87,7 @@ namespace client.Forms
             // pbxCredentials
             // 
             this.pbxCredentials.Image = ((System.Drawing.Image)(resources.GetObject("pbxCredentials.Image")));
-            this.pbxCredentials.Location = new System.Drawing.Point(39, 403);
+            this.pbxCredentials.Location = new System.Drawing.Point(11, 404);
             this.pbxCredentials.Name = "pbxCredentials";
             this.pbxCredentials.Size = new System.Drawing.Size(48, 31);
             this.pbxCredentials.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -114,56 +114,58 @@ namespace client.Forms
             // pbxDailySale
             // 
             this.pbxDailySale.Image = ((System.Drawing.Image)(resources.GetObject("pbxDailySale.Image")));
-            this.pbxDailySale.Location = new System.Drawing.Point(39, 285);
+            this.pbxDailySale.Location = new System.Drawing.Point(11, 285);
             this.pbxDailySale.Name = "pbxDailySale";
             this.pbxDailySale.Size = new System.Drawing.Size(48, 31);
             this.pbxDailySale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxDailySale.TabIndex = 4;
             this.pbxDailySale.TabStop = false;
             // 
-            // btnDailySale
+            // btnViewTotalSale
             // 
-            this.btnDailySale.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnViewTotalSale.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDailySale.FlatAppearance.BorderSize = 0;
-            this.btnDailySale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDailySale.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDailySale.ForeColor = System.Drawing.Color.White;
-            this.btnDailySale.Location = new System.Drawing.Point(0, 273);
-            this.btnDailySale.Name = "btnDailySale";
-            this.btnDailySale.Size = new System.Drawing.Size(283, 58);
-            this.btnDailySale.TabIndex = 3;
-            this.btnDailySale.Text = "DAILY SALE";
-            this.btnDailySale.UseVisualStyleBackColor = true;
-            this.btnDailySale.MouseEnter += new System.EventHandler(this.btnDailySale_MouseEnter);
-            this.btnDailySale.MouseLeave += new System.EventHandler(this.btnDailySale_MouseLeave);
+            this.btnViewTotalSale.FlatAppearance.BorderSize = 0;
+            this.btnViewTotalSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewTotalSale.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnViewTotalSale.ForeColor = System.Drawing.Color.White;
+            this.btnViewTotalSale.Location = new System.Drawing.Point(0, 273);
+            this.btnViewTotalSale.Name = "btnViewTotalSale";
+            this.btnViewTotalSale.Size = new System.Drawing.Size(283, 58);
+            this.btnViewTotalSale.TabIndex = 3;
+            this.btnViewTotalSale.Text = "VIEW TOTAL SALE";
+            this.btnViewTotalSale.UseVisualStyleBackColor = true;
+            this.btnViewTotalSale.MouseEnter += new System.EventHandler(this.btnDailySale_MouseEnter);
+            this.btnViewTotalSale.MouseLeave += new System.EventHandler(this.btnDailySale_MouseLeave);
             // 
             // pbxRecords
             // 
             this.pbxRecords.Image = ((System.Drawing.Image)(resources.GetObject("pbxRecords.Image")));
-            this.pbxRecords.Location = new System.Drawing.Point(39, 168);
+            this.pbxRecords.Location = new System.Drawing.Point(11, 167);
             this.pbxRecords.Name = "pbxRecords";
             this.pbxRecords.Size = new System.Drawing.Size(48, 31);
             this.pbxRecords.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxRecords.TabIndex = 2;
             this.pbxRecords.TabStop = false;
+            this.pbxRecords.MouseEnter += new System.EventHandler(this.pbxRecords_MouseEnter);
             // 
-            // btnRecords
+            // btnViewBorrows
             // 
-            this.btnRecords.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnViewBorrows.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRecords.FlatAppearance.BorderSize = 0;
-            this.btnRecords.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRecords.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnRecords.ForeColor = System.Drawing.Color.White;
-            this.btnRecords.Location = new System.Drawing.Point(0, 153);
-            this.btnRecords.Name = "btnRecords";
-            this.btnRecords.Size = new System.Drawing.Size(283, 58);
-            this.btnRecords.TabIndex = 1;
-            this.btnRecords.Text = "RECORDS";
-            this.btnRecords.UseVisualStyleBackColor = true;
-            this.btnRecords.MouseEnter += new System.EventHandler(this.btnRecords_MouseEnter);
-            this.btnRecords.MouseLeave += new System.EventHandler(this.btnRecords_MouseLeave);
+            this.btnViewBorrows.FlatAppearance.BorderSize = 0;
+            this.btnViewBorrows.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnViewBorrows.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnViewBorrows.ForeColor = System.Drawing.Color.White;
+            this.btnViewBorrows.Location = new System.Drawing.Point(0, 153);
+            this.btnViewBorrows.Name = "btnViewBorrows";
+            this.btnViewBorrows.Size = new System.Drawing.Size(283, 58);
+            this.btnViewBorrows.TabIndex = 1;
+            this.btnViewBorrows.Text = "VIEW BORROWS";
+            this.btnViewBorrows.UseVisualStyleBackColor = true;
+            this.btnViewBorrows.Click += new System.EventHandler(this.btnViewBorrows_Click);
+            this.btnViewBorrows.MouseEnter += new System.EventHandler(this.btnRecords_MouseEnter);
+            this.btnViewBorrows.MouseLeave += new System.EventHandler(this.btnRecords_MouseLeave);
             // 
             // pnlTopDashboard
             // 
@@ -355,9 +357,9 @@ namespace client.Forms
 
         private System.Windows.Forms.Panel pnlDashboard;
         private System.Windows.Forms.PictureBox pbxDailySale;
-        private System.Windows.Forms.Button btnDailySale;
+        private System.Windows.Forms.Button btnViewTotalSale;
         private System.Windows.Forms.PictureBox pbxRecords;
-        private System.Windows.Forms.Button btnRecords;
+        private System.Windows.Forms.Button btnViewBorrows;
         private System.Windows.Forms.Panel pnlTopDashboard;
         private System.Windows.Forms.PictureBox pbxCredentials;
         private System.Windows.Forms.Button btnCredentials;

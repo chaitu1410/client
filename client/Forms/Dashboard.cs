@@ -11,7 +11,7 @@ namespace client.Forms
 {
     public partial class Dashboard : Form
     {
-        TransactionRepository  _transactionRepository;
+        TransactionRepository _transactionRepository;
 
         public Dashboard()
         {
@@ -21,22 +21,23 @@ namespace client.Forms
 
         private void btnRecords_MouseEnter(object sender, EventArgs e)
         {
-            btnRecords.BackColor = Color.FromArgb(0, 13, 72, 114);
+            btnViewBorrows.BackColor = Color.FromArgb(0, 13, 72, 114);
         }
 
         private void btnRecords_MouseLeave(object sender, EventArgs e)
         {
-            btnRecords.BackColor = Color.FromArgb(0, 0, 53, 92);
+            btnViewBorrows.BackColor = Color.FromArgb(0, 0, 53, 92);
+
         }
 
         private void btnDailySale_MouseEnter(object sender, EventArgs e)
         {
-            btnDailySale.BackColor = Color.FromArgb(0, 13, 72, 114);
+            btnViewTotalSale.BackColor = Color.FromArgb(0, 13, 72, 114);
         }
 
         private void btnDailySale_MouseLeave(object sender, EventArgs e)
         {
-            btnDailySale.BackColor = Color.FromArgb(0, 0, 53, 92);
+            btnViewTotalSale.BackColor = Color.FromArgb(0, 0, 53, 92);
         }
 
         private void btnCredentials_MouseEnter(object sender, EventArgs e)
@@ -113,6 +114,17 @@ namespace client.Forms
         {
             AddBorrowForm frm=new AddBorrowForm();
             frm.Show();
+        }
+
+        private void btnViewBorrows_Click(object sender, EventArgs e)
+        {
+            BorrowsDashboard bd = new BorrowsDashboard();
+            bd.Show();
+        }
+
+        private void pbxRecords_MouseEnter(object sender, EventArgs e)
+        {
+            pbxRecords.BackColor = Color.FromArgb(0, 13, 72, 114);
         }
     }
 }
