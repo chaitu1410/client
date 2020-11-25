@@ -52,7 +52,7 @@ namespace client.Forms
 
         }
 
-        private async void Dashboard_Load(object sender, EventArgs e)
+        private void Dashboard_Load(object sender, EventArgs e)
         {
             Load_Datagridview_Data();
         }
