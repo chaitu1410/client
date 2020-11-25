@@ -64,10 +64,10 @@ namespace client.Forms
             String s1 = dt.ToString("yyyy-MM-dd");
             DateTime dtnew = Convert.ToDateTime(s1);
 
-                var source = new BindingSource();
-                source.DataSource = _transactionRepository.GetAllByDate(dtnew).ToList();
-                dgvRecords.AutoGenerateColumns = true;
-                dgvRecords.DataSource = source;
+            var source = new BindingSource();
+            source.DataSource = _transactionRepository.GetAllByDate(dtnew).ToList();
+            dgvRecords.AutoGenerateColumns = true;
+            dgvRecords.DataSource = source;
 
            
 

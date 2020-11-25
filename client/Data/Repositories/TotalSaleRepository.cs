@@ -71,6 +71,7 @@ namespace client.Data
         {
             if(isNotAvailable(date) || date.Date.Equals(DateTime.Now.Date))
             {
+                
                 TransactionRepository transactionRepository = new TransactionRepository();
                 BorrowRepository borrowRepository = new BorrowRepository();
                 SaleReturnRepository saleReturnRepository = new SaleReturnRepository();
@@ -98,6 +99,7 @@ namespace client.Data
                     Date = DateTime.Now
                 };
                 Update(totalSale);
+                
             }
         }
 

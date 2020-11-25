@@ -70,6 +70,10 @@ namespace client.Data
             {
                 return false;
             }
+            if (borrow.IsReturned && borrow.ReturnDate == null)
+            {
+                borrow.ReturnDate = DateTime.Now;
+            }
             _db.Borrows.Update(borrow);
             _db.SaveChanges();
             return true;

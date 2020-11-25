@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace client.Data
 {
@@ -24,7 +25,7 @@ namespace client.Data
 
         public IEnumerable<Transaction> GetAllByDate(DateTime date) 
         {
-            return _db.Transactions.Where(t => t.Date.Date.Equals(date.Date));
+            return  _db.Transactions.Where(t => t.Date.Date.Equals(date.Date));
             //return _db.Transactions.Where(t => new DateTime(t.Date.Year, t.Date.Month, t.Date.Day) == new DateTime(date.Year, date.Month, date.Day));
         }
 

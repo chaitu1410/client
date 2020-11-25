@@ -91,6 +91,9 @@ namespace client.Migrations
                     b.Property<decimal>("TotalSaleAmount")
                         .HasColumnType("decimal(10,2)");
 
+                    b.Property<decimal>("UPIAmount")
+                        .HasColumnType("decimal(10,2)");
+
                     b.HasKey("Id");
 
                     b.ToTable("TotalSales");
