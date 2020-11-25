@@ -24,28 +24,27 @@ namespace client.Forms
 
         private void Load_Datagridview1_Data()
         {
-             DateTime dt = Convert.ToDateTime(dtpBorrowingBalance.Value);
-              String s1 = dt.ToString("yyyy-MM-dd");
-              DateTime dtnew = Convert.ToDateTime(s1);
+            ///DateTime dt = Convert.ToDateTime(dateTimePicker1.Value);
+            //String s1 = dt.ToString("yyyy-MM-dd");
+            //DateTime dtnew = Convert.ToDateTime(s1);
 
             var source = new BindingSource();
-            source.DataSource = _borrowRepository.GetAllUndepositedByDate(dtnew).ToList();
-            dgvBorrowingBalance.AutoGenerateColumns = true;             
+            source.DataSource = _borrowRepository.GetAllUndeposited().ToList();
+            dgvBorrowingBalance.AutoGenerateColumns = true;
             dgvBorrowingBalance.DataSource = source;
-            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
-            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+
 
 
         }
         private void Load_Datagridview2_Data()
         {
-            // DateTime dt = Convert.ToDateTime(.Value);
-             //String s1 = dt.ToString("yyyy-MM-dd");
-            // DateTime dtnew = Convert.ToDateTime(s1);
+            ///DateTime dt = Convert.ToDateTime(dateTimePicker1.Value);
+            //String s1 = dt.ToString("yyyy-MM-dd");
+            //DateTime dtnew = Convert.ToDateTime(s1);
 
             var source = new BindingSource();
             source.DataSource = _borrowRepository.GetAllDeposited().ToList();
-            dgvCreditDeposit.AutoGenerateColumns = true;
+            dgvBorrowingBalance.AutoGenerateColumns = true;
             dgvCreditDeposit.DataSource = source;
 
 
@@ -75,38 +74,7 @@ namespace client.Forms
 
         }
 
-        private void btnViewBorrows_MouseEnter(object sender, EventArgs e)
-        {
-            btnViewBorrows.BackColor = Color.FromArgb(0, 13, 72, 114);
-        }
-
-        private void btnViewBorrows_MouseLeave(object sender, EventArgs e)
-        {
-            btnViewBorrows.BackColor = Color.FromArgb(0, 0, 53, 92);
-        }
-
-        private void btnViewTotalSale_MouseEnter(object sender, EventArgs e)
-        {
-            btnViewTotalSale.BackColor = Color.FromArgb(0, 13, 72, 114);
-
-        }
-
-        private void btnViewTotalSale_MouseLeave(object sender, EventArgs e)
-        {
-            btnViewTotalSale.BackColor = Color.FromArgb(0, 0, 53, 92);
-        }
-
-        private void btnCredentials_MouseEnter(object sender, EventArgs e)
-        {
-            btnCredentials.BackColor = Color.FromArgb(0, 13, 72, 114);
-
-        }
-
-        private void btnCredentials_MouseLeave(object sender, EventArgs e)
-        {
-            btnCredentials.BackColor = Color.FromArgb(0, 0, 53, 92);
-        }
-
+       
         private void BorrowsDashboard_MouseDown(object sender, MouseEventArgs e)
         {
             flag = true;
@@ -125,9 +93,9 @@ namespace client.Forms
             flag = false;
         }
 
-        private void dtpBorrowingBalance_ValueChanged(object sender, EventArgs e)
+        private void lblBorrows_Click(object sender, EventArgs e)
         {
-            Load_Datagridview1_Data();
+
         }
     }
 }
