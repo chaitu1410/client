@@ -5,7 +5,6 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using client.Data;
 namespace client.Forms
@@ -53,18 +52,21 @@ namespace client.Forms
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            //Load_Datagridview_Data();
+            Load_Datagridview_Data();
+
+
+
         }
-        private async void Load_Datagridview_Data()
+        private void Load_Datagridview_Data()
         {
             DateTime dt = Convert.ToDateTime(dtpRecords.Value);
             String s1 = dt.ToString("yyyy-MM-dd");
             DateTime dtnew = Convert.ToDateTime(s1);
 
-            var source = new BindingSource();
-            source.DataSource = await _transactionRepository.GetAllByDate(dtnew);
-            dgvRecords.AutoGenerateColumns = true;
-            dgvRecords.DataSource = source;
+                var source = new BindingSource();
+                source.DataSource = _transactionRepository.GetAllByDate(dtnew).ToList();
+                dgvRecords.AutoGenerateColumns = true;
+                dgvRecords.DataSource = source;
 
            
 
@@ -72,19 +74,6 @@ namespace client.Forms
 
        
 
-        private async void dgvRecords_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if(dgvRecords.CurrentRow!=null)
-            {
-                var row = dgvRecords.CurrentRow.Cells;
-                int id = Convert.ToInt32(row["TransactionId"].Value);
-                //Console.WriteLine(id);
-                Transaction transaction = await _transactionRepository.Find(id);
-                EditRecordsForm f1 = new EditRecordsForm(transaction);
-                f1.Show();
-
-            }
-            
        
 
         private void Dashboard_Activated(object sender, EventArgs e)
