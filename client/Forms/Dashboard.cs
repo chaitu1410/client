@@ -26,7 +26,7 @@ namespace client.Forms
 
         private void btnRecords_MouseLeave(object sender, EventArgs e)
         {
-            
+            btnViewBorrows.BackColor = Color.FromArgb(0, 0, 53, 92);
         }
 
         private void btnDailySale_MouseEnter(object sender, EventArgs e)
@@ -49,40 +49,11 @@ namespace client.Forms
             btnCredentials.BackColor = Color.FromArgb(0, 0, 53, 92);
 
         }
-
-        private void Dashboard_Load(object sender, EventArgs e)
-        {
-            
-        }
-        private async void Load_Datagridview_Data()
-        {
-            DateTime dt = Convert.ToDateTime(dtpRecords.Value);
-            String s1 = dt.ToString("yyyy-MM-dd");
-            DateTime dtnew = Convert.ToDateTime(s1);
-
-            var source = new BindingSource();
-            source.DataSource = await _transactionRepository.GetAllByDate(dtnew);
-            dgvRecords.AutoGenerateColumns = true;
-            dgvRecords.DataSource = source;
-        }
-
        
-
-       
-
-        private void Dashboard_Activated(object sender, EventArgs e)
-        {
-            Load_Datagridview_Data();
-        }
-
-       
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        
 
         private void btnViewBorrows_Click(object sender, EventArgs e)
         {
@@ -95,42 +66,37 @@ namespace client.Forms
             bd.Show();
         }
 
-        private void pnlDashboard_Paint(object sender, PaintEventArgs e)
+        private void btnHome_MouseEnter(object sender, EventArgs e)
         {
+            btnHome.BackColor = Color.FromArgb(0, 13, 72, 114);
 
         }
 
-        private void btnAddRecords_Click(object sender, EventArgs e)
+        private void btnHome_MouseLeave(object sender, EventArgs e)
         {
-            AddNewRecordsForm frm = new AddNewRecordsForm();
-            frm.Show();
+            btnHome.BackColor = Color.FromArgb(0, 0, 53, 92);
 
         }
 
-        private void btnAddBorrow_Click(object sender, EventArgs e)
+        private void btnHome_Click(object sender, EventArgs e)
         {
-            AddBorrowForm frm = new AddBorrowForm();
-            frm.Show();
+            pnlBody.Controls.Clear();
+            home home = new home();
+            home.TopLevel = false;
+            pnlBody.Controls.Add(home);
+            home.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            home.Dock = DockStyle.Fill;
+            home.Show();
         }
 
-        private void dtpRecords_ValueChanged(object sender, EventArgs e)
+        private void Dashboard_Load(object sender, EventArgs e)
         {
-            Load_Datagridview_Data();
-        }
-
-        private async void dgvRecords_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgvRecords.CurrentRow != null)
-            {
-                var row = dgvRecords.CurrentRow.Cells;
-                int id = Convert.ToInt32(row["TransactionId"].Value);
-                //Console.WriteLine(id);
-                Transaction transaction = await _transactionRepository.Find(id);
-                EditRecordsForm f1 = new EditRecordsForm(transaction);
-                f1.Show();
-
-            }
-
+            home home = new home();
+            home.TopLevel = false;
+            pnlBody.Controls.Add(home);
+            home.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            home.Dock = DockStyle.Fill;
+            home.Show();
         }
     }
 }

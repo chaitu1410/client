@@ -21,7 +21,7 @@ namespace client.Forms
         }
         
 
-        private async void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
             
 
@@ -32,7 +32,7 @@ namespace client.Forms
                 PaymentMethod = GetSelectedPaymentMethod(),
                 Date = DateTime.Now
             };
-             await _transactionRepository.Add(transaction);
+             _transactionRepository.Add(transaction);
             this.Dispose();
         }
 
