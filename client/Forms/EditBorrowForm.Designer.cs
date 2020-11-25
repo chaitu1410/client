@@ -45,9 +45,9 @@ namespace client.Forms
             this.EditBorrowAmount.AutoSize = true;
             this.EditBorrowAmount.Font = new System.Drawing.Font("Cambria", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.EditBorrowAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.EditBorrowAmount.Location = new System.Drawing.Point(119, 26);
+            this.EditBorrowAmount.Location = new System.Drawing.Point(136, 35);
             this.EditBorrowAmount.Name = "EditBorrowAmount";
-            this.EditBorrowAmount.Size = new System.Drawing.Size(189, 22);
+            this.EditBorrowAmount.Size = new System.Drawing.Size(239, 28);
             this.EditBorrowAmount.TabIndex = 0;
             this.EditBorrowAmount.Text = "Edit Borrow Amount";
             // 
@@ -55,37 +55,38 @@ namespace client.Forms
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblName.Location = new System.Drawing.Point(37, 155);
+            this.lblName.Location = new System.Drawing.Point(42, 207);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(51, 19);
+            this.lblName.Size = new System.Drawing.Size(64, 23);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Name";
             // 
             // txtName
             // 
             this.txtName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtName.Location = new System.Drawing.Point(130, 143);
-            this.txtName.Multiline = true;
+            this.txtName.Location = new System.Drawing.Point(149, 204);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(283, 41);
+            this.txtName.Size = new System.Drawing.Size(323, 31);
             this.txtName.TabIndex = 2;
             // 
             // lblAmount
             // 
             this.lblAmount.AutoSize = true;
             this.lblAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblAmount.Location = new System.Drawing.Point(20, 262);
+            this.lblAmount.Location = new System.Drawing.Point(23, 349);
             this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(68, 19);
+            this.lblAmount.Size = new System.Drawing.Size(83, 23);
             this.lblAmount.TabIndex = 3;
             this.lblAmount.Text = "Amount";
             // 
             // txtAmount
             // 
             this.txtAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtAmount.Location = new System.Drawing.Point(130, 259);
+            this.txtAmount.Location = new System.Drawing.Point(149, 345);
+            this.txtAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(283, 26);
+            this.txtAmount.Size = new System.Drawing.Size(323, 31);
             this.txtAmount.TabIndex = 4;
             // 
             // btnDelete
@@ -93,9 +94,10 @@ namespace client.Forms
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnDelete.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(314, 81);
+            this.btnDelete.Location = new System.Drawing.Point(359, 108);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(99, 42);
+            this.btnDelete.Size = new System.Drawing.Size(113, 56);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
@@ -106,9 +108,10 @@ namespace client.Forms
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnUpdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(37, 363);
+            this.btnUpdate.Location = new System.Drawing.Point(42, 484);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(109, 42);
+            this.btnUpdate.Size = new System.Drawing.Size(125, 56);
             this.btnUpdate.TabIndex = 6;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -119,29 +122,32 @@ namespace client.Forms
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnCancel.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(152, 363);
+            this.btnCancel.Location = new System.Drawing.Point(174, 484);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(109, 42);
+            this.btnCancel.Size = new System.Drawing.Size(125, 56);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // cbxIsDeposited
             // 
             this.cbxIsDeposited.AutoSize = true;
             this.cbxIsDeposited.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.cbxIsDeposited.Location = new System.Drawing.Point(130, 309);
+            this.cbxIsDeposited.Location = new System.Drawing.Point(149, 412);
+            this.cbxIsDeposited.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbxIsDeposited.Name = "cbxIsDeposited";
-            this.cbxIsDeposited.Size = new System.Drawing.Size(119, 23);
+            this.cbxIsDeposited.Size = new System.Drawing.Size(145, 27);
             this.cbxIsDeposited.TabIndex = 8;
             this.cbxIsDeposited.Text = "Is Deposited";
             this.cbxIsDeposited.UseVisualStyleBackColor = true;
             // 
             // EditBorrowForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 451);
+            this.ClientSize = new System.Drawing.Size(511, 601);
             this.Controls.Add(this.cbxIsDeposited);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnUpdate);
@@ -152,8 +158,10 @@ namespace client.Forms
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.EditBorrowAmount);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EditBorrowForm";
             this.Text = "EditBorrowForm";
+            this.Load += new System.EventHandler(this.EditBorrowForm_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.EditBorrowForm_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.EditBorrowForm_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.EditBorrowForm_MouseUp);

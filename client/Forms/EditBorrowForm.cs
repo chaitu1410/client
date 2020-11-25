@@ -26,7 +26,9 @@ namespace client.Forms
         private void btnUpdate_Click(object sender, EventArgs e)
         {
              _borrow.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
-             _borrow.CustomerName =Convert.ToString(txtName.Text);
+             _borrow.CustomerName = Convert.ToString(txtName.Text);
+            _borrow.IsReturned = cbxIsDeposited.Checked;
+
             
 
             _borrowRepository.Update(_borrow);
@@ -56,6 +58,22 @@ namespace client.Forms
         private void EditBorrowForm_MouseDown(object sender, MouseEventArgs e)
         {
             flag = true;
+        }
+
+        private void EditBorrowForm_Load(object sender, EventArgs e)
+        {
+            txtAmount.Text = _borrow.Amount.ToString();
+            txtName.Text = _borrow.CustomerName.ToString();
+            cbxIsDeposited.Checked = _borrow.IsReturned;
+            if (_borrow.IsReturned)
+            {
+                cbxIsDeposited.Enabled = false;
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }
