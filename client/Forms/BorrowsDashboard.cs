@@ -24,28 +24,27 @@ namespace client.Forms
 
         private void Load_Datagridview1_Data()
         {
-             DateTime dt = Convert.ToDateTime(dtpBorrowingBalance.Value);
-              String s1 = dt.ToString("yyyy-MM-dd");
-              DateTime dtnew = Convert.ToDateTime(s1);
+            ///DateTime dt = Convert.ToDateTime(dateTimePicker1.Value);
+            //String s1 = dt.ToString("yyyy-MM-dd");
+            //DateTime dtnew = Convert.ToDateTime(s1);
 
             var source = new BindingSource();
-            source.DataSource = _borrowRepository.GetAllUndepositedByDate(dtnew).ToList();
-            dgvBorrowingBalance.AutoGenerateColumns = true;             
+            source.DataSource = _borrowRepository.GetAllUndeposited().ToList();
+            dgvBorrowingBalance.AutoGenerateColumns = true;
             dgvBorrowingBalance.DataSource = source;
-            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
-            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+
 
 
         }
         private void Load_Datagridview2_Data()
         {
-            // DateTime dt = Convert.ToDateTime(.Value);
-             //String s1 = dt.ToString("yyyy-MM-dd");
-            // DateTime dtnew = Convert.ToDateTime(s1);
+            ///DateTime dt = Convert.ToDateTime(dateTimePicker1.Value);
+            //String s1 = dt.ToString("yyyy-MM-dd");
+            //DateTime dtnew = Convert.ToDateTime(s1);
 
             var source = new BindingSource();
             source.DataSource = _borrowRepository.GetAllDeposited().ToList();
-            dgvCreditDeposit.AutoGenerateColumns = true;
+            dgvBorrowingBalance.AutoGenerateColumns = true;
             dgvCreditDeposit.DataSource = source;
 
 
@@ -123,11 +122,6 @@ namespace client.Forms
         private void BorrowsDashboard_MouseUp(object sender, MouseEventArgs e)
         {
             flag = false;
-        }
-
-        private void dtpBorrowingBalance_ValueChanged(object sender, EventArgs e)
-        {
-            Load_Datagridview1_Data();
         }
     }
 }

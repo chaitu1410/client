@@ -48,7 +48,7 @@ namespace client.Forms
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblBorrows = new System.Windows.Forms.Label();
             this.pnlBody = new System.Windows.Forms.Panel();
-            this.dtpCreditDeposit = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpBorrowingBalance = new System.Windows.Forms.DateTimePicker();
             this.lblFilterBy = new System.Windows.Forms.Label();
@@ -197,7 +197,7 @@ namespace client.Forms
             // pnlBody
             // 
             this.pnlBody.BackColor = System.Drawing.Color.White;
-            this.pnlBody.Controls.Add(this.dtpCreditDeposit);
+            this.pnlBody.Controls.Add(this.dateTimePicker1);
             this.pnlBody.Controls.Add(this.label3);
             this.pnlBody.Controls.Add(this.dtpBorrowingBalance);
             this.pnlBody.Controls.Add(this.lblFilterBy);
@@ -212,14 +212,14 @@ namespace client.Forms
             this.pnlBody.Size = new System.Drawing.Size(876, 576);
             this.pnlBody.TabIndex = 2;
             // 
-            // dtpCreditDeposit
+            // dateTimePicker1
             // 
-            this.dtpCreditDeposit.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpCreditDeposit.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpCreditDeposit.Location = new System.Drawing.Point(544, 82);
-            this.dtpCreditDeposit.Name = "dtpCreditDeposit";
-            this.dtpCreditDeposit.Size = new System.Drawing.Size(230, 25);
-            this.dtpCreditDeposit.TabIndex = 11;
+            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.dateTimePicker1.Location = new System.Drawing.Point(544, 82);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(230, 25);
+            this.dateTimePicker1.TabIndex = 11;
             // 
             // label3
             // 
@@ -239,7 +239,6 @@ namespace client.Forms
             this.dtpBorrowingBalance.Name = "dtpBorrowingBalance";
             this.dtpBorrowingBalance.Size = new System.Drawing.Size(230, 25);
             this.dtpBorrowingBalance.TabIndex = 9;
-            this.dtpBorrowingBalance.ValueChanged += new System.EventHandler(this.dtpBorrowingBalance_ValueChanged);
             // 
             // lblFilterBy
             // 
@@ -344,10 +343,7 @@ namespace client.Forms
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
             this.dgvBorrowingBalance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvBorrowingBalance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgvBorrowingBalance.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvBorrowingBalance.BackgroundColor = System.Drawing.Color.White;
-            this.dgvBorrowingBalance.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -356,8 +352,7 @@ namespace client.Forms
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBorrowingBalance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            this.dgvBorrowingBalance.ColumnHeadersHeight = 50;
-            this.dgvBorrowingBalance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvBorrowingBalance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -366,10 +361,8 @@ namespace client.Forms
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBorrowingBalance.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dgvBorrowingBalance.GridColor = System.Drawing.Color.White;
             this.dgvBorrowingBalance.Location = new System.Drawing.Point(13, 118);
             this.dgvBorrowingBalance.Name = "dgvBorrowingBalance";
-            this.dgvBorrowingBalance.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -378,10 +371,7 @@ namespace client.Forms
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBorrowingBalance.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvBorrowingBalance.RowHeadersWidth = 50;
-            this.dgvBorrowingBalance.RowTemplate.Height = 50;
-            this.dgvBorrowingBalance.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBorrowingBalance.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgvBorrowingBalance.RowTemplate.Height = 25;
             this.dgvBorrowingBalance.Size = new System.Drawing.Size(402, 411);
             this.dgvBorrowingBalance.TabIndex = 0;
             this.dgvBorrowingBalance.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowingBalance_CellDoubleClick);
@@ -510,7 +500,7 @@ namespace client.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.DateTimePicker dtpCreditDeposit;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpBorrowingBalance;
         private System.Windows.Forms.Label lblFilterBy;

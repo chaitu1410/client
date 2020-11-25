@@ -26,8 +26,7 @@ namespace client.Forms
 
         private void btnRecords_MouseLeave(object sender, EventArgs e)
         {
-            btnViewBorrows.BackColor = Color.FromArgb(0, 0, 53, 92);
-
+            
         }
 
         private void btnDailySale_MouseEnter(object sender, EventArgs e)
@@ -120,11 +119,6 @@ namespace client.Forms
         {
             BorrowsDashboard bd = new BorrowsDashboard();
             bd.Show();
-        }
-
-        private void pbxRecords_MouseEnter(object sender, EventArgs e)
-        {
-            pbxRecords.BackColor = Color.FromArgb(0, 13, 72, 114);
         }
     }
 }
