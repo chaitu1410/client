@@ -27,8 +27,7 @@ namespace client.Forms
 
         private void btnRecords_MouseLeave(object sender, EventArgs e)
         {
-            btnViewBorrows.BackColor = Color.FromArgb(0, 0, 53, 92);
-
+            
         }
 
         private void btnDailySale_MouseEnter(object sender, EventArgs e)
@@ -58,7 +57,7 @@ namespace client.Forms
         }
         private async void Load_Datagridview_Data()
         {
-            DateTime dt = Convert.ToDateTime(dateTimePicker1.Value);
+            DateTime dt = Convert.ToDateTime(dtpRecords.Value);
             String s1 = dt.ToString("yyyy-MM-dd");
             DateTime dtnew = Convert.ToDateTime(s1);
 
@@ -71,12 +70,7 @@ namespace client.Forms
 
         }
 
-        private void btnAddRecords_Click(object sender, EventArgs e)
-        {
-            AddNewRecordsForm frm = new AddNewRecordsForm();
-            frm.Show();
-
-        }
+       
 
         private async void dgvRecords_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -91,38 +85,69 @@ namespace client.Forms
 
             }
             
-        }
+       
 
         private void Dashboard_Activated(object sender, EventArgs e)
         {
             Load_Datagridview_Data();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            Load_Datagridview_Data();
-        }
+       
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btnAddBorrow_Click(object sender, EventArgs e)
-        {
-            AddBorrowForm frm=new AddBorrowForm();
-            frm.Show();
-        }
+        
 
         private void btnViewBorrows_Click(object sender, EventArgs e)
         {
+            pnlBody.Controls.Clear();
             BorrowsDashboard bd = new BorrowsDashboard();
+            bd.TopLevel = false;
+            pnlBody.Controls.Add(bd);
+            bd.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            bd.Dock = DockStyle.Fill;
             bd.Show();
         }
 
-        private void pbxRecords_MouseEnter(object sender, EventArgs e)
+        private void pnlDashboard_Paint(object sender, PaintEventArgs e)
         {
-            pbxRecords.BackColor = Color.FromArgb(0, 13, 72, 114);
+
+        }
+
+        private void btnAddRecords_Click(object sender, EventArgs e)
+        {
+            AddNewRecordsForm frm = new AddNewRecordsForm();
+            frm.Show();
+
+        }
+
+        private void btnAddBorrow_Click(object sender, EventArgs e)
+        {
+            AddBorrowForm frm = new AddBorrowForm();
+            frm.Show();
+        }
+
+        private void dtpRecords_ValueChanged(object sender, EventArgs e)
+        {
+            Load_Datagridview_Data();
+        }
+
+        private void dgvRecords_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvRecords.CurrentRow != null)
+            {
+                var row = dgvRecords.CurrentRow.Cells;
+                int id = Convert.ToInt32(row["TransactionId"].Value);
+                //Console.WriteLine(id);
+                Transaction transaction = _transactionRepository.Find(id);
+                EditRecordsForm f1 = new EditRecordsForm(transaction);
+                f1.Show();
+
+            }
+
         }
     }
 }
