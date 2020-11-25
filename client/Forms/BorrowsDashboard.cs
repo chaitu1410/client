@@ -74,38 +74,7 @@ namespace client.Forms
 
         }
 
-        private void btnViewBorrows_MouseEnter(object sender, EventArgs e)
-        {
-            btnViewBorrows.BackColor = Color.FromArgb(0, 13, 72, 114);
-        }
-
-        private void btnViewBorrows_MouseLeave(object sender, EventArgs e)
-        {
-            btnViewBorrows.BackColor = Color.FromArgb(0, 0, 53, 92);
-        }
-
-        private void btnViewTotalSale_MouseEnter(object sender, EventArgs e)
-        {
-            btnViewTotalSale.BackColor = Color.FromArgb(0, 13, 72, 114);
-
-        }
-
-        private void btnViewTotalSale_MouseLeave(object sender, EventArgs e)
-        {
-            btnViewTotalSale.BackColor = Color.FromArgb(0, 0, 53, 92);
-        }
-
-        private void btnCredentials_MouseEnter(object sender, EventArgs e)
-        {
-            btnCredentials.BackColor = Color.FromArgb(0, 13, 72, 114);
-
-        }
-
-        private void btnCredentials_MouseLeave(object sender, EventArgs e)
-        {
-            btnCredentials.BackColor = Color.FromArgb(0, 0, 53, 92);
-        }
-
+       
         private void BorrowsDashboard_MouseDown(object sender, MouseEventArgs e)
         {
             flag = true;
@@ -122,6 +91,11 @@ namespace client.Forms
         private void BorrowsDashboard_MouseUp(object sender, MouseEventArgs e)
         {
             flag = false;
+        }
+
+        private void lblBorrows_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
