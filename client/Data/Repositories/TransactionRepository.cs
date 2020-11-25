@@ -18,18 +18,19 @@ namespace client.Data
             _db = new AppDbContext();
         }
 
-        public IEnumerable<Transaction> GetAll() 
+        public async Task<IEnumerable<Transaction>> GetAll()
         {
-            return _db.Transactions;
+            return await Task.Run(() => _db.Transactions);
         }
 
-        public IEnumerable<Transaction> GetAllByDate(DateTime date) 
+        public async Task<IEnumerable<Transaction>> GetAllByDate(DateTime date) 
         {
-            return  _db.Transactions.Where(t => t.Date.Date.Equals(date.Date));
+            AppDbContext _db = new AppDbContext();
+            return  await Task.Run(() => _db.Transactions.Where(t => t.Date.Date.Equals(date.Date)).ToList());
             //return _db.Transactions.Where(t => new DateTime(t.Date.Year, t.Date.Month, t.Date.Day) == new DateTime(date.Year, date.Month, date.Day));
         }
 
-        public bool Add(Transaction transaction) 
+        public async Task<bool> Add(Transaction transaction) 
         {
             ValidationContext context = new ValidationContext(transaction, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
@@ -39,17 +40,17 @@ namespace client.Data
             {
                 return false;
             }
-            _db.Transactions.Add(transaction);
-            _db.SaveChanges();
+            await _db.Transactions.AddAsync(transaction);
+            await _db.SaveChangesAsync();
             return true;
         }
 
-        public Transaction Find(int id) 
+        public async Task<Transaction> Find(int id) 
         {
-            return _db.Transactions.Find(id);
+            return await _db.Transactions.FindAsync(id);
         }
 
-        public bool Update(Transaction transaction) 
+        public async Task<bool> Update(Transaction transaction) 
         {
             ValidationContext context = new ValidationContext(transaction, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
@@ -60,14 +61,14 @@ namespace client.Data
                 return false;
             }
             _db.Transactions.Update(transaction);
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
             return true;
         }
 
-        public bool Remove(Transaction transaction) 
+        public async Task<bool> Remove(Transaction transaction) 
         {
             _db.Transactions.Remove(transaction);
-            _db.SaveChanges();
+            await _db.SaveChangesAsync();
             return true;
         }
     }

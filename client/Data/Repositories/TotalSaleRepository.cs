@@ -67,7 +67,7 @@ namespace client.Data
             return true;
         }
 
-        private void CalculateTotalSale(DateTime date)
+        private async void CalculateTotalSale(DateTime date)
         {
             if(isNotAvailable(date) || date.Date.Equals(DateTime.Now.Date))
             {
@@ -76,7 +76,7 @@ namespace client.Data
                 BorrowRepository borrowRepository = new BorrowRepository();
                 SaleReturnRepository saleReturnRepository = new SaleReturnRepository();
 
-                IEnumerable<Transaction> transactions = transactionRepository.GetAllByDate(date);
+                IEnumerable<Transaction> transactions = await transactionRepository.GetAllByDate(date);
                 IEnumerable<Borrow> borrows = borrowRepository.GetAllByDate(date);
                 IEnumerable<SaleReturn> saleReturns = saleReturnRepository.GetAllByDate(date);
 

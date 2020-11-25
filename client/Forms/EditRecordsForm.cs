@@ -52,15 +52,13 @@ namespace client.Forms
             flag = false;
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private async void btnUpdate_Click(object sender, EventArgs e)
         {
-            
-
             _transaction.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
             _transaction.Extras = (double)Convert.ToDouble(txtExtra.Text);
             _transaction.PaymentMethod = GetSelectedPaymentMethod();
 
-            _transactionRepository.Update(_transaction);
+            await _transactionRepository.Update(_transaction);
 
             this.Dispose();
         }
@@ -72,9 +70,9 @@ namespace client.Forms
             return paymentMethod;
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
-            _transactionRepository.Remove(_transaction);
+            await _transactionRepository.Remove(_transaction);
             this.Dispose();
         }
 
