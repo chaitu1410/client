@@ -186,25 +186,27 @@ namespace client.Forms
             this.btnClearFilter.TabIndex = 5;
             this.btnClearFilter.Text = "Clear Filter";
             this.btnClearFilter.UseVisualStyleBackColor = false;
+            this.btnClearFilter.Click += new System.EventHandler(this.btnClearFilter_Click);
             // 
             // btnClrFilter
             // 
             this.btnClrFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnClrFilter.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClrFilter.ForeColor = System.Drawing.Color.White;
-            this.btnClrFilter.Location = new System.Drawing.Point(13, 612);
+            this.btnClrFilter.Location = new System.Drawing.Point(346, 612);
             this.btnClrFilter.Name = "btnClrFilter";
             this.btnClrFilter.Size = new System.Drawing.Size(110, 36);
             this.btnClrFilter.TabIndex = 4;
             this.btnClrFilter.Text = "Clear Filter";
             this.btnClrFilter.UseVisualStyleBackColor = false;
+            this.btnClrFilter.Click += new System.EventHandler(this.btnClrFilter_Click);
             // 
             // lblCreditDeposit
             // 
             this.lblCreditDeposit.AutoSize = true;
             this.lblCreditDeposit.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCreditDeposit.ForeColor = System.Drawing.Color.Black;
-            this.lblCreditDeposit.Location = new System.Drawing.Point(583, 28);
+            this.lblCreditDeposit.Location = new System.Drawing.Point(660, 25);
             this.lblCreditDeposit.Name = "lblCreditDeposit";
             this.lblCreditDeposit.Size = new System.Drawing.Size(149, 22);
             this.lblCreditDeposit.TabIndex = 3;
@@ -215,7 +217,7 @@ namespace client.Forms
             this.lblBorrowingBalance.AutoSize = true;
             this.lblBorrowingBalance.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblBorrowingBalance.ForeColor = System.Drawing.Color.Black;
-            this.lblBorrowingBalance.Location = new System.Drawing.Point(99, 25);
+            this.lblBorrowingBalance.Location = new System.Drawing.Point(131, 25);
             this.lblBorrowingBalance.Name = "lblBorrowingBalance";
             this.lblBorrowingBalance.Size = new System.Drawing.Size(189, 22);
             this.lblBorrowingBalance.TabIndex = 2;

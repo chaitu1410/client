@@ -29,30 +29,31 @@ namespace client.Forms
             cbxPaymentMethod.SelectedItem = _transaction.PaymentMethod;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+       
+        private PaymentMethods GetSelectedPaymentMethod()
         {
+            PaymentMethods paymentMethod;
+            Enum.TryParse<PaymentMethods>(cbxPaymentMethod.SelectedValue.ToString(), out paymentMethod);
+            return paymentMethod;
+        }
+
+       
+
+        private void SetupComboBox()
+        {
+            cbxPaymentMethod.DataSource = Enum.GetValues(typeof(PaymentMethods));
+            AutoCompleteStringCollection cbPaymentMethodsAutoCompleteStrings = new AutoCompleteStringCollection();
+            cbPaymentMethodsAutoCompleteStrings.AddRange(Enum.GetNames(typeof(PaymentMethods)));
+            cbxPaymentMethod.AutoCompleteCustomSource = cbPaymentMethodsAutoCompleteStrings;
+        }
+
+        private async void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            await _transactionRepository.Remove(_transaction);
             this.Dispose();
         }
 
-        private void EditRecordsForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            flag = true;
-        }
-
-        private void EditRecordsForm_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (flag == true) 
-            {
-                this.Location = Cursor.Position;
-            }
-        }
-
-        private void EditRecordsForm_MouseUp(object sender, MouseEventArgs e)
-        {
-            flag = false;
-        }
-
-        private async void btnUpdate_Click(object sender, EventArgs e)
+        private  async void btnUpdate_Click_1(object sender, EventArgs e)
         {
             _transaction.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
             _transaction.Extras = (double)Convert.ToDouble(txtExtra.Text);
@@ -63,25 +64,32 @@ namespace client.Forms
             this.Dispose();
         }
 
-        private PaymentMethods GetSelectedPaymentMethod()
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
-            PaymentMethods paymentMethod;
-            Enum.TryParse<PaymentMethods>(cbxPaymentMethod.SelectedValue.ToString(), out paymentMethod);
-            return paymentMethod;
-        }
-
-        private async void btnDelete_Click(object sender, EventArgs e)
-        {
-            await _transactionRepository.Remove(_transaction);
             this.Dispose();
         }
 
-        private void SetupComboBox()
+        private void pnlBody_Paint(object sender, PaintEventArgs e)
         {
-            cbxPaymentMethod.DataSource = Enum.GetValues(typeof(PaymentMethods));
-            AutoCompleteStringCollection cbPaymentMethodsAutoCompleteStrings = new AutoCompleteStringCollection();
-            cbPaymentMethodsAutoCompleteStrings.AddRange(Enum.GetNames(typeof(PaymentMethods)));
-            cbxPaymentMethod.AutoCompleteCustomSource = cbPaymentMethodsAutoCompleteStrings;
+            ControlPaint.DrawBorder(e.Graphics, this.pnlBody.ClientRectangle, Color.DarkSlateBlue, ButtonBorderStyle.None);
+        }
+
+        private void pnlBody_MouseDown(object sender, MouseEventArgs e)
+        {
+            flag = true;
+        }
+
+        private void pnlBody_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (flag == true)
+            {
+                this.Location = Cursor.Position;
+            }
+        }
+
+        private void pnlBody_MouseUp(object sender, MouseEventArgs e)
+        {
+            flag = false;
         }
     }
 }

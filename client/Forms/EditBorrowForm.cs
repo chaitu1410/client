@@ -23,43 +23,6 @@ namespace client.Forms
            
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-             _borrow.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
-             _borrow.CustomerName = Convert.ToString(txtName.Text);
-            _borrow.IsReturned = cbxIsDeposited.Checked;
-
-            
-
-            _borrowRepository.Update(_borrow);
-
-            this.Dispose();
-        }
-
-        private void btnDelete_Click(object sender, EventArgs e)
-        {
-            _borrowRepository.Remove(_borrow);
-            this.Dispose();
-        }
-
-        private void EditBorrowForm_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (flag == true)
-            {
-                this.Location = Cursor.Position;
-            }
-        }
-
-        private void EditBorrowForm_MouseUp(object sender, MouseEventArgs e)
-        {
-            flag = false;
-        }
-
-        private void EditBorrowForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            flag = true;
-        }
-
         private void EditBorrowForm_Load(object sender, EventArgs e)
         {
             txtAmount.Text = _borrow.Amount.ToString();
@@ -71,9 +34,53 @@ namespace client.Forms
             }
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
+   
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            _borrowRepository.Remove(_borrow);
+            this.Dispose();
+        }
+
+        private void btnUpdate_Click_1(object sender, EventArgs e)
+        {
+            _borrow.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
+            _borrow.CustomerName = Convert.ToString(txtName.Text);
+            _borrow.IsReturned = cbxIsDeposited.Checked;
+
+
+
+            _borrowRepository.Update(_borrow);
+
+            this.Dispose();
+        }
+
+        private void btnCancel_Click_1(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void pnlBody_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.pnlBody.ClientRectangle, Color.DarkSlateBlue, ButtonBorderStyle.None);
+        }
+
+        private void pnlBody_MouseDown(object sender, MouseEventArgs e)
+        {
+            flag = true;
+        }
+
+        private void pnlBody_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (flag == true)
+            {
+                this.Location = Cursor.Position;
+            }
+        }
+
+        private void pnlBody_MouseUp(object sender, MouseEventArgs e)
+        {
+            flag = false;
         }
     }
 }
