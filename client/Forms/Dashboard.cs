@@ -12,11 +12,13 @@ namespace client.Forms
     public partial class Dashboard : Form
     {
         TransactionRepository _transactionRepository;
+        bool flag = false;
 
         public Dashboard()
         {
             InitializeComponent();
             _transactionRepository = new TransactionRepository();
+            
         }
 
         private void btnRecords_MouseEnter(object sender, EventArgs e)
@@ -112,6 +114,34 @@ namespace client.Forms
             btnClose.BackColor = Color.White;
             btnClose.ForeColor = Color.Black;
 
+        }
+
+        private void Dashboard_MouseDown(object sender, MouseEventArgs e)
+        {
+            flag = true;
+        }
+
+        private void Dashboard_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (flag == true)
+            {
+                this.Location = Cursor.Position;
+            }
+        }
+
+        private void Dashboard_MouseUp(object sender, MouseEventArgs e)
+        {
+            flag = false;
+        }
+
+        private void pnlBody_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

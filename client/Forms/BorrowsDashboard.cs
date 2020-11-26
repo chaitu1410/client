@@ -135,8 +135,14 @@ namespace client.Forms
             dgvBorrowingBalance.DataSource = source;
             dgvBorrowingBalance.Columns["Id"].Visible = false;
             dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
-            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+           /// dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
 
+        }
+
+        private void BorrowsDashboard_Activated(object sender, EventArgs e)
+        {
+            Load_Datagridview1_Data();
+            Load_Datagridview2_Data();
         }
     }
 }
