@@ -45,7 +45,7 @@ namespace client.Forms
             this.lblAddNewRecord.AutoSize = true;
             this.lblAddNewRecord.Font = new System.Drawing.Font("Cambria", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblAddNewRecord.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblAddNewRecord.Location = new System.Drawing.Point(150, 29);
+            this.lblAddNewRecord.Location = new System.Drawing.Point(168, 24);
             this.lblAddNewRecord.Name = "lblAddNewRecord";
             this.lblAddNewRecord.Size = new System.Drawing.Size(161, 23);
             this.lblAddNewRecord.TabIndex = 0;
@@ -142,6 +142,7 @@ namespace client.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(499, 504);
             this.Controls.Add(this.cbxPaymentMethod);
             this.Controls.Add(this.btnCancel);

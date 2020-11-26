@@ -32,6 +32,9 @@ namespace client.Forms
             source.DataSource = _borrowRepository.GetAllUndeposited().ToList();
             dgvBorrowingBalance.AutoGenerateColumns = true;
             dgvBorrowingBalance.DataSource = source;
+            dgvBorrowingBalance.Columns["Id"].Visible = false;
+            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
+            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
 
 
 
@@ -46,6 +49,10 @@ namespace client.Forms
             source.DataSource = _borrowRepository.GetAllDeposited().ToList();
             dgvBorrowingBalance.AutoGenerateColumns = true;
             dgvCreditDeposit.DataSource = source;
+            dgvCreditDeposit.Columns["Id"].Visible = false;
+            dgvCreditDeposit.Columns["IsReturned"].Visible = false;
+            dgvCreditDeposit.Columns["ReturnDate"].Visible = false;
+
 
 
 
