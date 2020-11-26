@@ -52,6 +52,7 @@ namespace client.Forms
        
         private void btnClose_Click(object sender, EventArgs e)
         {
+            btnClose.BackColor = Color.Red;
             Application.Exit();
         }
 
@@ -97,6 +98,20 @@ namespace client.Forms
             home.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             home.Dock = DockStyle.Fill;
             home.Show();
+        }
+
+        private void btnClose_MouseEnter(object sender, EventArgs e)
+        {
+            btnClose.BackColor = Color.Red;
+            btnClose.ForeColor = Color.Black;
+           
+        }
+
+        private void btnClose_MouseLeave(object sender, EventArgs e)
+        {
+            btnClose.BackColor = Color.White;
+            btnClose.ForeColor = Color.Black;
+
         }
     }
 }

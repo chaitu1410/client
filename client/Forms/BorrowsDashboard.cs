@@ -24,12 +24,12 @@ namespace client.Forms
 
         private void Load_Datagridview1_Data()
         {
-            ///DateTime dt = Convert.ToDateTime(dateTimePicker1.Value);
-            //String s1 = dt.ToString("yyyy-MM-dd");
-            //DateTime dtnew = Convert.ToDateTime(s1);
+            DateTime dt = Convert.ToDateTime(dtpBorrowingBalance.Value);
+            String s1 = dt.ToString("yyyy-MM-dd");
+            DateTime dtnew = Convert.ToDateTime(s1);
 
             var source = new BindingSource();
-            source.DataSource = _borrowRepository.GetAllUndeposited().ToList();
+            source.DataSource = _borrowRepository.GetAllUndepositedByDate(dtnew).ToList();
             dgvBorrowingBalance.AutoGenerateColumns = true;
             dgvBorrowingBalance.DataSource = source;
             dgvBorrowingBalance.Columns["Id"].Visible = false;
@@ -41,12 +41,12 @@ namespace client.Forms
         }
         private void Load_Datagridview2_Data()
         {
-            ///DateTime dt = Convert.ToDateTime(dateTimePicker1.Value);
-            //String s1 = dt.ToString("yyyy-MM-dd");
-            //DateTime dtnew = Convert.ToDateTime(s1);
+            DateTime dt = Convert.ToDateTime(dtpCreditDeposit.Value);
+            String s1 = dt.ToString("yyyy-MM-dd");
+            DateTime dtnew = Convert.ToDateTime(s1);
 
             var source = new BindingSource();
-            source.DataSource = _borrowRepository.GetAllDeposited().ToList();
+            source.DataSource = _borrowRepository.GetAllDepositedByDate(dtnew).ToList();
             dgvBorrowingBalance.AutoGenerateColumns = true;
             dgvCreditDeposit.DataSource = source;
             dgvCreditDeposit.Columns["Id"].Visible = false;
@@ -103,6 +103,16 @@ namespace client.Forms
         private void lblBorrows_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void dtpBorrowingBalance_ValueChanged(object sender, EventArgs e)
+        {
+            Load_Datagridview1_Data();
+        }
+
+        private void dtpCreditDeposit_ValueChanged(object sender, EventArgs e)
+        {
+            Load_Datagridview2_Data();
         }
     }
 }

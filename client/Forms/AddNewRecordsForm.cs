@@ -21,20 +21,10 @@ namespace client.Forms
         }
         
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
+      
             
 
-            Transaction transaction = new Transaction()
-            {
-                Amount = (decimal)Convert.ToDouble(txtAmount.Text),
-                Extras = (double)Convert.ToDouble(txtExtra.Text),
-                PaymentMethod = GetSelectedPaymentMethod(),
-                Date = DateTime.Now
-            };
-             _transactionRepository.Add(transaction);
-            this.Dispose();
-        }
+          
 
         private PaymentMethods GetSelectedPaymentMethod()
         {
@@ -43,10 +33,7 @@ namespace client.Forms
             return paymentMethod;
         }
 
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
+      
 
         private void AddNewRecordsForm_MouseDown(object sender, MouseEventArgs e)
         {
@@ -78,6 +65,34 @@ namespace client.Forms
             cbPaymentMethodsAutoCompleteStrings.AddRange(Enum.GetNames(typeof(PaymentMethods)));
             cbxPaymentMethod.AutoCompleteCustomSource = cbPaymentMethodsAutoCompleteStrings;
             cbxPaymentMethod.SelectedIndex = 0;
+        }
+
+        private void pnlBody_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.pnlBody.ClientRectangle, Color.DarkSlateBlue,ButtonBorderStyle.None);
+        }
+
+       
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+
+       
+
+        private void  btnSave_Click_1(object sender, EventArgs e)
+        {
+            Transaction transaction = new Transaction()
+            {
+                Amount = (decimal)Convert.ToDouble(txtAmount.Text),
+                Extras = (double)Convert.ToDouble(txtExtra.Text),
+                PaymentMethod = GetSelectedPaymentMethod(),
+                Date = DateTime.Now
+            };
+            _transactionRepository.Add(transaction);
+            this.Dispose();
         }
     }
 }
