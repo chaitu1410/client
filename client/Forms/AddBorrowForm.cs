@@ -18,6 +18,12 @@ namespace client.Forms
             InitializeComponent();
             _borrowRepository = new BorrowRepository();       
         }
+       
+        private void pnlBody_Paint(object sender, PaintEventArgs e)
+        {
+            ControlPaint.DrawBorder(e.Graphics, this.pnlBody.ClientRectangle, Color.DarkSlateBlue, ButtonBorderStyle.None);
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
             Borrow _borrow = new Borrow()
@@ -37,12 +43,12 @@ namespace client.Forms
             this.Dispose();
         }
 
-        private void AddBorrowForm_MouseDown(object sender, MouseEventArgs e)
+        private void pnlBody_MouseDown(object sender, MouseEventArgs e)
         {
             flag = true;
         }
 
-        private void AddBorrowForm_MouseMove(object sender, MouseEventArgs e)
+        private void pnlBody_MouseMove(object sender, MouseEventArgs e)
         {
             if (flag == true)
             {
@@ -50,7 +56,7 @@ namespace client.Forms
             }
         }
 
-        private void AddBorrowForm_MouseUp(object sender, MouseEventArgs e)
+        private void pnlBody_MouseUp(object sender, MouseEventArgs e)
         {
             flag = false;
         }

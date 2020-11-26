@@ -114,5 +114,29 @@ namespace client.Forms
         {
             Load_Datagridview2_Data();
         }
+
+        private void btnClrFilter_Click(object sender, EventArgs e)
+        {
+            var source = new BindingSource();
+            source.DataSource = _borrowRepository.GetAllUndeposited().ToList();
+            dgvBorrowingBalance.AutoGenerateColumns = true;
+            dgvBorrowingBalance.DataSource = source;
+            dgvBorrowingBalance.Columns["Id"].Visible = false;
+            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
+            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+
+        }
+
+        private void btnClearFilter_Click(object sender, EventArgs e)
+        {
+            var source = new BindingSource();
+            source.DataSource = _borrowRepository.GetAllDeposited().ToList();
+            dgvBorrowingBalance.AutoGenerateColumns = true;
+            dgvBorrowingBalance.DataSource = source;
+            dgvBorrowingBalance.Columns["Id"].Visible = false;
+            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
+            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+
+        }
     }
 }

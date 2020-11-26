@@ -33,26 +33,6 @@ namespace client.Forms
             return paymentMethod;
         }
 
-      
-
-        private void AddNewRecordsForm_MouseDown(object sender, MouseEventArgs e)
-        {
-            flag = true;
-        }
-
-        private void AddNewRecordsForm_MouseMove(object sender, MouseEventArgs e)
-        {
-            if(flag==true)
-            {
-                this.Location = Cursor.Position;
-            }
-        }
-
-        private void AddNewRecordsForm_MouseUp(object sender, MouseEventArgs e)
-        {
-            flag = false;
-        }
-
         private void AddNewRecordsForm_Load(object sender, EventArgs e)
         {
             SetupComboBox();
@@ -93,6 +73,24 @@ namespace client.Forms
             };
             _transactionRepository.Add(transaction);
             this.Dispose();
+        }
+
+        private void pnlBody_MouseDown(object sender, MouseEventArgs e)
+        {
+            flag = true;
+        }
+
+        private void pnlBody_MouseUp(object sender, MouseEventArgs e)
+        {
+            flag = false;
+        }
+
+        private void pnlBody_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (flag == true)
+            {
+                this.Location = Cursor.Position;
+            }
         }
     }
 }

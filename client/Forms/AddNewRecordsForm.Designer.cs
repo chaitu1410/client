@@ -118,7 +118,7 @@ namespace client.Forms
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnCancel.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(163, 387);
+            this.btnCancel.Location = new System.Drawing.Point(312, 387);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 46);
             this.btnCancel.TabIndex = 8;
@@ -144,13 +144,16 @@ namespace client.Forms
             this.pnlBody.Size = new System.Drawing.Size(499, 504);
             this.pnlBody.TabIndex = 0;
             this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
+            this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);
+            this.pnlBody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseMove);
+            this.pnlBody.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseUp);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnSave.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(38, 387);
+            this.btnSave.Location = new System.Drawing.Point(187, 387);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 46);
             this.btnSave.TabIndex = 9;
@@ -171,9 +174,6 @@ namespace client.Forms
             this.Text = "AddNewRecordsForm";
             this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.AddNewRecordsForm_Load);
-            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddNewRecordsForm_MouseDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AddNewRecordsForm_MouseMove);
-            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.AddNewRecordsForm_MouseUp);
             this.pnlBody.ResumeLayout(false);
             this.pnlBody.PerformLayout();
             this.ResumeLayout(false);
