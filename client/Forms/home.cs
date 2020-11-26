@@ -19,7 +19,7 @@ namespace client.Forms
 
         }
 
-        private void dtpRecords_ValueChanged(object sender, EventArgs e)
+        private async void dtpRecords_ValueChanged(object sender, EventArgs e)
         {
             Load_Datagridview_Data();
         }
