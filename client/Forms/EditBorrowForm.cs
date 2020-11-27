@@ -44,6 +44,19 @@ namespace client.Forms
 
         private void btnUpdate_Click_1(object sender, EventArgs e)
         {
+            if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("All fields required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtName.Focus();
+                return;
+            }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtName.Text, "^[a-zA-Z]"))
+            {
+                MessageBox.Show("Invaild Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtName.Focus();
+                txtName.Text.Remove(txtName.Text.Length - 1);
+                return;
+            }
             _borrow.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
             _borrow.CustomerName = Convert.ToString(txtName.Text);
             _borrow.IsReturned = cbxIsDeposited.Checked;
@@ -81,6 +94,18 @@ namespace client.Forms
         private void pnlBody_MouseUp(object sender, MouseEventArgs e)
         {
             flag = false;
+        }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
         }
     }
 }

@@ -93,6 +93,7 @@ namespace client.Forms
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(293, 26);
             this.txtAmount.TabIndex = 4;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblAmount
             // 
@@ -112,6 +113,7 @@ namespace client.Forms
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(293, 26);
             this.txtName.TabIndex = 2;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lblName
             // 
@@ -144,9 +146,6 @@ namespace client.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddBorrowForm";
             this.Text = "AddBorrowForm";
-            //this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AddBorrowForm_MouseDown);
-            //this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.AddBorrowForm_MouseMove);
-            //this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.AddBorrowForm_MouseUp);
             this.pnlBody.ResumeLayout(false);
             this.pnlBody.PerformLayout();
             this.ResumeLayout(false);
