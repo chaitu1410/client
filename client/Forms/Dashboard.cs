@@ -91,16 +91,6 @@ namespace client.Forms
             home.Dock = DockStyle.Fill;
             home.Show();
         }
-        private void btnViewTotalSale_Click(object sender, EventArgs e)
-        {
-            pnlBody.Controls.Clear();
-            Totalsale totalsale = new Totalsale();
-            totalsale.TopLevel = false;
-            pnlBody.Controls.Add(totalsale);
-            totalsale.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            totalsale.Dock = DockStyle.Fill;
-            totalsale.Show();
-        }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
@@ -153,7 +143,5 @@ namespace client.Forms
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-       
     }
 }
