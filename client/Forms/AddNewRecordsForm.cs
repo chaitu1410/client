@@ -64,6 +64,11 @@ namespace client.Forms
 
         private void  btnSave_Click_1(object sender, EventArgs e)
         {
+            if(txtAmount.Text.Trim()==string.Empty)
+            {
+                MessageBox.Show("Please Enter Amount....", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Transaction transaction = new Transaction()
             {
                 Amount = (decimal)Convert.ToDouble(txtAmount.Text),
@@ -72,6 +77,7 @@ namespace client.Forms
                 Date = DateTime.Now
             };
             _transactionRepository.Add(transaction);
+           
             this.Dispose();
         }
 
@@ -92,5 +98,31 @@ namespace client.Forms
                 this.Location = Cursor.Position;
             }
         }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == '\b') 
+            {
+                e.Handled = false; 
+            }
+            else
+            {
+                e.Handled = true; 
+            }
+        }
+
+        private void txtExtra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+       
     }
 }

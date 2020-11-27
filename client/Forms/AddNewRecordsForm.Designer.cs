@@ -106,6 +106,7 @@ namespace client.Forms
             this.txtExtra.Size = new System.Drawing.Size(245, 26);
             this.txtExtra.TabIndex = 6;
             this.txtExtra.Text = "0";
+            this.txtExtra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExtra_KeyPress);
             // 
             // btnCancel
             // 
@@ -152,6 +153,7 @@ namespace client.Forms
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(245, 26);
             this.txtAmount.TabIndex = 10;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // btnSave
             // 
@@ -171,7 +173,7 @@ namespace client.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(502, 496);
+            this.ClientSize = new System.Drawing.Size(502, 495);
             this.Controls.Add(this.pnlBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewRecordsForm";

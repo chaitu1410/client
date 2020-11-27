@@ -111,6 +111,7 @@ namespace client.Forms
             this.txtExtra.Name = "txtExtra";
             this.txtExtra.Size = new System.Drawing.Size(248, 26);
             this.txtExtra.TabIndex = 6;
+            this.txtExtra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExtra_KeyPress);
             // 
             // lblExtras
             // 
@@ -130,6 +131,7 @@ namespace client.Forms
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(248, 26);
             this.txtAmount.TabIndex = 4;
+            this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblAmount
             // 

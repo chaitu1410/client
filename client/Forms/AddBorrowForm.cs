@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using client.Data;
-
+using System.Text.RegularExpressions;
 namespace client.Forms
 {
     public partial class AddBorrowForm : Form
@@ -26,6 +26,19 @@ namespace client.Forms
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if(txtName.Text.Trim()==string.Empty|| txtAmount.Text.Trim()==string.Empty)
+            {
+                MessageBox.Show("All fields required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtName.Focus();
+                return;
+            }   
+            if(!System.Text.RegularExpressions.Regex.IsMatch(txtName.Text,"^[a-zA-Z]"))
+            {
+                MessageBox.Show("Invaild Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtName.Focus();
+                txtName.Text.Remove(txtName.Text.Length - 1);
+                return;
+            }
             Borrow _borrow = new Borrow()
             {
                 Amount = (decimal)Convert.ToDouble(txtAmount.Text),
@@ -59,6 +72,23 @@ namespace client.Forms
         private void pnlBody_MouseUp(object sender, MouseEventArgs e)
         {
             flag = false;
+        }
+
+        private void txtAmount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar >= '0' && e.KeyChar <= '9' || e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 };
