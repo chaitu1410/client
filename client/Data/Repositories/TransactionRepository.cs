@@ -12,14 +12,9 @@ namespace client.Data
      */
     class TransactionRepository
     {
-        AppDbContext _db;
-        public TransactionRepository()
-        {
-            _db = new AppDbContext();
-        }
-
         public async Task<IEnumerable<Transaction>> GetAll()
         {
+            AppDbContext _db = new AppDbContext();
             return await Task.Run(() => _db.Transactions);
         }
 
@@ -32,6 +27,7 @@ namespace client.Data
 
         public async Task<bool> Add(Transaction transaction) 
         {
+            AppDbContext _db = new AppDbContext();
             ValidationContext context = new ValidationContext(transaction, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
             bool isValid = Validator.TryValidateObject(transaction, context, validationResults);
@@ -47,11 +43,13 @@ namespace client.Data
 
         public async Task<Transaction> Find(int id) 
         {
+            AppDbContext _db = new AppDbContext();
             return await _db.Transactions.FindAsync(id);
         }
 
         public async Task<bool> Update(Transaction transaction) 
         {
+            AppDbContext _db = new AppDbContext();
             ValidationContext context = new ValidationContext(transaction, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
             bool isValid = Validator.TryValidateObject(transaction, context, validationResults);
@@ -67,6 +65,7 @@ namespace client.Data
 
         public async Task<bool> Remove(Transaction transaction) 
         {
+            AppDbContext _db = new AppDbContext();
             _db.Transactions.Remove(transaction);
             await _db.SaveChangesAsync();
             return true;
