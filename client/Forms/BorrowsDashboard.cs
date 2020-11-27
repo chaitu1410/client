@@ -20,9 +20,11 @@ namespace client.Forms
             InitializeComponent();
             _borrowRepository=new BorrowRepository();
             borrow = new Borrow();
+            Load_Datagridview1_Data();
+            Load_Datagridview2_Data();
         }
 
-        private void Load_Datagridview1_Data()
+        private void Load_Datagridview1_Data_By_Date()
         {
             DateTime dt = Convert.ToDateTime(dtpBorrowingBalance.Value);
             String s1 = dt.ToString("yyyy-MM-dd");
@@ -35,11 +37,8 @@ namespace client.Forms
             dgvBorrowingBalance.Columns["Id"].Visible = false;
             dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
             dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
-
-
-
         }
-        private void Load_Datagridview2_Data()
+        private void Load_Datagridview2_Data_By_Date()
         {
             DateTime dt = Convert.ToDateTime(dtpCreditDeposit.Value);
             String s1 = dt.ToString("yyyy-MM-dd");
@@ -51,17 +50,6 @@ namespace client.Forms
             dgvCreditDeposit.DataSource = source;
             dgvCreditDeposit.Columns["Id"].Visible = false;
             dgvCreditDeposit.Columns["IsReturned"].Visible = false;
-            dgvCreditDeposit.Columns["ReturnDate"].Visible = false;
-
-
-
-
-        }
-
-        private void BorrowsDashboard_Load(object sender, EventArgs e)
-        {
-            Load_Datagridview1_Data();
-            Load_Datagridview2_Data();
         }
 
         private void dgvBorrowingBalance_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -74,14 +62,31 @@ namespace client.Forms
                 Borrow  borrow= _borrowRepository.Find(id);
                 EditBorrowForm edf = new EditBorrowForm(borrow);
                 edf.Show();
-
-
             }
-           
-
         }
 
-       
+        private void Load_Datagridview1_Data()
+        {
+            var source = new BindingSource();
+            source.DataSource = _borrowRepository.GetAllUndeposited().ToList();
+            dgvBorrowingBalance.AutoGenerateColumns = true;
+            dgvBorrowingBalance.DataSource = source;
+            dgvBorrowingBalance.Columns["Id"].Visible = false;
+            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
+            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+        }
+
+        private void Load_Datagridview2_Data()
+        {
+            var source = new BindingSource();
+            source.DataSource = _borrowRepository.GetAllDeposited().ToList();
+            dgvCreditDeposit.AutoGenerateColumns = true;
+            dgvCreditDeposit.DataSource = source;
+            dgvCreditDeposit.Columns["Id"].Visible = false;
+            dgvCreditDeposit.Columns["IsReturned"].Visible = false;
+            /// dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+        }
+
         private void BorrowsDashboard_MouseDown(object sender, MouseEventArgs e)
         {
             flag = true;
@@ -100,49 +105,28 @@ namespace client.Forms
             flag = false;
         }
 
-        private void lblBorrows_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void dtpBorrowingBalance_ValueChanged(object sender, EventArgs e)
         {
-            Load_Datagridview1_Data();
+            Load_Datagridview1_Data_By_Date();
         }
 
         private void dtpCreditDeposit_ValueChanged(object sender, EventArgs e)
         {
-            Load_Datagridview2_Data();
+            Load_Datagridview2_Data_By_Date();
         }
 
         private void btnClrFilter_Click(object sender, EventArgs e)
         {
-            var source = new BindingSource();
-            source.DataSource = _borrowRepository.GetAllUndeposited().ToList();
-            dgvBorrowingBalance.AutoGenerateColumns = true;
-            dgvBorrowingBalance.DataSource = source;
-            dgvBorrowingBalance.Columns["Id"].Visible = false;
-            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
-            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
-
+            //first
+            Load_Datagridview1_Data();
+            dtpBorrowingBalance.Value = DateTime.Now;
         }
 
         private void btnClearFilter_Click(object sender, EventArgs e)
         {
-            var source = new BindingSource();
-            source.DataSource = _borrowRepository.GetAllDeposited().ToList();
-            dgvBorrowingBalance.AutoGenerateColumns = true;
-            dgvBorrowingBalance.DataSource = source;
-            dgvBorrowingBalance.Columns["Id"].Visible = false;
-            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
-           /// dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
-
-        }
-
-        private void BorrowsDashboard_Activated(object sender, EventArgs e)
-        {
-            Load_Datagridview1_Data();
             Load_Datagridview2_Data();
+            dtpCreditDeposit.Value = DateTime.Now;
         }
+
     }
 }

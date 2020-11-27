@@ -69,12 +69,11 @@ namespace client.Forms
             this.lblBorrows.AutoSize = true;
             this.lblBorrows.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblBorrows.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblBorrows.Location = new System.Drawing.Point(12, 20);
+            this.lblBorrows.Location = new System.Drawing.Point(14, 27);
             this.lblBorrows.Name = "lblBorrows";
-            this.lblBorrows.Size = new System.Drawing.Size(97, 25);
+            this.lblBorrows.Size = new System.Drawing.Size(119, 32);
             this.lblBorrows.TabIndex = 1;
             this.lblBorrows.Text = "Borrows";
-            this.lblBorrows.Click += new System.EventHandler(this.lblBorrows_Click);
             // 
             // pnlBody
             // 
@@ -89,18 +88,20 @@ namespace client.Forms
             this.pnlBody.Controls.Add(this.lblCreditDeposit);
             this.pnlBody.Controls.Add(this.lblBorrowingBalance);
             this.pnlBody.Controls.Add(this.dgvBorrowingBalance);
-            this.pnlBody.Location = new System.Drawing.Point(7, 60);
+            this.pnlBody.Location = new System.Drawing.Point(8, 80);
+            this.pnlBody.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(964, 670);
+            this.pnlBody.Size = new System.Drawing.Size(1102, 893);
             this.pnlBody.TabIndex = 2;
             // 
             // dtpCreditDeposit
             // 
             this.dtpCreditDeposit.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpCreditDeposit.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpCreditDeposit.Location = new System.Drawing.Point(569, 82);
+            this.dtpCreditDeposit.Location = new System.Drawing.Point(650, 109);
+            this.dtpCreditDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpCreditDeposit.Name = "dtpCreditDeposit";
-            this.dtpCreditDeposit.Size = new System.Drawing.Size(230, 25);
+            this.dtpCreditDeposit.Size = new System.Drawing.Size(262, 29);
             this.dtpCreditDeposit.TabIndex = 11;
             this.dtpCreditDeposit.ValueChanged += new System.EventHandler(this.dtpCreditDeposit_ValueChanged);
             // 
@@ -108,9 +109,9 @@ namespace client.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(497, 86);
+            this.label3.Location = new System.Drawing.Point(568, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 17);
+            this.label3.Size = new System.Drawing.Size(83, 22);
             this.label3.TabIndex = 10;
             this.label3.Text = "Filter by";
             // 
@@ -118,9 +119,10 @@ namespace client.Forms
             // 
             this.dtpBorrowingBalance.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpBorrowingBalance.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpBorrowingBalance.Location = new System.Drawing.Point(90, 82);
+            this.dtpBorrowingBalance.Location = new System.Drawing.Point(103, 109);
+            this.dtpBorrowingBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpBorrowingBalance.Name = "dtpBorrowingBalance";
-            this.dtpBorrowingBalance.Size = new System.Drawing.Size(230, 25);
+            this.dtpBorrowingBalance.Size = new System.Drawing.Size(262, 29);
             this.dtpBorrowingBalance.TabIndex = 9;
             this.dtpBorrowingBalance.ValueChanged += new System.EventHandler(this.dtpBorrowingBalance_ValueChanged);
             // 
@@ -128,9 +130,9 @@ namespace client.Forms
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterBy.Location = new System.Drawing.Point(18, 86);
+            this.lblFilterBy.Location = new System.Drawing.Point(21, 115);
             this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(66, 17);
+            this.lblFilterBy.Size = new System.Drawing.Size(83, 22);
             this.lblFilterBy.TabIndex = 8;
             this.lblFilterBy.Text = "Filter by";
             // 
@@ -165,6 +167,8 @@ namespace client.Forms
             this.dgvCreditDeposit.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCreditDeposit.GridColor = System.Drawing.Color.LightGray;
             this.dgvCreditDeposit.Location = new System.Drawing.Point(497, 118);
+            this.dgvCreditDeposit.Location = new System.Drawing.Point(568, 157);
+            this.dgvCreditDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCreditDeposit.Name = "dgvCreditDeposit";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -175,8 +179,9 @@ namespace client.Forms
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCreditDeposit.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCreditDeposit.RowHeadersVisible = false;
+            this.dgvCreditDeposit.RowHeadersWidth = 51;
             this.dgvCreditDeposit.RowTemplate.Height = 25;
-            this.dgvCreditDeposit.Size = new System.Drawing.Size(457, 488);
+            this.dgvCreditDeposit.Size = new System.Drawing.Size(522, 651);
             this.dgvCreditDeposit.TabIndex = 7;
             // 
             // btnClearFilter
@@ -184,9 +189,10 @@ namespace client.Forms
             this.btnClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnClearFilter.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearFilter.ForeColor = System.Drawing.Color.White;
-            this.btnClearFilter.Location = new System.Drawing.Point(844, 612);
+            this.btnClearFilter.Location = new System.Drawing.Point(965, 816);
+            this.btnClearFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClearFilter.Name = "btnClearFilter";
-            this.btnClearFilter.Size = new System.Drawing.Size(110, 36);
+            this.btnClearFilter.Size = new System.Drawing.Size(126, 48);
             this.btnClearFilter.TabIndex = 5;
             this.btnClearFilter.Text = "Clear Filter";
             this.btnClearFilter.UseVisualStyleBackColor = false;
@@ -197,9 +203,10 @@ namespace client.Forms
             this.btnClrFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnClrFilter.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClrFilter.ForeColor = System.Drawing.Color.White;
-            this.btnClrFilter.Location = new System.Drawing.Point(346, 612);
+            this.btnClrFilter.Location = new System.Drawing.Point(395, 816);
+            this.btnClrFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClrFilter.Name = "btnClrFilter";
-            this.btnClrFilter.Size = new System.Drawing.Size(110, 36);
+            this.btnClrFilter.Size = new System.Drawing.Size(126, 48);
             this.btnClrFilter.TabIndex = 4;
             this.btnClrFilter.Text = "Clear Filter";
             this.btnClrFilter.UseVisualStyleBackColor = false;
@@ -210,9 +217,9 @@ namespace client.Forms
             this.lblCreditDeposit.AutoSize = true;
             this.lblCreditDeposit.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCreditDeposit.ForeColor = System.Drawing.Color.Black;
-            this.lblCreditDeposit.Location = new System.Drawing.Point(660, 25);
+            this.lblCreditDeposit.Location = new System.Drawing.Point(754, 33);
             this.lblCreditDeposit.Name = "lblCreditDeposit";
-            this.lblCreditDeposit.Size = new System.Drawing.Size(149, 22);
+            this.lblCreditDeposit.Size = new System.Drawing.Size(189, 28);
             this.lblCreditDeposit.TabIndex = 3;
             this.lblCreditDeposit.Text = "Credit Deposit\'s";
             // 
@@ -221,9 +228,9 @@ namespace client.Forms
             this.lblBorrowingBalance.AutoSize = true;
             this.lblBorrowingBalance.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblBorrowingBalance.ForeColor = System.Drawing.Color.Black;
-            this.lblBorrowingBalance.Location = new System.Drawing.Point(131, 25);
+            this.lblBorrowingBalance.Location = new System.Drawing.Point(150, 33);
             this.lblBorrowingBalance.Name = "lblBorrowingBalance";
-            this.lblBorrowingBalance.Size = new System.Drawing.Size(189, 22);
+            this.lblBorrowingBalance.Size = new System.Drawing.Size(238, 28);
             this.lblBorrowingBalance.TabIndex = 2;
             this.lblBorrowingBalance.Text = "Borrowing Balance\'s";
             // 
@@ -259,6 +266,8 @@ namespace client.Forms
             this.dgvBorrowingBalance.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgvBorrowingBalance.GridColor = System.Drawing.Color.LightGray;
             this.dgvBorrowingBalance.Location = new System.Drawing.Point(13, 118);
+            this.dgvBorrowingBalance.Location = new System.Drawing.Point(15, 157);
+            this.dgvBorrowingBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvBorrowingBalance.Name = "dgvBorrowingBalance";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -269,22 +278,27 @@ namespace client.Forms
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBorrowingBalance.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBorrowingBalance.RowHeadersVisible = false;
+            this.dgvBorrowingBalance.RowHeadersWidth = 51;
             this.dgvBorrowingBalance.RowTemplate.Height = 25;
-            this.dgvBorrowingBalance.Size = new System.Drawing.Size(443, 488);
+            this.dgvBorrowingBalance.Size = new System.Drawing.Size(506, 651);
             this.dgvBorrowingBalance.TabIndex = 0;
             this.dgvBorrowingBalance.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowingBalance_CellDoubleClick);
             // 
             // dataGridView3
             // 
+            this.dataGridView3.ColumnHeadersHeight = 29;
             this.dataGridView3.Location = new System.Drawing.Point(0, 0);
             this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 51;
             this.dataGridView3.Size = new System.Drawing.Size(240, 150);
             this.dataGridView3.TabIndex = 0;
             // 
             // dataGridView4
             // 
+            this.dataGridView4.ColumnHeadersHeight = 29;
             this.dataGridView4.Location = new System.Drawing.Point(0, 0);
             this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 51;
             this.dataGridView4.Size = new System.Drawing.Size(240, 150);
             this.dataGridView4.TabIndex = 0;
             // 
@@ -336,23 +350,24 @@ namespace client.Forms
             // 
             // dataGridView5
             // 
+            this.dataGridView5.ColumnHeadersHeight = 29;
             this.dataGridView5.Location = new System.Drawing.Point(0, 0);
             this.dataGridView5.Name = "dataGridView5";
+            this.dataGridView5.RowHeadersWidth = 51;
             this.dataGridView5.Size = new System.Drawing.Size(240, 150);
             this.dataGridView5.TabIndex = 0;
             // 
             // BorrowsDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 742);
+            this.ClientSize = new System.Drawing.Size(1123, 989);
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.lblBorrows);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BorrowsDashboard";
             this.Text = "BorrowsDashboard";
-            this.Activated += new System.EventHandler(this.BorrowsDashboard_Activated);
-            this.Load += new System.EventHandler(this.BorrowsDashboard_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BorrowsDashboard_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BorrowsDashboard_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BorrowsDashboard_MouseUp);
