@@ -153,6 +153,16 @@ namespace client.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap My_Post__8_ {
+            get {
+                object obj = ResourceManager.GetObject("My Post (8)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap WhatsApp_Image_2020_11_22_at_2_47_40_PM {
             get {
                 object obj = ResourceManager.GetObject("WhatsApp Image 2020-11-22 at 2.47.40 PM", resourceCulture);
