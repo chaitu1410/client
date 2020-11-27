@@ -53,7 +53,6 @@ namespace client.Forms
 
         private async void Load_Datagridview_Data()
         {
-            progressBar1.Visible = true;
             DateTime dt = Convert.ToDateTime(dtpRecords.Value);
             String s1 = dt.ToString("yyyy-MM-dd");
             DateTime dtnew = Convert.ToDateTime(s1);
@@ -63,7 +62,6 @@ namespace client.Forms
             dgvRecords.AutoGenerateColumns = true;
             dgvRecords.DataSource = source;
             dgvRecords.Columns["TransactionId"].Visible = false;
-            progressBar1.Visible = false;
         }
 
         private  async void home_Activated(object sender, EventArgs e)

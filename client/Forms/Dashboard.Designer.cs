@@ -147,7 +147,7 @@ namespace client.Forms
             // pbxDailySale
             // 
             this.pbxDailySale.Image = ((System.Drawing.Image)(resources.GetObject("pbxDailySale.Image")));
-            this.pbxDailySale.Location = new System.Drawing.Point(13, 363);
+            this.pbxDailySale.Location = new System.Drawing.Point(13, 366);
             this.pbxDailySale.Name = "pbxDailySale";
             this.pbxDailySale.Size = new System.Drawing.Size(48, 31);
             this.pbxDailySale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -162,13 +162,12 @@ namespace client.Forms
             this.btnViewTotalSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewTotalSale.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnViewTotalSale.ForeColor = System.Drawing.Color.White;
-            this.btnViewTotalSale.Location = new System.Drawing.Point(1, 351);
+            this.btnViewTotalSale.Location = new System.Drawing.Point(-2, 354);
             this.btnViewTotalSale.Name = "btnViewTotalSale";
             this.btnViewTotalSale.Size = new System.Drawing.Size(283, 58);
             this.btnViewTotalSale.TabIndex = 3;
             this.btnViewTotalSale.Text = "VIEW TOTAL SALE";
             this.btnViewTotalSale.UseVisualStyleBackColor = true;
-            this.btnViewTotalSale.Click += new System.EventHandler(this.btnViewTotalSale_Click);
             this.btnViewTotalSale.MouseEnter += new System.EventHandler(this.btnDailySale_MouseEnter);
             this.btnViewTotalSale.MouseLeave += new System.EventHandler(this.btnDailySale_MouseLeave);
             // 
