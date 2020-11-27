@@ -33,11 +33,11 @@ namespace client.Forms
             this.lblPaymentMethod = new System.Windows.Forms.Label();
             this.cbxPaymentMethod = new System.Windows.Forms.ComboBox();
             this.lblAmount = new System.Windows.Forms.Label();
-            this.txtAmount = new System.Windows.Forms.TextBox();
             this.lblExtras = new System.Windows.Forms.Label();
             this.txtExtra = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.pnlBody = new System.Windows.Forms.Panel();
+            this.txtAmount = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.pnlBody.SuspendLayout();
             this.SuspendLayout();
@@ -65,7 +65,9 @@ namespace client.Forms
             // 
             // cbxPaymentMethod
             // 
+            this.cbxPaymentMethod.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbxPaymentMethod.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.cbxPaymentMethod.ForeColor = System.Drawing.Color.Black;
             this.cbxPaymentMethod.FormattingEnabled = true;
             this.cbxPaymentMethod.Items.AddRange(new object[] {
             "Cash",
@@ -85,14 +87,6 @@ namespace client.Forms
             this.lblAmount.Size = new System.Drawing.Size(68, 19);
             this.lblAmount.TabIndex = 3;
             this.lblAmount.Text = "Amount";
-            // 
-            // txtAmount
-            // 
-            this.txtAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtAmount.Location = new System.Drawing.Point(194, 207);
-            this.txtAmount.Name = "txtAmount";
-            this.txtAmount.Size = new System.Drawing.Size(245, 26);
-            this.txtAmount.TabIndex = 4;
             // 
             // lblExtras
             // 
@@ -128,25 +122,36 @@ namespace client.Forms
             // 
             // pnlBody
             // 
+            this.pnlBody.AllowDrop = true;
             this.pnlBody.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBody.Controls.Add(this.txtAmount);
             this.pnlBody.Controls.Add(this.btnSave);
             this.pnlBody.Controls.Add(this.btnCancel);
             this.pnlBody.Controls.Add(this.txtExtra);
             this.pnlBody.Controls.Add(this.lblExtras);
-            this.pnlBody.Controls.Add(this.txtAmount);
             this.pnlBody.Controls.Add(this.lblAmount);
             this.pnlBody.Controls.Add(this.cbxPaymentMethod);
             this.pnlBody.Controls.Add(this.lblPaymentMethod);
             this.pnlBody.Controls.Add(this.lblAddNewRecord);
-            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBody.Cursor = System.Windows.Forms.Cursors.Default;
             this.pnlBody.Location = new System.Drawing.Point(0, 0);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(499, 504);
+            this.pnlBody.Size = new System.Drawing.Size(499, 492);
             this.pnlBody.TabIndex = 0;
             this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);
             this.pnlBody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseMove);
             this.pnlBody.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseUp);
+            // 
+            // txtAmount
+            // 
+            this.txtAmount.BackColor = System.Drawing.Color.White;
+            this.txtAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtAmount.ForeColor = System.Drawing.Color.Black;
+            this.txtAmount.Location = new System.Drawing.Point(194, 208);
+            this.txtAmount.Name = "txtAmount";
+            this.txtAmount.Size = new System.Drawing.Size(245, 26);
+            this.txtAmount.TabIndex = 10;
             // 
             // btnSave
             // 
@@ -166,13 +171,12 @@ namespace client.Forms
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(499, 504);
+            this.ClientSize = new System.Drawing.Size(502, 496);
             this.Controls.Add(this.pnlBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddNewRecordsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddNewRecordsForm";
-            this.TransparencyKey = System.Drawing.Color.White;
             this.Load += new System.EventHandler(this.AddNewRecordsForm_Load);
             this.pnlBody.ResumeLayout(false);
             this.pnlBody.PerformLayout();
@@ -186,11 +190,11 @@ namespace client.Forms
         private System.Windows.Forms.Label lblPaymentMethod;
         private System.Windows.Forms.ComboBox cbxPaymentMethod;
         private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.TextBox txtAmount;
         private System.Windows.Forms.Label lblExtras;
         private System.Windows.Forms.TextBox txtExtra;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Panel pnlBody;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.TextBox txtAmount;
     }
 }

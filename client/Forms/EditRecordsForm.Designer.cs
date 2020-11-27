@@ -58,7 +58,7 @@ namespace client.Forms
             this.pnlBody.Controls.Add(this.lblEditRecord);
             this.pnlBody.Location = new System.Drawing.Point(2, 1);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(486, 498);
+            this.pnlBody.Size = new System.Drawing.Size(486, 500);
             this.pnlBody.TabIndex = 0;
             this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);

@@ -64,7 +64,7 @@ namespace client.Forms
             dgvRecords.Columns["TransactionId"].Visible = false;
         }
 
-        private void home_Activated(object sender, EventArgs e)
+        private  async void home_Activated(object sender, EventArgs e)
         {
             Load_Datagridview_Data();
         }
