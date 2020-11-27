@@ -85,13 +85,13 @@ namespace client.Migrations
                     b.Property<decimal>("ExtraAmount")
                         .HasColumnType("decimal(10,2)");
 
+                    b.Property<decimal>("OnlineAmount")
+                        .HasColumnType("decimal(10,2)");
+
                     b.Property<decimal>("SaleReturnAmount")
                         .HasColumnType("decimal(10,2)");
 
                     b.Property<decimal>("TotalSaleAmount")
-                        .HasColumnType("decimal(10,2)");
-
-                    b.Property<decimal>("UPIAmount")
                         .HasColumnType("decimal(10,2)");
 
                     b.HasKey("Id");
