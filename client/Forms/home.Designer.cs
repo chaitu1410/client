@@ -182,7 +182,6 @@ namespace client.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "home";
             this.Text = "z";
-            this.Activated += new System.EventHandler(this.home_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecords)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

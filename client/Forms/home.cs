@@ -16,10 +16,10 @@ namespace client.Forms
         {
             InitializeComponent();
             _transactionRepository = new TransactionRepository();
-
+            Load_Datagridview_Data();
         }
 
-        private async void dtpRecords_ValueChanged(object sender, EventArgs e)
+        private void dtpRecords_ValueChanged(object sender, EventArgs e)
         {
             Load_Datagridview_Data();
         }
@@ -62,11 +62,6 @@ namespace client.Forms
             dgvRecords.AutoGenerateColumns = true;
             dgvRecords.DataSource = source;
             dgvRecords.Columns["TransactionId"].Visible = false;
-        }
-
-        private  async void home_Activated(object sender, EventArgs e)
-        {
-            Load_Datagridview_Data();
         }
     }
 }
