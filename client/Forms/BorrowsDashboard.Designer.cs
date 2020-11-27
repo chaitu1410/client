@@ -138,6 +138,7 @@ namespace client.Forms
             // 
             // dgvCreditDeposit
             // 
+            this.dgvCreditDeposit.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
@@ -154,7 +155,8 @@ namespace client.Forms
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCreditDeposit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvCreditDeposit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCreditDeposit.ColumnHeadersHeight = 50;
+            this.dgvCreditDeposit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -163,8 +165,13 @@ namespace client.Forms
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCreditDeposit.DefaultCellStyle = dataGridViewCellStyle3;
+
+            this.dgvCreditDeposit.GridColor = System.Drawing.Color.LightGray;
+            //this.dgvCreditDeposit.Location = new System.Drawing.Point(497, 118);
+
             this.dgvCreditDeposit.Location = new System.Drawing.Point(568, 157);
             this.dgvCreditDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.dgvCreditDeposit.Name = "dgvCreditDeposit";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -174,6 +181,7 @@ namespace client.Forms
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCreditDeposit.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvCreditDeposit.RowHeadersVisible = false;
             this.dgvCreditDeposit.RowHeadersWidth = 51;
             this.dgvCreditDeposit.RowTemplate.Height = 25;
             this.dgvCreditDeposit.Size = new System.Drawing.Size(522, 651);
@@ -231,6 +239,7 @@ namespace client.Forms
             // 
             // dgvBorrowingBalance
             // 
+            this.dgvBorrowingBalance.AllowUserToAddRows = false;
             this.dgvBorrowingBalance.AllowUserToResizeColumns = false;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
@@ -258,8 +267,13 @@ namespace client.Forms
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBorrowingBalance.DefaultCellStyle = dataGridViewCellStyle7;
+
+            this.dgvBorrowingBalance.GridColor = System.Drawing.Color.LightGray;
+            //this.dgvBorrowingBalance.Location = new System.Drawing.Point(13, 118);
+
             this.dgvBorrowingBalance.Location = new System.Drawing.Point(15, 157);
             this.dgvBorrowingBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.dgvBorrowingBalance.Name = "dgvBorrowingBalance";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -269,7 +283,11 @@ namespace client.Forms
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBorrowingBalance.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+
+            this.dgvBorrowingBalance.RowHeadersVisible = false;
+
             this.dgvBorrowingBalance.RowHeadersWidth = 51;
+
             this.dgvBorrowingBalance.RowTemplate.Height = 25;
             this.dgvBorrowingBalance.Size = new System.Drawing.Size(506, 651);
             this.dgvBorrowingBalance.TabIndex = 0;
