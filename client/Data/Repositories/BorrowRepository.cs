@@ -36,7 +36,7 @@ namespace client.Data
 
         public IEnumerable<Borrow> GetAllDepositedByDate(DateTime date)
         {
-            return _db.Borrows.Where(row => row.Date.Date.Equals(date.Date) && row.IsReturned == true);
+            return _db.Borrows.Where(row => row.ReturnDate.Date.Equals(date.Date) && row.IsReturned == true);
         }
 
         public IEnumerable<Borrow> GetAllUndepositedByDate(DateTime date)
@@ -70,7 +70,7 @@ namespace client.Data
             {
                 return false;
             }
-            if (borrow.IsReturned && borrow.ReturnDate == null)
+            if (borrow.IsReturned && borrow.ReturnDate.Equals(new DateTime(0001,01,01)))
             {
                 borrow.ReturnDate = DateTime.Now;
             }
