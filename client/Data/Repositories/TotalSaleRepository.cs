@@ -92,7 +92,7 @@ namespace client.Data
                 {
                     CashAmount = (decimal)CashPayment,
                     CardAmount = (decimal)CardPayment,
-                    UPIAmount = (decimal)UPIPayment,
+                    OnlineAmount = (decimal)UPIPayment,
                     SaleReturnAmount = (decimal)SaleReturnAmount,
                     ExtraAmount = (decimal)ExtraAmount,
                     TotalSaleAmount = (decimal)TotalSaleAmount,

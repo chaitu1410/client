@@ -87,6 +87,7 @@ namespace client.Data
         public bool Remove(Borrow borrow)
         {
             _db.Borrows.Remove(borrow);
+            _db.SaveChanges();
             return true;
         }
 

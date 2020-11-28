@@ -169,6 +169,13 @@ namespace client.Forms
             this.dgvCreditDeposit.Location = new System.Drawing.Point(497, 118);
             this.dgvCreditDeposit.Location = new System.Drawing.Point(568, 157);
             this.dgvCreditDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.dgvCreditDeposit.GridColor = System.Drawing.Color.LightGray;
+            //this.dgvCreditDeposit.Location = new System.Drawing.Point(497, 118);
+
+            this.dgvCreditDeposit.Location = new System.Drawing.Point(568, 157);
+            this.dgvCreditDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.dgvCreditDeposit.Name = "dgvCreditDeposit";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
@@ -268,6 +275,13 @@ namespace client.Forms
             this.dgvBorrowingBalance.Location = new System.Drawing.Point(13, 118);
             this.dgvBorrowingBalance.Location = new System.Drawing.Point(15, 157);
             this.dgvBorrowingBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
+            this.dgvBorrowingBalance.GridColor = System.Drawing.Color.LightGray;
+            //this.dgvBorrowingBalance.Location = new System.Drawing.Point(13, 118);
+
+            this.dgvBorrowingBalance.Location = new System.Drawing.Point(15, 157);
+            this.dgvBorrowingBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+
             this.dgvBorrowingBalance.Name = "dgvBorrowingBalance";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
@@ -279,6 +293,11 @@ namespace client.Forms
             this.dgvBorrowingBalance.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvBorrowingBalance.RowHeadersVisible = false;
             this.dgvBorrowingBalance.RowHeadersWidth = 51;
+
+            this.dgvBorrowingBalance.RowHeadersVisible = false;
+
+            this.dgvBorrowingBalance.RowHeadersWidth = 51;
+
             this.dgvBorrowingBalance.RowTemplate.Height = 25;
             this.dgvBorrowingBalance.Size = new System.Drawing.Size(506, 651);
             this.dgvBorrowingBalance.TabIndex = 0;

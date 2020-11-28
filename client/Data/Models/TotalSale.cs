@@ -29,8 +29,8 @@ namespace client.Data
 
         [Required]
         [Column(TypeName = "decimal(10, 2)")]
-        [DisplayName("UPI Payments")]
-        public decimal UPIAmount { get; set; }
+        [DisplayName("Online Payments")]
+        public decimal OnlineAmount { get; set; }
 
         [Required]
         [Column(TypeName = "decimal(10, 2)")]
