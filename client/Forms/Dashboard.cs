@@ -94,7 +94,7 @@ namespace client.Forms
         private void btnViewTotalSale_Click(object sender, EventArgs e)
         {
             pnlBody.Controls.Clear();
-            Totalsale totalsale = new Totalsale();
+            TotalsaleDashboard totalsale = new TotalsaleDashboard();
             totalsale.TopLevel = false;
             pnlBody.Controls.Add(totalsale);
             totalsale.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

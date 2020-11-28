@@ -41,7 +41,7 @@ namespace client.Forms
             _totalsale.TotalSaleAmount = (decimal)Convert.ToDouble(txtTotalSale.Text);
 
 
-            _totalsalerepository.Update(_totalsale);
+            //_totalsalerepository.Update(_totalsale);
             this.Dispose();
 
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace client.Forms
 {
-    partial class Totalsale
+    partial class TotalsaleDashboard
     {
         /// <summary>
         /// Required designer variable.

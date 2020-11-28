@@ -39,6 +39,16 @@ namespace client.Data
 
         [Required]
         [Column(TypeName = "decimal(10, 2)")]
+        [DisplayName("Borrowing Balance")]
+        public decimal BorrowingBalanceAmount { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(10, 2)")]
+        [DisplayName("Credit Deposit")]
+        public decimal CreditDepositAmount { get; set; }
+
+        [Required]
+        [Column(TypeName = "decimal(10, 2)")]
         [DisplayName("Total Sale")]
         public decimal TotalSaleAmount { get; set; }
 

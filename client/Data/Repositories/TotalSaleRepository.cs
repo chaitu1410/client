@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace client.Data
 {
@@ -16,22 +17,26 @@ namespace client.Data
 
         public IEnumerable<TotalSale> GetAll()
         {
-            return _db.TotalSales;
+            return _db.TotalSales.OrderBy(row => row.Date);
         }
 
         public IEnumerable<TotalSale> GetByDate(DateTime date)
         {
-            CalculateTotalSale(date);
+            CreateTotalSale(date);
             return _db.TotalSales.Where(row => row.Date.Date.Equals(date.Date));
             //return _db.Transactions.Where(t => new DateTime(t.Date.Year, t.Date.Month, t.Date.Day) == new DateTime(date.Year, date.Month, date.Day));
         }
 
-        public bool Add(TotalSale totalSale)
+        private TotalSale FindByDate(DateTime date)
+        {
+            return _db.TotalSales.Where(row => row.Date.Date.Equals(date.Date)).FirstOrDefault();
+        }
+
+        private bool Add(TotalSale totalSale)
         {
             ValidationContext context = new ValidationContext(totalSale, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
             bool isValid = Validator.TryValidateObject(totalSale, context, validationResults);
-
             if (!isValid)
             {
                 return false;
@@ -46,7 +51,7 @@ namespace client.Data
             return _db.TotalSales.Find(id);
         }
 
-        public bool Update(TotalSale totalSale)
+        private bool Update(TotalSale totalSale)
         {
             ValidationContext context = new ValidationContext(totalSale, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
@@ -67,39 +72,63 @@ namespace client.Data
             return true;
         }
 
-        private async void CalculateTotalSale(DateTime date)
-        {
-            if(isNotAvailable(date) || date.Date.Equals(DateTime.Now.Date))
+        private async Task<TotalSale> CalculateTotalSale(DateTime date)
+        {       
+            TransactionRepository transactionRepository = new TransactionRepository();
+            BorrowRepository borrowRepository = new BorrowRepository();
+            SaleReturnRepository saleReturnRepository = new SaleReturnRepository();
+
+            IEnumerable<Transaction> transactions = await transactionRepository.GetAllByDate(date);
+            IEnumerable<Borrow> borrowsUndeposited = borrowRepository.GetAllUndepositedByDate(date);
+            IEnumerable<Borrow> borrowsDeposited = borrowRepository.GetAllDepositedByDate(date);
+            IEnumerable<SaleReturn> saleReturns = saleReturnRepository.GetAllByDate(date);
+
+            double CashPayment = (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Cash).Sum(row => row.Amount);
+            double CardPayment = (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Card).Sum(row => row.Amount);
+            double UPIPayment = (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.UPI).Sum(row => row.Amount);
+            double ExtraAmount = (double)transactions.Sum(row => row.Extras);
+            double SaleReturnAmount = (double)saleReturns.Sum(row => row.Amount);
+            double BorrowingBalanceAmount = (double)borrowsUndeposited.Sum(row => row.Amount);
+            double CreditDepositAmount = (double)borrowsDeposited.Sum(row => row.Amount);
+
+            double TotalSaleAmount = CashPayment + CardPayment + UPIPayment + SaleReturnAmount + (BorrowingBalanceAmount + CreditDepositAmount) - ExtraAmount;
+
+            TotalSale totalSale = new TotalSale
             {
-                
-                TransactionRepository transactionRepository = new TransactionRepository();
-                BorrowRepository borrowRepository = new BorrowRepository();
-                SaleReturnRepository saleReturnRepository = new SaleReturnRepository();
+                CashAmount = (decimal)CashPayment,
+                CardAmount = (decimal)CardPayment,
+                OnlineAmount = (decimal)UPIPayment,
+                SaleReturnAmount = (decimal)SaleReturnAmount,
+                ExtraAmount = (decimal)ExtraAmount,
+                BorrowingBalanceAmount = (decimal)BorrowingBalanceAmount,
+                CreditDepositAmount = (decimal)CreditDepositAmount,
+                TotalSaleAmount = (decimal)TotalSaleAmount,
+                Date = date
+            };
+            return totalSale;       
+        }
 
-                IEnumerable<Transaction> transactions = await transactionRepository.GetAllByDate(date);
-                IEnumerable<Borrow> borrows = borrowRepository.GetAllByDate(date);
-                IEnumerable<SaleReturn> saleReturns = saleReturnRepository.GetAllByDate(date);
 
-                double CashPayment = (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Cash).Sum(row => row.Amount);
-                double CardPayment = (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Card).Sum(row => row.Amount);
-                double UPIPayment = (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.UPI).Sum(row => row.Amount);
-                double ExtraAmount = (double)transactions.Sum(row => row.Extras);
-                double SaleReturnAmount = (double)saleReturns.Sum(row => row.Amount);
-                double BorrowAmount = (double)borrows.Sum(row => row.Amount);
-                double TotalSaleAmount = CashPayment + CardPayment + UPIPayment + SaleReturnAmount + BorrowAmount - ExtraAmount;
-
-                TotalSale totalSale = new TotalSale
-                {
-                    CashAmount = (decimal)CashPayment,
-                    CardAmount = (decimal)CardPayment,
-                    OnlineAmount = (decimal)UPIPayment,
-                    SaleReturnAmount = (decimal)SaleReturnAmount,
-                    ExtraAmount = (decimal)ExtraAmount,
-                    TotalSaleAmount = (decimal)TotalSaleAmount,
-                    Date = DateTime.Now
-                };
+        private async void CreateTotalSale(DateTime date)
+        {
+            if (isNotAvailable(date))
+            {
+                TotalSale totalSale = await CalculateTotalSale(date);
+                Add(totalSale);
+            }
+            else if (date.Date.Equals(DateTime.Today))
+            {
+                TotalSale calculatedTotalSale = await CalculateTotalSale(date);
+                TotalSale totalSale = FindByDate(date);
+                totalSale.CashAmount = calculatedTotalSale.CashAmount;
+                totalSale.CardAmount = calculatedTotalSale.CardAmount;
+                totalSale.OnlineAmount = calculatedTotalSale.OnlineAmount;
+                totalSale.SaleReturnAmount = calculatedTotalSale.SaleReturnAmount;
+                totalSale.ExtraAmount = calculatedTotalSale.ExtraAmount;
+                totalSale.BorrowingBalanceAmount = calculatedTotalSale.BorrowingBalanceAmount;
+                totalSale.CreditDepositAmount = calculatedTotalSale.CreditDepositAmount;
+                totalSale.TotalSaleAmount = calculatedTotalSale.TotalSaleAmount;
                 Update(totalSale);
-                
             }
         }
 

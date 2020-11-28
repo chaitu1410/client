@@ -10,12 +10,12 @@ using System.Linq;
 
 namespace client.Forms
 {
-    public partial class Totalsale : Form
+    public partial class TotalsaleDashboard : Form
     {
         TotalSaleRepository _totalsalerepository;
         TotalSale _totalsale;
 
-        public Totalsale()
+        public TotalsaleDashboard()
         {
             InitializeComponent();
             _totalsalerepository = new TotalSaleRepository();
@@ -52,7 +52,7 @@ namespace client.Forms
             Load_Datagridview_Data();
         }
 
-        private async void Load_Datagridview_Data()
+        private void Load_Datagridview_Data()
         {
            
             DateTime dt = Convert.ToDateTime(dtpTotalSale.Value);
@@ -61,14 +61,17 @@ namespace client.Forms
 
             var source = new BindingSource();
             source.DataSource =  _totalsalerepository.GetByDate(dtnew).ToList();
+            dgvTotalSale.AutoGenerateColumns = true;
+            dgvTotalSale.DataSource = source;
         }
 
         private void btnClearFilter_Click(object sender, EventArgs e)
         {
             var source = new BindingSource();
-            source.DataSource = _totalsalerepository.GetAll();
+            source.DataSource = _totalsalerepository.GetAll().ToList() ;
             dgvTotalSale.AutoGenerateColumns = true;
             dgvTotalSale.DataSource = source;
+            
         }
     }
 }
