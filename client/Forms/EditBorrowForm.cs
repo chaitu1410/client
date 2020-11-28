@@ -15,6 +15,7 @@ namespace client.Forms
         BorrowRepository _borrowRepository;
         Borrow _borrow;
         bool flag = false;
+        public static event LoadData OnLoadData;
         public EditBorrowForm(Borrow borrow)
         {
             InitializeComponent();
@@ -36,13 +37,14 @@ namespace client.Forms
 
    
 
-        private void btnDelete_Click_1(object sender, EventArgs e)
+        private async void btnDelete_Click_1(object sender, EventArgs e)
         {
-            _borrowRepository.Remove(_borrow);
+            await _borrowRepository.Remove(_borrow);
+            OnLoadData();
             this.Dispose();
         }
 
-        private void btnUpdate_Click_1(object sender, EventArgs e)
+        private async void btnUpdate_Click_1(object sender, EventArgs e)
         {
             if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
             {
@@ -63,8 +65,8 @@ namespace client.Forms
 
 
 
-            _borrowRepository.Update(_borrow);
-
+            await _borrowRepository.Update(_borrow);
+            OnLoadData();
             this.Dispose();
         }
 

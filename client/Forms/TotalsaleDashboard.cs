@@ -23,23 +23,17 @@ namespace client.Forms
 
         }
 
-        private void dgvTotalSale_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private async void dgvTotalSale_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvTotalSale.CurrentRow != null)
             {
                 var row = dgvTotalSale.CurrentRow.Cells;
                 int id = Convert.ToInt32(row["Id"].Value);
                 //Console.WriteLine(id);
-                TotalSale _totalsale = _totalsalerepository.Find(id);
+                TotalSale _totalsale = await _totalsalerepository.Find(id);
                 EditTotalSale ets = new EditTotalSale(_totalsale);
                 ets.Show();
-
-
-
             }
-
-
-          
         }
 
         private void Totalsale_Load(object sender, EventArgs e)
@@ -52,7 +46,7 @@ namespace client.Forms
             Load_Datagridview_Data();
         }
 
-        private void Load_Datagridview_Data()
+        private async void Load_Datagridview_Data()
         {
            
             DateTime dt = Convert.ToDateTime(dtpTotalSale.Value);
@@ -60,17 +54,19 @@ namespace client.Forms
             DateTime dtnew = Convert.ToDateTime(s1);
 
             var source = new BindingSource();
-            source.DataSource =  _totalsalerepository.GetByDate(dtnew).ToList();
+            source.DataSource =  await _totalsalerepository.GetByDate(dtnew);
             dgvTotalSale.AutoGenerateColumns = true;
             dgvTotalSale.DataSource = source;
+            dgvTotalSale.Columns["Id"].Visible = false;
         }
 
-        private void btnClearFilter_Click(object sender, EventArgs e)
+        private async void btnClearFilter_Click(object sender, EventArgs e)
         {
             var source = new BindingSource();
-            source.DataSource = _totalsalerepository.GetAll().ToList() ;
+            source.DataSource = await _totalsalerepository.GetAll();
             dgvTotalSale.AutoGenerateColumns = true;
             dgvTotalSale.DataSource = source;
+            dgvTotalSale.Columns["Id"].Visible = false;
             
         }
     }

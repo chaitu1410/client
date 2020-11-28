@@ -14,17 +14,13 @@ namespace client.Forms
         TransactionRepository _transactionRepository;
         bool flag = false;
 
+        public static event LoadData OnLoadData;
+
         public AddNewRecordsForm()
         {
             InitializeComponent();
             _transactionRepository = new TransactionRepository();
         }
-        
-
-      
-            
-
-          
 
         private PaymentMethods GetSelectedPaymentMethod()
         {
@@ -62,7 +58,7 @@ namespace client.Forms
 
        
 
-        private void  btnSave_Click_1(object sender, EventArgs e)
+        private async void btnSave_Click_1(object sender, EventArgs e)
         {
             if(txtAmount.Text.Trim()==string.Empty)
             {
@@ -76,8 +72,8 @@ namespace client.Forms
                 PaymentMethod = GetSelectedPaymentMethod(),
                 Date = DateTime.Now
             };
-            _transactionRepository.Add(transaction);
-           
+            await _transactionRepository.Add(transaction);
+            OnLoadData();
             this.Dispose();
         }
 

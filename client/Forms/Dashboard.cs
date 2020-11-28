@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using client.Data;
 namespace client.Forms
 {
+    public delegate void LoadData();
     public partial class Dashboard : Form
     {
         TransactionRepository _transactionRepository;

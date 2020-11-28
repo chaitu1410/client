@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using client.Data;
 
@@ -17,6 +18,8 @@ namespace client.Forms
             InitializeComponent();
             _transactionRepository = new TransactionRepository();
             Load_Datagridview_Data();
+            AddNewRecordsForm.OnLoadData += Load_Datagridview_Data;
+            EditRecordsForm.OnLoadData += Load_Datagridview_Data;
         }
 
         private void dtpRecords_ValueChanged(object sender, EventArgs e)

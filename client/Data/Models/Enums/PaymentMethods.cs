@@ -6,6 +6,6 @@ namespace client.Data
 {
     public enum PaymentMethods
     {
-        Cash, Card, UPI
+        Cash, Card, Online
     }
 }

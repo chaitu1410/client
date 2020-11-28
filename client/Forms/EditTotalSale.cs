@@ -19,31 +19,17 @@ namespace client.Forms
             InitializeComponent();
             _totalsalerepository = new TotalSaleRepository();
             _totalsale = totalSale;
-           
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
+            await _totalsalerepository.Remove(_totalsale);
             this.Dispose();
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-
-            _totalsale.CashAmount = (decimal)Convert.ToDouble(txtCashAmount.Text);
-            _totalsale.CardAmount = (decimal)Convert.ToDouble(txtCardAmount.Text);
-
-            _totalsale.OnlineAmount = (decimal)Convert.ToDouble(txtUpiAmount.Text);
-
-            _totalsale.SaleReturnAmount = (decimal)Convert.ToDouble(txtSaleReturnAmount.Text);
-
-            _totalsale.ExtraAmount = (decimal)Convert.ToDouble(txtExtraAmount.Text);
-            _totalsale.TotalSaleAmount = (decimal)Convert.ToDouble(txtTotalSale.Text);
-
-
-            //_totalsalerepository.Update(_totalsale);
             this.Dispose();
-
         }
 
         private void btnGeneratePdf_Click(object sender, EventArgs e)

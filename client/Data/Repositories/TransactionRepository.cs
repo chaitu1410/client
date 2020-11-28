@@ -25,7 +25,7 @@ namespace client.Data
             //return _db.Transactions.Where(t => new DateTime(t.Date.Year, t.Date.Month, t.Date.Day) == new DateTime(date.Year, date.Month, date.Day));
         }
 
-        public async Task<bool> Add(Transaction transaction) 
+        public async Task Add(Transaction transaction) 
         {
             AppDbContext _db = new AppDbContext();
             ValidationContext context = new ValidationContext(transaction, null, null);
@@ -34,11 +34,10 @@ namespace client.Data
 
             if (!isValid) 
             {
-                return false;
+                throw new InvaliedValuesException(validationResults.First().ErrorMessage);
             }
-            await _db.Transactions.AddAsync(transaction);
-            await _db.SaveChangesAsync();
-            return true;
+             await _db.Transactions.AddAsync(transaction);
+             await _db.SaveChangesAsync();
         }
 
         public async Task<Transaction> Find(int id) 
@@ -47,7 +46,7 @@ namespace client.Data
             return await _db.Transactions.FindAsync(id);
         }
 
-        public async Task<bool> Update(Transaction transaction) 
+        public async Task Update(Transaction transaction) 
         {
             AppDbContext _db = new AppDbContext();
             ValidationContext context = new ValidationContext(transaction, null, null);
@@ -56,19 +55,17 @@ namespace client.Data
 
             if (!isValid)
             {
-                return false;
+                throw new InvaliedValuesException(validationResults.First().ErrorMessage);
             }
             _db.Transactions.Update(transaction);
             await _db.SaveChangesAsync();
-            return true;
         }
 
-        public async Task<bool> Remove(Transaction transaction) 
+        public async Task Remove(Transaction transaction) 
         {
             AppDbContext _db = new AppDbContext();
             _db.Transactions.Remove(transaction);
             await _db.SaveChangesAsync();
-            return true;
         }
     }
 }

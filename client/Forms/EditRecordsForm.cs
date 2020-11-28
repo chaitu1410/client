@@ -13,7 +13,9 @@ namespace client.Forms
     {
         TransactionRepository _transactionRepository;
         Transaction _transaction;
-        
+
+        public static event LoadData OnLoadData;
+
         public EditRecordsForm(Transaction transaction)
         {
             InitializeComponent();
@@ -50,6 +52,7 @@ namespace client.Forms
         private async void btnDelete_Click_1(object sender, EventArgs e)
         {
             await _transactionRepository.Remove(_transaction);
+            OnLoadData();
             this.Dispose();
         }
 
@@ -60,7 +63,7 @@ namespace client.Forms
             _transaction.PaymentMethod = GetSelectedPaymentMethod();
 
             await _transactionRepository.Update(_transaction);
-
+            OnLoadData();
             this.Dispose();
         }
 

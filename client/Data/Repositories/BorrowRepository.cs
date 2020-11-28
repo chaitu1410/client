@@ -3,101 +3,93 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace client.Data
 {
     public class BorrowRepository
     {
-        AppDbContext _db;
-        public BorrowRepository()
+        public async Task<IEnumerable<Borrow>> GetAll() 
         {
-            _db = new AppDbContext();
+            AppDbContext _db = new AppDbContext();
+            return await Task.Run(() => _db.Borrows.ToList());
         }
 
-        public IEnumerable<Borrow> GetAll() 
+        public async Task<IEnumerable<Borrow>> GetAllDeposited()
         {
-            return _db.Borrows;
+            AppDbContext _db = new AppDbContext();
+            return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == true).ToList());
         }
 
-        public IEnumerable<Borrow> GetAllDeposited()
+        public async Task<IEnumerable<Borrow>> GetAllUndeposited()
         {
-            return _db.Borrows.Where(row => row.IsReturned == true);
+            AppDbContext _db = new AppDbContext();
+            return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == false).ToList());
         }
 
-        public IEnumerable<Borrow> GetAllUndeposited()
+        public async Task<IEnumerable<Borrow>> GetAllByDate(DateTime date)
         {
-            return _db.Borrows.Where(row => row.IsReturned == false);
+            AppDbContext _db = new AppDbContext();
+            return await Task.Run(() => _db.Borrows.Where(t => t.Date.Date.Equals(date.Date)).ToList());
         }
 
-        public IEnumerable<Borrow> GetAllByDate(DateTime date)
+        public async Task<IEnumerable<Borrow>> GetAllDepositedByDate(DateTime date)
         {
-            return _db.Borrows.Where(t => t.Date.Date.Equals(date.Date));
+            AppDbContext _db = new AppDbContext();
+            return await Task.Run(() => _db.Borrows.Where(row => row.ReturnDate.Date.Equals(date.Date) && row.IsReturned == true).ToList());
         }
 
-        public IEnumerable<Borrow> GetAllDepositedByDate(DateTime date)
+        public async Task<IEnumerable<Borrow>> GetAllUndepositedByDate(DateTime date)
         {
-            return _db.Borrows.Where(row => row.ReturnDate.Date.Equals(date.Date) && row.IsReturned == true);
+            AppDbContext _db = new AppDbContext();
+            return await Task.Run(() => _db.Borrows.Where(row => row.Date.Date.Equals(date.Date) && row.IsReturned == false).ToList());
         }
 
-        public IEnumerable<Borrow> GetAllUndepositedByDate(DateTime date)
+        public async Task Add(Borrow borrow) 
         {
-            return _db.Borrows.Where(row => row.Date.Date.Equals(date.Date) && row.IsReturned == false);
-        }
-
-        public bool Add(Borrow borrow) 
-        {
-
+            AppDbContext _db = new AppDbContext();
             ValidationContext context = new ValidationContext(borrow, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
             bool isValid = Validator.TryValidateObject(borrow, context, validationResults);
 
             if (!isValid)
             {
-                return false;
+                throw new InvaliedValuesException(validationResults.First().ErrorMessage);
             }
-            _db.Borrows.Add(borrow);
-            _db.SaveChanges();
-            return true;
+            await _db.Borrows.AddAsync(borrow);
+            await _db.SaveChangesAsync();
         }
 
-        public bool Update(Borrow borrow) 
+        public async Task Update(Borrow borrow) 
         {
+            AppDbContext _db = new AppDbContext();
             ValidationContext context = new ValidationContext(borrow, null, null);
             List<ValidationResult> validationResults = new List<ValidationResult>();
             bool isValid = Validator.TryValidateObject(borrow, context, validationResults);
 
             if (!isValid)
             {
-                return false;
+                throw new InvaliedValuesException(validationResults.First().ErrorMessage);
             }
             if (borrow.IsReturned && borrow.ReturnDate.Equals(new DateTime(0001,01,01)))
             {
                 borrow.ReturnDate = DateTime.Now;
             }
             _db.Borrows.Update(borrow);
-            _db.SaveChanges();
-            return true;
+            await _db.SaveChangesAsync();
         }
 
-        public Borrow Find(int id)
+        public async Task<Borrow> Find(int id)
         {
-            return _db.Borrows.Find(id);
+            AppDbContext _db = new AppDbContext();
+            return await _db.Borrows.FindAsync(id);
         }
 
-        public bool Remove(Borrow borrow)
+        public async Task Remove(Borrow borrow)
         {
+            AppDbContext _db = new AppDbContext();
             _db.Borrows.Remove(borrow);
-            _db.SaveChanges();
-            return true;
+            await _db.SaveChangesAsync();
         }
-
-        public bool MarkAsDeposited(Borrow borrow) 
-        {
-            borrow.IsReturned = true;
-            borrow.ReturnDate = DateTime.Now;
-            _db.Borrows.Update(borrow);
-            return true;
-        }
-
     }
 }
