@@ -98,7 +98,7 @@ namespace client.Forms
             this.btnGeneratePdf.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGeneratePdf.ForeColor = System.Drawing.Color.White;
             this.btnGeneratePdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGeneratePdf.Location = new System.Drawing.Point(296, 107);
+            this.btnGeneratePdf.Location = new System.Drawing.Point(296, 106);
             this.btnGeneratePdf.Name = "btnGeneratePdf";
             this.btnGeneratePdf.Size = new System.Drawing.Size(163, 46);
             this.btnGeneratePdf.TabIndex = 15;
@@ -140,6 +140,7 @@ namespace client.Forms
             this.txtTotalSale.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTotalSale.Location = new System.Drawing.Point(208, 535);
             this.txtTotalSale.Name = "txtTotalSale";
+            this.txtTotalSale.ReadOnly = true;
             this.txtTotalSale.Size = new System.Drawing.Size(251, 26);
             this.txtTotalSale.TabIndex = 12;
             // 
@@ -150,6 +151,7 @@ namespace client.Forms
             this.txtExtraAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtExtraAmount.Location = new System.Drawing.Point(208, 463);
             this.txtExtraAmount.Name = "txtExtraAmount";
+            this.txtExtraAmount.ReadOnly = true;
             this.txtExtraAmount.Size = new System.Drawing.Size(251, 26);
             this.txtExtraAmount.TabIndex = 11;
             // 
@@ -160,6 +162,7 @@ namespace client.Forms
             this.txtUpiAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtUpiAmount.Location = new System.Drawing.Point(208, 390);
             this.txtUpiAmount.Name = "txtUpiAmount";
+            this.txtUpiAmount.ReadOnly = true;
             this.txtUpiAmount.Size = new System.Drawing.Size(251, 26);
             this.txtUpiAmount.TabIndex = 10;
             // 
@@ -170,6 +173,7 @@ namespace client.Forms
             this.txtCardAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCardAmount.Location = new System.Drawing.Point(208, 317);
             this.txtCardAmount.Name = "txtCardAmount";
+            this.txtCardAmount.ReadOnly = true;
             this.txtCardAmount.Size = new System.Drawing.Size(251, 26);
             this.txtCardAmount.TabIndex = 9;
             // 
@@ -180,6 +184,7 @@ namespace client.Forms
             this.txtSaleReturnAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtSaleReturnAmount.Location = new System.Drawing.Point(208, 242);
             this.txtSaleReturnAmount.Name = "txtSaleReturnAmount";
+            this.txtSaleReturnAmount.ReadOnly = true;
             this.txtSaleReturnAmount.Size = new System.Drawing.Size(251, 26);
             this.txtSaleReturnAmount.TabIndex = 8;
             // 
@@ -190,6 +195,7 @@ namespace client.Forms
             this.txtCashAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtCashAmount.Location = new System.Drawing.Point(208, 173);
             this.txtCashAmount.Name = "txtCashAmount";
+            this.txtCashAmount.ReadOnly = true;
             this.txtCashAmount.Size = new System.Drawing.Size(251, 26);
             this.txtCashAmount.TabIndex = 7;
             // 
@@ -264,7 +270,7 @@ namespace client.Forms
             this.lblEditTotalSale.AutoSize = true;
             this.lblEditTotalSale.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblEditTotalSale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblEditTotalSale.Location = new System.Drawing.Point(183, 33);
+            this.lblEditTotalSale.Location = new System.Drawing.Point(179, 45);
             this.lblEditTotalSale.Name = "lblEditTotalSale";
             this.lblEditTotalSale.Size = new System.Drawing.Size(149, 25);
             this.lblEditTotalSale.TabIndex = 0;
