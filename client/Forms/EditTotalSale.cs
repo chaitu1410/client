@@ -33,7 +33,7 @@ namespace client.Forms
             _totalsale.CashAmount = (decimal)Convert.ToDouble(txtCashAmount.Text);
             _totalsale.CardAmount = (decimal)Convert.ToDouble(txtCardAmount.Text);
 
-            _totalsale.UPIAmount = (decimal)Convert.ToDouble(txtUpiAmount.Text);
+            _totalsale.OnlineAmount = (decimal)Convert.ToDouble(txtUpiAmount.Text);
 
             _totalsale.SaleReturnAmount = (decimal)Convert.ToDouble(txtSaleReturnAmount.Text);
 
@@ -78,7 +78,7 @@ namespace client.Forms
         {
             txtCashAmount.Text = _totalsale.CashAmount.ToString();
             txtCardAmount.Text = _totalsale.CardAmount.ToString();
-            txtUpiAmount.Text = _totalsale.UPIAmount.ToString();
+            txtUpiAmount.Text = _totalsale.OnlineAmount.ToString();
             txtSaleReturnAmount.Text = _totalsale.SaleReturnAmount.ToString();
             txtTotalSale.Text = _totalsale.TotalSaleAmount.ToString();
             txtExtraAmount.Text = _totalsale.ExtraAmount.ToString();

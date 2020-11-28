@@ -165,6 +165,10 @@ namespace client.Forms
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvCreditDeposit.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvCreditDeposit.GridColor = System.Drawing.Color.LightGray;
+            this.dgvCreditDeposit.Location = new System.Drawing.Point(497, 118);
+            this.dgvCreditDeposit.Location = new System.Drawing.Point(568, 157);
+            this.dgvCreditDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 
             this.dgvCreditDeposit.GridColor = System.Drawing.Color.LightGray;
             //this.dgvCreditDeposit.Location = new System.Drawing.Point(497, 118);
@@ -267,6 +271,10 @@ namespace client.Forms
             dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvBorrowingBalance.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgvBorrowingBalance.GridColor = System.Drawing.Color.LightGray;
+            this.dgvBorrowingBalance.Location = new System.Drawing.Point(13, 118);
+            this.dgvBorrowingBalance.Location = new System.Drawing.Point(15, 157);
+            this.dgvBorrowingBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 
             this.dgvBorrowingBalance.GridColor = System.Drawing.Color.LightGray;
             //this.dgvBorrowingBalance.Location = new System.Drawing.Point(13, 118);
@@ -283,6 +291,8 @@ namespace client.Forms
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvBorrowingBalance.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvBorrowingBalance.RowHeadersVisible = false;
+            this.dgvBorrowingBalance.RowHeadersWidth = 51;
 
             this.dgvBorrowingBalance.RowHeadersVisible = false;
 
