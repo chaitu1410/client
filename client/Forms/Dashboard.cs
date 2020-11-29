@@ -155,6 +155,5 @@ namespace client.Forms
             this.WindowState = FormWindowState.Minimized;
         }
 
-       
     }
 }
