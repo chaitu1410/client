@@ -6,14 +6,9 @@ namespace client.Data
 {
     public class AuthRepository
     {
-        private readonly AppDbContext _db;
-
-        public AuthRepository(AppDbContext db)
-        {
-            _db = db;
-        }
         public bool Authenticate(string email, string password) 
         {
+	    AppDbContext _db = new AppDbContext();
             User user = _db.Users.Find(email);
             if(user != null && user.Password == password)
             {

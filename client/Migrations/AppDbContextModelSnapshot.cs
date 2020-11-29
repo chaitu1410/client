@@ -73,10 +73,16 @@ namespace client.Migrations
                         .HasColumnType("int")
                         .UseIdentityColumn();
 
+                    b.Property<decimal>("BorrowingBalanceAmount")
+                        .HasColumnType("decimal(10,2)");
+
                     b.Property<decimal>("CardAmount")
                         .HasColumnType("decimal(10,2)");
 
                     b.Property<decimal>("CashAmount")
+                        .HasColumnType("decimal(10,2)");
+
+                    b.Property<decimal>("CreditDepositAmount")
                         .HasColumnType("decimal(10,2)");
 
                     b.Property<DateTime>("Date")

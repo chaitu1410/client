@@ -13,7 +13,6 @@ namespace client.Data
         public DbSet<Borrow> Borrows { get; set; }
         public DbSet<SaleReturn> SaleReturns { get; set; }
         public DbSet<TotalSale> TotalSales { get; set; }
-
         public DbSet<User> Users { get; set; }
     }
 }
