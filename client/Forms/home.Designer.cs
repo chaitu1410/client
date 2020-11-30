@@ -168,6 +168,7 @@ namespace client.Forms
             this.btnSaleReturn.TabIndex = 8;
             this.btnSaleReturn.Text = "Sale Return";
             this.btnSaleReturn.UseVisualStyleBackColor = false;
+            this.btnSaleReturn.Click += new System.EventHandler(this.btnSaleReturn_Click);
             // 
             // progressBar1
             // 

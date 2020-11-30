@@ -153,7 +153,31 @@ namespace client.Forms
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }     
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
         }
 
+        private void btnSaleReturn_MouseEnter(object sender, EventArgs e)
+        {
+            btnSaleReturn.BackColor = Color.FromArgb(0, 13, 72, 114);
+        }
+
+        private void btnSaleReturn_MouseLeave(object sender, EventArgs e)
+        {
+            btnSaleReturn.BackColor = Color.FromArgb(0, 0, 53, 92);
+
+        }
+
+        private void btnSaleReturn_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            SaleReturnDashboard  saleReturnDashboard = new SaleReturnDashboard();
+            saleReturnDashboard.TopLevel = false;
+            pnlBody.Controls.Add(saleReturnDashboard);
+            saleReturnDashboard.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            saleReturnDashboard.Dock = DockStyle.Fill;
+            saleReturnDashboard.Show();
+        }
     }
 }

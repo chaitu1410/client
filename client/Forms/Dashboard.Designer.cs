@@ -38,9 +38,11 @@ namespace client.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.pnlDashboard = new System.Windows.Forms.Panel();
+            this.pbxSaleReturn = new System.Windows.Forms.PictureBox();
+            this.btnSaleReturn = new System.Windows.Forms.Button();
             this.pbxHome = new System.Windows.Forms.PictureBox();
             this.btnHome = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbxBorrows = new System.Windows.Forms.PictureBox();
             this.pbxCredentials = new System.Windows.Forms.PictureBox();
             this.btnCredentials = new System.Windows.Forms.Button();
             this.pbxDailySale = new System.Windows.Forms.PictureBox();
@@ -52,8 +54,9 @@ namespace client.Forms
             this.pnlBody = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
             this.pnlDashboard.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSaleReturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHome)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBorrows)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCredentials)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDailySale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRecords)).BeginInit();
@@ -64,9 +67,11 @@ namespace client.Forms
             this.pnlDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            this.pnlDashboard.Controls.Add(this.pbxSaleReturn);
+            this.pnlDashboard.Controls.Add(this.btnSaleReturn);
             this.pnlDashboard.Controls.Add(this.pbxHome);
             this.pnlDashboard.Controls.Add(this.btnHome);
-            this.pnlDashboard.Controls.Add(this.pictureBox1);
+            this.pnlDashboard.Controls.Add(this.pbxBorrows);
             this.pnlDashboard.Controls.Add(this.pbxCredentials);
             this.pnlDashboard.Controls.Add(this.btnCredentials);
             this.pnlDashboard.Controls.Add(this.pbxDailySale);
@@ -78,6 +83,35 @@ namespace client.Forms
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(283, 783);
             this.pnlDashboard.TabIndex = 0;
+            // 
+            // pbxSaleReturn
+            // 
+            this.pbxSaleReturn.Image = ((System.Drawing.Image)(resources.GetObject("pbxSaleReturn.Image")));
+            this.pbxSaleReturn.Location = new System.Drawing.Point(13, 465);
+            this.pbxSaleReturn.Name = "pbxSaleReturn";
+            this.pbxSaleReturn.Size = new System.Drawing.Size(48, 31);
+            this.pbxSaleReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxSaleReturn.TabIndex = 11;
+            this.pbxSaleReturn.TabStop = false;
+            this.pbxSaleReturn.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // btnSaleReturn
+            // 
+            this.btnSaleReturn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSaleReturn.FlatAppearance.BorderSize = 0;
+            this.btnSaleReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSaleReturn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSaleReturn.ForeColor = System.Drawing.Color.White;
+            this.btnSaleReturn.Location = new System.Drawing.Point(-2, 450);
+            this.btnSaleReturn.Name = "btnSaleReturn";
+            this.btnSaleReturn.Size = new System.Drawing.Size(283, 58);
+            this.btnSaleReturn.TabIndex = 10;
+            this.btnSaleReturn.Text = "SALE RETURN";
+            this.btnSaleReturn.UseVisualStyleBackColor = true;
+            this.btnSaleReturn.Click += new System.EventHandler(this.btnSaleReturn_Click);
+            this.btnSaleReturn.MouseEnter += new System.EventHandler(this.btnSaleReturn_MouseEnter);
+            this.btnSaleReturn.MouseLeave += new System.EventHandler(this.btnSaleReturn_MouseLeave);
             // 
             // pbxHome
             // 
@@ -99,7 +133,6 @@ namespace client.Forms
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Location = new System.Drawing.Point(-2, 157);
             this.btnHome.Name = "btnHome";
-
             this.btnHome.Size = new System.Drawing.Size(283, 58);
             this.btnHome.TabIndex = 8;
             this.btnHome.Text = "HOME";
@@ -108,26 +141,25 @@ namespace client.Forms
             this.btnHome.MouseEnter += new System.EventHandler(this.btnHome_MouseEnter);
             this.btnHome.MouseLeave += new System.EventHandler(this.btnHome_MouseLeave);
             // 
-            // pictureBox1
+            // pbxBorrows
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 268);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 31);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.pbxBorrows.Image = ((System.Drawing.Image)(resources.GetObject("pbxBorrows.Image")));
+            this.pbxBorrows.Location = new System.Drawing.Point(13, 268);
+            this.pbxBorrows.Name = "pbxBorrows";
+            this.pbxBorrows.Size = new System.Drawing.Size(48, 31);
+            this.pbxBorrows.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbxBorrows.TabIndex = 7;
+            this.pbxBorrows.TabStop = false;
             // 
             // pbxCredentials
             // 
             this.pbxCredentials.Image = ((System.Drawing.Image)(resources.GetObject("pbxCredentials.Image")));
-            this.pbxCredentials.Location = new System.Drawing.Point(13, 459);
+            this.pbxCredentials.Location = new System.Drawing.Point(13, 560);
             this.pbxCredentials.Name = "pbxCredentials";
             this.pbxCredentials.Size = new System.Drawing.Size(48, 31);
             this.pbxCredentials.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCredentials.TabIndex = 6;
             this.pbxCredentials.TabStop = false;
-            //this.pbxCredentials.Click += new System.EventHandler(this.pbxCredentials_Click);
             // 
             // btnCredentials
             // 
@@ -137,7 +169,7 @@ namespace client.Forms
             this.btnCredentials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCredentials.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCredentials.ForeColor = System.Drawing.Color.White;
-            this.btnCredentials.Location = new System.Drawing.Point(0, 448);
+            this.btnCredentials.Location = new System.Drawing.Point(0, 546);
             this.btnCredentials.Name = "btnCredentials";
             this.btnCredentials.Size = new System.Drawing.Size(281, 58);
             this.btnCredentials.TabIndex = 5;
@@ -149,7 +181,7 @@ namespace client.Forms
             // pbxDailySale
             // 
             this.pbxDailySale.Image = ((System.Drawing.Image)(resources.GetObject("pbxDailySale.Image")));
-            this.pbxDailySale.Location = new System.Drawing.Point(13, 362);
+            this.pbxDailySale.Location = new System.Drawing.Point(13, 364);
             this.pbxDailySale.Name = "pbxDailySale";
             this.pbxDailySale.Size = new System.Drawing.Size(48, 31);
             this.pbxDailySale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -263,8 +295,9 @@ namespace client.Forms
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseUp);
             this.pnlDashboard.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxSaleReturn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHome)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbxBorrows)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCredentials)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDailySale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRecords)).EndInit();
@@ -286,7 +319,9 @@ namespace client.Forms
         private Panel pnlBody;
         private PictureBox pbxHome;
         private Button btnHome;
-        private PictureBox pictureBox1;
+        private PictureBox pbxBorrows;
         private Button btnMinimize;
+        private PictureBox pbxSaleReturn;
+        private Button btnSaleReturn;
     }
 }

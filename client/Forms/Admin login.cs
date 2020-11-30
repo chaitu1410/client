@@ -16,7 +16,8 @@ namespace client.Forms
         public Admin_login()
         {
             InitializeComponent();
-            
+            _authRepository = new AuthRepository();
+            _user = new User();
             
         }
 
@@ -27,10 +28,18 @@ namespace client.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            String email = txtEmailAddress.Text;
-            String password = txtPassword.Text;
-            _authRepository.Authenticate(email, password);
-
+            string email = txtEmailAddress.Text;
+            string password = txtPassword.Text;
+           bool result=_authRepository.Authenticate(email, password);
+            if(result==true)
+            {
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invaild username and password...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
