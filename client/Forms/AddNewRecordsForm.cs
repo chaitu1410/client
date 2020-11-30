@@ -65,6 +65,11 @@ namespace client.Forms
                 MessageBox.Show("Please Enter Amount....", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (txtExtra.Text.Trim() == string.Empty)
+            {
+                MessageBox.Show("Please Enter Extra Amount....", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             Transaction transaction = new Transaction()
             {
                 Amount = (decimal)Convert.ToDouble(txtAmount.Text),
