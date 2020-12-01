@@ -16,8 +16,7 @@ namespace client.Forms
         public Admin_login()
         {
             InitializeComponent();
-            _authRepository = new AuthRepository();
-            _user = new User();
+            
             
         }
 
@@ -28,23 +27,49 @@ namespace client.Forms
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string email = txtEmailAddress.Text;
-            string password = txtPassword.Text;
-           bool result=_authRepository.Authenticate(email, password);
-            if(result==true)
+
+            if (txtEmailAddress.Text.Trim() == string.Empty)
             {
-                Dashboard dashboard = new Dashboard();
-                dashboard.Show();
+                MessageBox.Show("Please Enter Email Address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
-            else
+            if (txtPassword.Text.Trim() == string.Empty)
             {
-                MessageBox.Show("Invaild username and password...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Please Enter Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmailAddress.Text, @"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+            {
+                MessageBox.Show("Invaild Email...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            String email = txtEmailAddress.Text;
+            String password = txtPassword.Text;
+            _authRepository.Authenticate(email, password);
+
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+        public int ValidateEmailId(string emailId)
+        {
+            /*Regular Expressions for email id*/
+            System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
+            if (emailId.Length > 0)
+            {
+                if (!rEMail.IsMatch(emailId))
+                {
+                    return 0;
+                }
+                else
+                {
+                    return 1;
+                }
+            }
+            return 2;
+        }
     }
 }
+

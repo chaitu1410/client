@@ -68,11 +68,5 @@ namespace client.Forms
             dgvRecords.Columns["TransactionId"].Visible = false;
             progressBar1.Visible = false;
         }
-
-        private void btnSaleReturn_Click(object sender, EventArgs e)
-        {
-            AddSaleReturn addSaleReturn = new AddSaleReturn();
-            addSaleReturn.Show();
-        }
     }
 }
