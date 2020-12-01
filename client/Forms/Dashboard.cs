@@ -155,5 +155,37 @@ namespace client.Forms
             this.WindowState = FormWindowState.Minimized;
         }
 
+        private void btnSaleReturn_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            SaleReturnDashboard saleReturnDashboard = new SaleReturnDashboard();
+            saleReturnDashboard.TopLevel = false;
+            pnlBody.Controls.Add(saleReturnDashboard);
+            saleReturnDashboard.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            saleReturnDashboard.Dock = DockStyle.Fill;
+            saleReturnDashboard.Show();
+        }
+
+        private void btnSaleReturn_MouseEnter(object sender, EventArgs e)
+        {
+            btnSaleReturn.BackColor = Color.FromArgb(0, 13, 72, 114);
+
+        }
+
+        private void btnSaleReturn_MouseLeave(object sender, EventArgs e)
+        {
+            btnSaleReturn.BackColor = Color.FromArgb(0, 0, 53, 92);
+        }
+
+        private void btnCredentials_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            EditCredentialsDashboard editCredentialsDashboard = new EditCredentialsDashboard();
+            editCredentialsDashboard.TopLevel = false;
+            pnlBody.Controls.Add(editCredentialsDashboard);
+            editCredentialsDashboard.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            editCredentialsDashboard.Dock = DockStyle.Fill;
+            editCredentialsDashboard.Show();
+        }
     }
 }

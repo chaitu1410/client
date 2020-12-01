@@ -16,12 +16,14 @@ namespace client.Forms
         public Admin_login()
         {
             InitializeComponent();
+            _authRepository = new AuthRepository();
             
             
         }
 
         private void Admin_login_Load(object sender, EventArgs e)
         {
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
 
         }
 
@@ -31,21 +33,33 @@ namespace client.Forms
             if (txtEmailAddress.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Please Enter Email Address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmailAddress.Focus();
                 return;
             }
             if (txtPassword.Text.Trim() == string.Empty)
             {
                 MessageBox.Show("Please Enter Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPassword.Focus();
                 return;
             }
             if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmailAddress.Text, @"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
             {
                 MessageBox.Show("Invaild Email...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmailAddress.Focus();
                 return;
             }
             String email = txtEmailAddress.Text;
             String password = txtPassword.Text;
-            _authRepository.Authenticate(email, password);
+           bool result= _authRepository.Authenticate(email, password);
+            if(result==true)
+            {
+                Dashboard dashboard = new Dashboard();
+                dashboard.Show();
+            }
+            else
+            {
+                MessageBox.Show("Invaild Username and Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
         }
 
@@ -69,6 +83,19 @@ namespace client.Forms
                 }
             }
             return 2;
+        }
+
+        private void txtPassword_Validating(object sender, CancelEventArgs e)
+        {
+            if (this.txtPassword.TextLength < 8)
+            {
+                this.errorProvider1.SetError(this.txtPassword, "Password must be at least 8 character");
+                e.Cancel = true;
+            }
+            else
+            {
+                this.errorProvider1.SetError(this.txtPassword, "");
+            }
         }
     }
 }

@@ -29,6 +29,7 @@ namespace client.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_login));
             this.lblAdminLogin = new System.Windows.Forms.Label();
             this.lblEmailAddress = new System.Windows.Forms.Label();
@@ -40,8 +41,10 @@ namespace client.Forms
             this.lblForgotPwd = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUsername)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPassword)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblAdminLogin
@@ -112,6 +115,7 @@ namespace client.Forms
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(483, 26);
             this.txtPassword.TabIndex = 7;
+            this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // lblForgotPwd
             // 
@@ -150,6 +154,10 @@ namespace client.Forms
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Admin_login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -171,6 +179,7 @@ namespace client.Forms
             this.Load += new System.EventHandler(this.Admin_login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUsername)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxPassword)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +197,6 @@ namespace client.Forms
         private System.Windows.Forms.Label lblForgotPwd;
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

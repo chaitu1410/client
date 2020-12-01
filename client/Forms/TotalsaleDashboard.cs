@@ -48,7 +48,7 @@ namespace client.Forms
 
         private async void Load_Datagridview_Data()
         {
-           
+            pbxTotalSale.Visible = true;
             DateTime dt = Convert.ToDateTime(dtpTotalSale.Value);
             String s1 = dt.ToString("yyyy-MM-dd");
             DateTime dtnew = Convert.ToDateTime(s1);
@@ -58,6 +58,7 @@ namespace client.Forms
             dgvTotalSale.AutoGenerateColumns = true;
             dgvTotalSale.DataSource = source;
             dgvTotalSale.Columns["Id"].Visible = false;
+            pbxTotalSale.Visible = false;
         }
 
         private async void btnClearFilter_Click(object sender, EventArgs e)
