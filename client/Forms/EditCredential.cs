@@ -19,7 +19,7 @@ namespace client.Forms
         {
             InitializeComponent();
             _userRepository = new UserRepository();
-            _user = new User();
+            _user = _userRepository.GetUser();
         }
 
         private void pnlBody_Paint(object sender, PaintEventArgs e)

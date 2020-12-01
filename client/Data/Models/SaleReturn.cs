@@ -14,7 +14,7 @@ namespace client.Data
 
         [Required(ErrorMessage = "Customer Name is required.")]
         [StringLength(100)]
-        [DisplayName("Name Of Customer")]
+        [DisplayName("Customer Name")]
         public string CustomerName { get; set; }
 
         [Required(ErrorMessage = "Please Enter Valid Amount of Transaction.")]
