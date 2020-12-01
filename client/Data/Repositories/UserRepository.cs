@@ -1,20 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace client.Data.Repositories
 {
     public class UserRepository
     {
-        private readonly AppDbContext _db;
-
-        public UserRepository(AppDbContext db)
+        public User GetUser()
         {
-            _db = db;
+            AppDbContext _db = new AppDbContext();
+            return _db.Users.First();
         }
-
         public void Update(User user)
         {
+            AppDbContext _db = new AppDbContext();
             _db.Users.Update(user);
         }
     }
