@@ -99,6 +99,7 @@ namespace client.Forms
             this.btnHome.ForeColor = System.Drawing.Color.White;
             this.btnHome.Location = new System.Drawing.Point(-2, 157);
             this.btnHome.Name = "btnHome";
+
             this.btnHome.Size = new System.Drawing.Size(283, 58);
             this.btnHome.TabIndex = 8;
             this.btnHome.Text = "HOME";
@@ -120,12 +121,13 @@ namespace client.Forms
             // pbxCredentials
             // 
             this.pbxCredentials.Image = ((System.Drawing.Image)(resources.GetObject("pbxCredentials.Image")));
-            this.pbxCredentials.Location = new System.Drawing.Point(13, 470);
+            this.pbxCredentials.Location = new System.Drawing.Point(13, 459);
             this.pbxCredentials.Name = "pbxCredentials";
             this.pbxCredentials.Size = new System.Drawing.Size(48, 31);
             this.pbxCredentials.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCredentials.TabIndex = 6;
             this.pbxCredentials.TabStop = false;
+            //this.pbxCredentials.Click += new System.EventHandler(this.pbxCredentials_Click);
             // 
             // btnCredentials
             // 
@@ -135,7 +137,7 @@ namespace client.Forms
             this.btnCredentials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCredentials.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCredentials.ForeColor = System.Drawing.Color.White;
-            this.btnCredentials.Location = new System.Drawing.Point(0, 459);
+            this.btnCredentials.Location = new System.Drawing.Point(0, 448);
             this.btnCredentials.Name = "btnCredentials";
             this.btnCredentials.Size = new System.Drawing.Size(281, 58);
             this.btnCredentials.TabIndex = 5;
@@ -147,7 +149,7 @@ namespace client.Forms
             // pbxDailySale
             // 
             this.pbxDailySale.Image = ((System.Drawing.Image)(resources.GetObject("pbxDailySale.Image")));
-            this.pbxDailySale.Location = new System.Drawing.Point(13, 363);
+            this.pbxDailySale.Location = new System.Drawing.Point(13, 362);
             this.pbxDailySale.Name = "pbxDailySale";
             this.pbxDailySale.Size = new System.Drawing.Size(48, 31);
             this.pbxDailySale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -162,7 +164,7 @@ namespace client.Forms
             this.btnViewTotalSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewTotalSale.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnViewTotalSale.ForeColor = System.Drawing.Color.White;
-            this.btnViewTotalSale.Location = new System.Drawing.Point(1, 351);
+            this.btnViewTotalSale.Location = new System.Drawing.Point(0, 352);
             this.btnViewTotalSale.Name = "btnViewTotalSale";
             this.btnViewTotalSale.Size = new System.Drawing.Size(283, 58);
             this.btnViewTotalSale.TabIndex = 3;
