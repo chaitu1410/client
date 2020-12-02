@@ -55,6 +55,7 @@ namespace client.Forms
             {
                 Dashboard dashboard = new Dashboard();
                 dashboard.Show();
+                this.Hide();
             }
             else
             {
