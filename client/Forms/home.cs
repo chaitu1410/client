@@ -27,11 +27,7 @@ namespace client.Forms
             Load_Datagridview_Data();
         }
 
-        private void btnAddRecords_Click(object sender, EventArgs e)
-        {
-            AddNewRecordsForm frm = new AddNewRecordsForm();
-            frm.Show();
-        }
+        
 
         private void btnAddBorrow_Click(object sender, EventArgs e)
         {
@@ -73,6 +69,12 @@ namespace client.Forms
         {
             AddSaleReturn addSaleReturn = new AddSaleReturn();
             addSaleReturn.Show();
+        }
+
+        private void btnAddRecords_Click_1(object sender, EventArgs e)
+        {
+            AddNewRecordsForm frm = new AddNewRecordsForm();
+            frm.Show();
         }
     }
 }
