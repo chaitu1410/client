@@ -53,6 +53,7 @@ namespace client.Forms
             this.btnClose = new System.Windows.Forms.Button();
             this.pnlBody = new System.Windows.Forms.Panel();
             this.btnMinimize = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlDashboard.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbxSaleReturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxHome)).BeginInit();
@@ -60,6 +61,7 @@ namespace client.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pbxCredentials)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDailySale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRecords)).BeginInit();
+            this.pnlTopDashboard.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlDashboard
@@ -237,6 +239,7 @@ namespace client.Forms
             // pnlTopDashboard
             // 
             this.pnlTopDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
+            this.pnlTopDashboard.Controls.Add(this.label1);
             this.pnlTopDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopDashboard.Location = new System.Drawing.Point(0, 0);
             this.pnlTopDashboard.Name = "pnlTopDashboard";
@@ -277,6 +280,17 @@ namespace client.Forms
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(41, 41);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(184, 25);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Aditya Medical";
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -301,6 +315,8 @@ namespace client.Forms
             ((System.ComponentModel.ISupportInitialize)(this.pbxCredentials)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxDailySale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxRecords)).EndInit();
+            this.pnlTopDashboard.ResumeLayout(false);
+            this.pnlTopDashboard.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -323,5 +339,6 @@ namespace client.Forms
         private Button btnMinimize;
         private PictureBox PbxSaleReturn;
         private Button btnSaleReturn;
+        private Label label1;
     }
 }
