@@ -55,5 +55,39 @@ namespace client.Data
         [DisplayName("Date")]
         public DateTime Date { get; set; }
 
+        public List<string> Columns = new List<string> { "Cash", "Sale Return", "Card", "Online", "Extras", "Borrowing Balance", "Credit Deposit", "Total Sale"};
+
+        public string GetByString(string columnName)
+        {
+            switch (columnName)
+            {
+                case "Cash":
+                    return this.CashAmount.ToString();
+
+                case "Sale Return":
+                    return this.SaleReturnAmount.ToString();
+
+                case "Card":
+                    return this.CardAmount.ToString();
+
+                case "Online":
+                    return this.OnlineAmount.ToString();
+
+                case "Extras":
+                    return this.ExtraAmount.ToString();
+
+                case "Borrowing Balance":
+                    return this.BorrowingBalanceAmount.ToString();
+
+                case "Credit Deposit":
+                    return this.CreditDepositAmount.ToString();
+
+                case "Total Sale":
+                    return this.TotalSaleAmount.ToString();
+                default:
+                    return "";
+            }
+        }
+
     }
 }

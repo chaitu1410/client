@@ -33,13 +33,13 @@ namespace client.Data
             return await Task.Run(() => _db.Borrows.Where(t => t.Date.Date.Equals(date.Date)).ToList());
         }
 
-        public async Task<IEnumerable<Borrow>> GetAllDepositedByDate(DateTime date)
+        public async Task<List<Borrow>> GetAllDepositedByDate(DateTime date)
         {
             AppDbContext _db = new AppDbContext();
             return await Task.Run(() => _db.Borrows.Where(row => row.ReturnDate.Date.Equals(date.Date) && row.IsReturned == true).ToList());
         }
 
-        public async Task<IEnumerable<Borrow>> GetAllUndepositedByDate(DateTime date)
+        public async Task<List<Borrow>> GetAllUndepositedByDate(DateTime date)
         {
             AppDbContext _db = new AppDbContext();
             return await Task.Run(() => _db.Borrows.Where(row => row.Date.Date.Equals(date.Date) && row.IsReturned == false).ToList());

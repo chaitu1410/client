@@ -9,6 +9,7 @@ namespace client
 {
     static class Program
     {
+        public static string author;
         /// <summary>
         ///  The main entry point for the application.
         /// </summary>

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace client.Data
 {
@@ -79,8 +82,8 @@ namespace client.Data
             SaleReturnRepository saleReturnRepository = new SaleReturnRepository();
 
             IEnumerable<Transaction> transactions = await transactionRepository.GetAllByDate(date);
-            IEnumerable<Borrow> borrowsUndeposited = await borrowRepository.GetAllUndepositedByDate(date);
-            IEnumerable<Borrow> borrowsDeposited = await borrowRepository.GetAllDepositedByDate(date);
+            List<Borrow> borrowsUndeposited = await borrowRepository.GetAllUndepositedByDate(date);
+            List<Borrow> borrowsDeposited = await borrowRepository.GetAllDepositedByDate(date);
             IEnumerable<SaleReturn> saleReturns = saleReturnRepository.GetAllByDate(date);
 
             double CashPayment = await Task.Run(() => (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Cash).Sum(row => row.Amount));
@@ -155,5 +158,194 @@ namespace client.Data
             return null;
         }
         */
+
+        public async Task GeneratePdf(TotalSale totalSale)
+        {
+            Document document = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
+            try
+            {
+                BorrowRepository borrowRepository = new BorrowRepository();
+                List<Borrow> borrowsUndeposited = await borrowRepository.GetAllUndepositedByDate(totalSale.Date);
+                List<Borrow> borrowsDeposited = await borrowRepository.GetAllDepositedByDate(totalSale.Date);
+
+                
+                //Create new PDF document
+                string fileName = totalSale.Date.ToString();
+                fileName = fileName.Replace("-", "");
+                fileName = fileName.Replace(":", "");
+                fileName = fileName.Replace(" ", "");
+                fileName += ".pdf";
+                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + $"\\Client\\{fileName}";
+                PdfWriter.GetInstance(document, new FileStream(path, FileMode.OpenOrCreate));
+
+                document.Open();
+                //Report Header
+                BaseFont bfntHead = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                Font fntHead = iTextSharp.text.FontFactory.GetFont(FontFactory.HELVETICA, 16, BaseColor.Black);
+                Paragraph prgHeading = new Paragraph();
+                prgHeading.Alignment = Element.ALIGN_CENTER;
+                prgHeading.Add(new Chunk("Client", fntHead));
+                document.Add(prgHeading);
+
+                //Author
+                Paragraph prgAuthor = new Paragraph();
+                BaseFont btnAuthor = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
+                Font fntAuthor = iTextSharp.text.FontFactory.GetFont(FontFactory.HELVETICA, 8, BaseColor.Black);
+                prgAuthor.Alignment = Element.ALIGN_RIGHT;
+                prgAuthor.Add(new Chunk("Author : Dotnet Mob", fntAuthor));
+                prgAuthor.Add(new Chunk("\nDate : " + totalSale.Date.ToShortDateString(), fntAuthor));
+                document.Add(prgAuthor);
+
+                //Add a line seperation
+                Paragraph p = new Paragraph(new Chunk(new iTextSharp.text.pdf.draw.LineSeparator(0.0F, 100.0F, BaseColor.Black, Element.ALIGN_LEFT, 1)));
+                document.Add(p);
+
+                ///////////////////////////////////////// START Total Sale Table ////////////////////////////////////////////
+
+                document.Add(new Chunk("\n", fntHead));
+                Paragraph prg = new Paragraph();
+                prg.Alignment = Element.ALIGN_CENTER;
+                Font fntHeading = iTextSharp.text.FontFactory.GetFont(FontFactory.HELVETICA, 13, BaseColor.Black);
+                Chunk totalSaleLabel = new Chunk("Total Sale", fntHeading);
+                prg.Add(totalSaleLabel);
+                document.Add(prg);
+
+                //Write the table
+                PdfPTable table = new PdfPTable(8);
+                table.TotalWidth = 550f;
+                //fix the absolute width of the table
+                table.LockedWidth = true;
+                float[] widths = new float[] { 2f, 2f, 2f, 2f, 2f, 2f, 2f, 2f };
+                table.SetWidths(widths);
+                table.HorizontalAlignment = 1;
+                //leave a gap before and after the table
+                table.SpacingBefore = 10f;
+                table.SpacingAfter = 20f;
+
+                Font fntColumnHeader = iTextSharp.text.FontFactory.GetFont(FontFactory.HELVETICA, 12, BaseColor.Black);
+                for (int i = 0; i < 8; i++)
+                {
+                    PdfPCell cell = new PdfPCell();
+                    cell.BackgroundColor = BaseColor.Gray;
+                    cell.AddElement(new Chunk(totalSale.Columns[i], fntColumnHeader));
+                    table.AddCell(cell);
+                }
+                //table Data
+                for (int i = 0; i < 8; i++)
+                {
+
+                    PdfPCell cell = new PdfPCell();
+                    cell.BackgroundColor = BaseColor.White;
+                    cell.AddElement(new Chunk(totalSale.GetByString(totalSale.Columns[i]), fntColumnHeader));
+                    table.AddCell(cell);
+                }
+                document.Add(table);
+                /////////////////////////////////////////// END Total Sale Table ////////////////////////////////////////
+                ///
+
+                ///////////////////////////////////////// START Borrowing Balance Table ////////////////////////////////////////////
+
+                document.Add(new Chunk("\n", fntHead));
+                Paragraph prg2 = new Paragraph();
+                prg2.Alignment = Element.ALIGN_CENTER;
+                Chunk bbLabel = new Chunk("Borrowing Balance", fntHeading);
+                prg2.Add(bbLabel);
+                document.Add(prg2);
+
+                //Write the table
+                PdfPTable bbTable = new PdfPTable(2);
+                bbTable.TotalWidth = 400f;
+                //fix the absolute width of the table
+                bbTable.LockedWidth = true;
+                float[] bbWidths = new float[] { 5f, 2f };
+                bbTable.SetWidths(bbWidths);
+                bbTable.HorizontalAlignment = 1;
+                //leave a gap before and after the table
+                bbTable.SpacingBefore = 10f;
+                bbTable.SpacingAfter = 20f;
+                for (int i = 0; i < 2; i++)
+                {
+                    PdfPCell cell = new PdfPCell();
+                    cell.BackgroundColor = BaseColor.Gray;
+                    cell.AddElement(new Chunk(Borrow.PdfColumnsName[i], fntColumnHeader));
+                    bbTable.AddCell(cell);
+                }
+                //table Data
+                for (int i = 0; i < borrowsUndeposited.Count; i++)
+                {
+                    for (int j = 0; j < 2; j++)
+                    {
+                        PdfPCell cell = new PdfPCell();
+                        cell.BackgroundColor = BaseColor.White;
+                        cell.AddElement(new Chunk(borrowsUndeposited[i].GetByString(Borrow.PdfColumnsName[j]), fntColumnHeader));
+                        bbTable.AddCell(cell);
+                    }
+                }
+                document.Add(bbTable);
+                /////////////////////////////////////////// END Borrowing Balance Table ////////////////////////////////////////
+                ///
+
+
+                ///////////////////////////////////////// START Credit Deposit Table ////////////////////////////////////////////
+
+                document.Add(new Chunk("\n", fntHead));
+                Paragraph prg3 = new Paragraph();
+                prg3.Alignment = Element.ALIGN_CENTER;
+                Chunk cdLabel = new Chunk("Credit Deposite", fntHeading);
+                prg3.Add(cdLabel);
+                document.Add(prg3);
+
+                //Write the table
+                PdfPTable cdTable = new PdfPTable(2);
+                cdTable.TotalWidth = 400f;
+                //fix the absolute width of the table
+                cdTable.LockedWidth = true;
+                float[] cdWidths = new float[] { 5f, 2f };
+                cdTable.SetWidths(cdWidths);
+                cdTable.HorizontalAlignment = 1;
+                //leave a gap before and after the table
+                cdTable.SpacingBefore = 10f;
+                cdTable.SpacingAfter = 20f;
+                for (int i = 0; i < 2; i++)
+                {
+                    PdfPCell cell = new PdfPCell();
+                    cell.BackgroundColor = BaseColor.Gray;
+                    cell.AddElement(new Chunk(Borrow.PdfColumnsName[i], fntColumnHeader));
+                    cdTable.AddCell(cell);
+                }
+                //table Data
+                for (int i = 0; i < borrowsDeposited.Count; i++)
+                {
+                    for (int j = 0; j < 2; j++)
+                    {
+                        PdfPCell cell = new PdfPCell();
+                        cell.BackgroundColor = BaseColor.White;
+                        cell.AddElement(new Chunk(borrowsDeposited[i].GetByString(Borrow.PdfColumnsName[j]), fntColumnHeader));
+                        cdTable.AddCell(cell);
+                    }
+                }
+                await Task.Run(() => document.Add(cdTable));
+                /////////////////////////////////////////// END Credit Deposit Table ////////////////////////////////////////
+                document.Close();
+            }
+            catch (DirectoryNotFoundException)
+            {
+                throw new PdfGenerationException("Please Create Folder Named Client in yout Documents Folder.");
+            }
+            catch (Exception)
+            {
+                throw new PdfGenerationException("Failed to generate Pdf.");
+            }
+            finally
+            {
+                if(document != null)
+                {
+                    if (document.IsOpen())
+                    {
+                        document.Close();
+                    }
+                }
+            }
+        }
     }
 }

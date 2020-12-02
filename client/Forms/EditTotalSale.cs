@@ -19,6 +19,7 @@ namespace client.Forms
             InitializeComponent();
             _totalsalerepository = new TotalSaleRepository();
             _totalsale = totalSale;
+            progessBar.Visible = false;
         }
 
         private async void btnDelete_Click(object sender, EventArgs e)
@@ -32,9 +33,11 @@ namespace client.Forms
             this.Dispose();
         }
 
-        private void btnGeneratePdf_Click(object sender, EventArgs e)
+        private async void btnGeneratePdf_Click(object sender, EventArgs e)
         {
-
+            progessBar.Visible = true;
+            await _totalsalerepository.GeneratePdf(_totalsale);
+            progessBar.Visible = false;
         }
 
         private void pnlBody_Paint(object sender, PaintEventArgs e)

@@ -48,6 +48,7 @@ namespace client.Forms
             this.lblSaleReturnAmount = new System.Windows.Forms.Label();
             this.lblCashAmount = new System.Windows.Forms.Label();
             this.lblEditTotalSale = new System.Windows.Forms.Label();
+            this.progessBar = new System.Windows.Forms.ProgressBar();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -55,6 +56,7 @@ namespace client.Forms
             // pnlBody
             // 
             this.pnlBody.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlBody.Controls.Add(this.progessBar);
             this.pnlBody.Controls.Add(this.pictureBox1);
             this.pnlBody.Controls.Add(this.btnGeneratePdf);
             this.pnlBody.Controls.Add(this.btnDelete);
@@ -287,6 +289,13 @@ namespace client.Forms
             this.lblEditTotalSale.TabIndex = 0;
             this.lblEditTotalSale.Text = "Edit Total Sale";
             // 
+            // progessBar
+            // 
+            this.progessBar.Location = new System.Drawing.Point(323, 105);
+            this.progessBar.Name = "progessBar";
+            this.progessBar.Size = new System.Drawing.Size(201, 29);
+            this.progessBar.TabIndex = 17;
+            // 
             // EditTotalSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -326,5 +335,6 @@ namespace client.Forms
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ProgressBar progessBar;
     }
 }

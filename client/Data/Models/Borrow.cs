@@ -31,5 +31,22 @@ namespace client.Data
 
         [DisplayName("Date Of Borrow Deposite")]
         public DateTime ReturnDate { get; set; }
+
+        public static List<string> PdfColumnsName = new List<string> { "Customer Name", "Amount" };
+
+        public string GetByString(string columnName)
+        {
+            switch (columnName)
+            {
+                case "Customer Name":
+                    return this.CustomerName.ToString();
+                case "Amount":
+                    return this.Amount.ToString();
+                default:
+                    return "";
+            }
+        }
     }
+
+   
 }
