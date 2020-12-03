@@ -29,9 +29,9 @@ namespace client.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblRecords = new System.Windows.Forms.Label();
             this.lblFilterBy = new System.Windows.Forms.Label();
             this.dtpRecords = new System.Windows.Forms.DateTimePicker();
@@ -48,9 +48,9 @@ namespace client.Forms
             this.lblRecords.AutoSize = true;
             this.lblRecords.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblRecords.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblRecords.Location = new System.Drawing.Point(14, 27);
+            this.lblRecords.Location = new System.Drawing.Point(12, 20);
             this.lblRecords.Name = "lblRecords";
-            this.lblRecords.Size = new System.Drawing.Size(114, 32);
+            this.lblRecords.Size = new System.Drawing.Size(92, 25);
             this.lblRecords.TabIndex = 1;
             this.lblRecords.Text = "Records";
             // 
@@ -58,9 +58,9 @@ namespace client.Forms
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterBy.Location = new System.Drawing.Point(18, 136);
+            this.lblFilterBy.Location = new System.Drawing.Point(16, 102);
             this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(83, 22);
+            this.lblFilterBy.Size = new System.Drawing.Size(66, 17);
             this.lblFilterBy.TabIndex = 2;
             this.lblFilterBy.Text = "Filter by";
             // 
@@ -68,10 +68,9 @@ namespace client.Forms
             // 
             this.dtpRecords.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpRecords.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpRecords.Location = new System.Drawing.Point(101, 128);
-            this.dtpRecords.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpRecords.Location = new System.Drawing.Point(88, 96);
             this.dtpRecords.Name = "dtpRecords";
-            this.dtpRecords.Size = new System.Drawing.Size(276, 29);
+            this.dtpRecords.Size = new System.Drawing.Size(242, 25);
             this.dtpRecords.TabIndex = 3;
             this.dtpRecords.ValueChanged += new System.EventHandler(this.dtpRecords_ValueChanged);
             // 
@@ -83,40 +82,39 @@ namespace client.Forms
             this.dgvRecords.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvRecords.BackgroundColor = System.Drawing.Color.White;
             this.dgvRecords.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Sunken;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecords.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvRecords.ColumnHeadersHeight = 50;
             this.dgvRecords.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvRecords.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRecords.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvRecords.GridColor = System.Drawing.Color.LightGray;
-            this.dgvRecords.Location = new System.Drawing.Point(1, 179);
-            this.dgvRecords.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dgvRecords.Location = new System.Drawing.Point(1, 134);
             this.dgvRecords.Name = "dgvRecords";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRecords.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvRecords.RowHeadersVisible = false;
             this.dgvRecords.RowHeadersWidth = 50;
             this.dgvRecords.RowTemplate.Height = 30;
-            this.dgvRecords.Size = new System.Drawing.Size(1117, 648);
+            this.dgvRecords.Size = new System.Drawing.Size(977, 486);
             this.dgvRecords.TabIndex = 5;
             this.dgvRecords.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRecords_CellDoubleClick);
             // 
@@ -125,10 +123,9 @@ namespace client.Forms
             this.btnAddBorrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnAddBorrow.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddBorrow.ForeColor = System.Drawing.Color.White;
-            this.btnAddBorrow.Location = new System.Drawing.Point(18, 860);
-            this.btnAddBorrow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddBorrow.Location = new System.Drawing.Point(16, 645);
             this.btnAddBorrow.Name = "btnAddBorrow";
-            this.btnAddBorrow.Size = new System.Drawing.Size(254, 69);
+            this.btnAddBorrow.Size = new System.Drawing.Size(222, 52);
             this.btnAddBorrow.TabIndex = 7;
             this.btnAddBorrow.Text = "+Add Borrow Cash";
             this.btnAddBorrow.UseVisualStyleBackColor = false;
@@ -139,10 +136,9 @@ namespace client.Forms
             this.btnSaleReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnSaleReturn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSaleReturn.ForeColor = System.Drawing.Color.White;
-            this.btnSaleReturn.Location = new System.Drawing.Point(427, 860);
-            this.btnSaleReturn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaleReturn.Location = new System.Drawing.Point(374, 645);
             this.btnSaleReturn.Name = "btnSaleReturn";
-            this.btnSaleReturn.Size = new System.Drawing.Size(254, 69);
+            this.btnSaleReturn.Size = new System.Drawing.Size(222, 52);
             this.btnSaleReturn.TabIndex = 8;
             this.btnSaleReturn.Text = "+ Add Sale Return";
             this.btnSaleReturn.UseVisualStyleBackColor = false;
@@ -150,11 +146,10 @@ namespace client.Forms
             // 
             // pbxHome
             // 
-            this.pbxHome.Location = new System.Drawing.Point(450, 456);
-            this.pbxHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbxHome.Location = new System.Drawing.Point(394, 342);
             this.pbxHome.MarqueeAnimationSpeed = 50;
             this.pbxHome.Name = "pbxHome";
-            this.pbxHome.Size = new System.Drawing.Size(231, 25);
+            this.pbxHome.Size = new System.Drawing.Size(202, 19);
             this.pbxHome.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pbxHome.TabIndex = 9;
             // 
@@ -163,10 +158,9 @@ namespace client.Forms
             this.btnAddRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnAddRecords.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddRecords.ForeColor = System.Drawing.Color.White;
-            this.btnAddRecords.Location = new System.Drawing.Point(846, 856);
-            this.btnAddRecords.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAddRecords.Location = new System.Drawing.Point(740, 642);
             this.btnAddRecords.Name = "btnAddRecords";
-            this.btnAddRecords.Size = new System.Drawing.Size(254, 69);
+            this.btnAddRecords.Size = new System.Drawing.Size(222, 52);
             this.btnAddRecords.TabIndex = 10;
             this.btnAddRecords.Text = "+Add New Record";
             this.btnAddRecords.UseVisualStyleBackColor = false;
@@ -174,9 +168,9 @@ namespace client.Forms
             // 
             // home
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1123, 989);
+            this.ClientSize = new System.Drawing.Size(983, 742);
             this.Controls.Add(this.btnAddRecords);
             this.Controls.Add(this.pbxHome);
             this.Controls.Add(this.btnSaleReturn);
@@ -186,9 +180,11 @@ namespace client.Forms
             this.Controls.Add(this.lblFilterBy);
             this.Controls.Add(this.lblRecords);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.KeyPreview = true;
             this.Name = "home";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "z";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.home_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRecords)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

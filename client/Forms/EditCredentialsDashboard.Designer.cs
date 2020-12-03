@@ -108,6 +108,7 @@ namespace client.Forms
             this.Controls.Add(this.lblEditCredentials);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditCredentialsDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditCredentials";
             this.Load += new System.EventHandler(this.EditCredentialsDashboard_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEditCredentials)).EndInit();

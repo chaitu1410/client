@@ -67,7 +67,7 @@ namespace client.Forms
             this.btnSave.Location = new System.Drawing.Point(184, 281);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(127, 39);
-            this.btnSave.TabIndex = 6;
+            this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
@@ -80,7 +80,7 @@ namespace client.Forms
             this.btnCancel.Location = new System.Drawing.Point(317, 281);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 39);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 3;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -92,7 +92,7 @@ namespace client.Forms
             this.txtAmount.Location = new System.Drawing.Point(151, 209);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(293, 26);
-            this.txtAmount.TabIndex = 4;
+            this.txtAmount.TabIndex = 1;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblAmount
@@ -112,7 +112,7 @@ namespace client.Forms
             this.txtName.Location = new System.Drawing.Point(151, 121);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(293, 26);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 0;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lblName
@@ -145,6 +145,7 @@ namespace client.Forms
             this.Controls.Add(this.pnlBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AddBorrowForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddBorrowForm";
             this.pnlBody.ResumeLayout(false);
             this.pnlBody.PerformLayout();

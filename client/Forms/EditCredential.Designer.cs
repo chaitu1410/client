@@ -73,7 +73,7 @@ namespace client.Forms
             this.btnCancel.Location = new System.Drawing.Point(364, 343);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(88, 35);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -86,7 +86,7 @@ namespace client.Forms
             this.btnUpdate.Location = new System.Drawing.Point(262, 343);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(96, 35);
-            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -99,7 +99,7 @@ namespace client.Forms
             this.txtConfirmPassword.Name = "txtConfirmPassword";
             this.txtConfirmPassword.PasswordChar = '*';
             this.txtConfirmPassword.Size = new System.Drawing.Size(270, 26);
-            this.txtConfirmPassword.TabIndex = 6;
+            this.txtConfirmPassword.TabIndex = 2;
             this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
             // 
             // lblConfirmPassword
@@ -121,7 +121,7 @@ namespace client.Forms
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(270, 26);
-            this.txtPassword.TabIndex = 4;
+            this.txtPassword.TabIndex = 1;
             this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
             // lblPassowrd
@@ -142,7 +142,7 @@ namespace client.Forms
             this.txtEmailAddress.Location = new System.Drawing.Point(182, 114);
             this.txtEmailAddress.Name = "txtEmailAddress";
             this.txtEmailAddress.Size = new System.Drawing.Size(270, 26);
-            this.txtEmailAddress.TabIndex = 2;
+            this.txtEmailAddress.TabIndex = 0;
             // 
             // lblEmailAddress
             // 
@@ -179,6 +179,7 @@ namespace client.Forms
             this.Controls.Add(this.pnlBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditCredential";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditCredential";
             this.Load += new System.EventHandler(this.EditCredential_Load);
             this.pnlBody.ResumeLayout(false);

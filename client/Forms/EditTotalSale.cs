@@ -46,6 +46,7 @@ namespace client.Forms
             {
                 progessBar.Visible = true;
                 await _totalsalerepository.GeneratePdf(_totalsale);
+                MessageBox.Show("PDF Generated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 progessBar.Visible = false;
             }
             catch (Exception ex)

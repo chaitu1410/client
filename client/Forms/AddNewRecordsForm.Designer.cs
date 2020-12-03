@@ -76,7 +76,7 @@ namespace client.Forms
             this.cbxPaymentMethod.Location = new System.Drawing.Point(194, 109);
             this.cbxPaymentMethod.Name = "cbxPaymentMethod";
             this.cbxPaymentMethod.Size = new System.Drawing.Size(245, 27);
-            this.cbxPaymentMethod.TabIndex = 2;
+            this.cbxPaymentMethod.TabIndex = 0;
             // 
             // lblAmount
             // 
@@ -104,8 +104,9 @@ namespace client.Forms
             this.txtExtra.Location = new System.Drawing.Point(194, 306);
             this.txtExtra.Name = "txtExtra";
             this.txtExtra.Size = new System.Drawing.Size(245, 26);
-            this.txtExtra.TabIndex = 6;
+            this.txtExtra.TabIndex = 2;
             this.txtExtra.Text = "0";
+            this.txtExtra.Click += new System.EventHandler(this.txtExtra_Click);
             this.txtExtra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExtra_KeyPress);
             // 
             // btnCancel
@@ -116,7 +117,7 @@ namespace client.Forms
             this.btnCancel.Location = new System.Drawing.Point(312, 387);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(127, 46);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
@@ -152,7 +153,7 @@ namespace client.Forms
             this.txtAmount.Location = new System.Drawing.Point(194, 208);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(245, 26);
-            this.txtAmount.TabIndex = 10;
+            this.txtAmount.TabIndex = 1;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // btnSave
@@ -163,7 +164,7 @@ namespace client.Forms
             this.btnSave.Location = new System.Drawing.Point(187, 387);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(119, 46);
-            this.btnSave.TabIndex = 9;
+            this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click_1);

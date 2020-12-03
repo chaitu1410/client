@@ -73,7 +73,7 @@ namespace client.Forms
             this.btnDelete.Location = new System.Drawing.Point(331, 87);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(97, 34);
-            this.btnDelete.TabIndex = 9;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
@@ -86,7 +86,7 @@ namespace client.Forms
             this.btnCancel.Location = new System.Drawing.Point(311, 399);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(117, 40);
-            this.btnCancel.TabIndex = 8;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
@@ -99,7 +99,7 @@ namespace client.Forms
             this.btnUpdate.Location = new System.Drawing.Point(188, 399);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(117, 40);
-            this.btnUpdate.TabIndex = 7;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
@@ -110,7 +110,7 @@ namespace client.Forms
             this.txtExtra.Location = new System.Drawing.Point(180, 324);
             this.txtExtra.Name = "txtExtra";
             this.txtExtra.Size = new System.Drawing.Size(248, 26);
-            this.txtExtra.TabIndex = 6;
+            this.txtExtra.TabIndex = 2;
             this.txtExtra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtExtra_KeyPress);
             // 
             // lblExtras
@@ -130,7 +130,7 @@ namespace client.Forms
             this.txtAmount.Location = new System.Drawing.Point(180, 225);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(248, 26);
-            this.txtAmount.TabIndex = 4;
+            this.txtAmount.TabIndex = 1;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblAmount
@@ -154,7 +154,7 @@ namespace client.Forms
             this.cbxPaymentMethod.Location = new System.Drawing.Point(175, 136);
             this.cbxPaymentMethod.Name = "cbxPaymentMethod";
             this.cbxPaymentMethod.Size = new System.Drawing.Size(253, 27);
-            this.cbxPaymentMethod.TabIndex = 2;
+            this.cbxPaymentMethod.TabIndex = 0;
             // 
             // lblPaymetMethod
             // 

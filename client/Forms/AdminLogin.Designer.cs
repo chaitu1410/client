@@ -175,6 +175,7 @@ namespace client.Forms
             this.Controls.Add(this.lblAdminLogin);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Admin_login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin_login";
             this.Load += new System.EventHandler(this.Admin_login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbxUsername)).EndInit();

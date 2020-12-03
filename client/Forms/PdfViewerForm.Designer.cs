@@ -52,6 +52,7 @@ namespace client.Forms
             this.Controls.Add(this.btnClose);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PdfViewerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PdfViewerForm";
             this.ResumeLayout(false);
 

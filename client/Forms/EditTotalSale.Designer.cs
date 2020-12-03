@@ -31,6 +31,7 @@ namespace client.Forms
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTotalSale));
             this.pnlBody = new System.Windows.Forms.Panel();
+            this.progessBar = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGeneratePdf = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@ namespace client.Forms
             this.lblSaleReturnAmount = new System.Windows.Forms.Label();
             this.lblCashAmount = new System.Windows.Forms.Label();
             this.lblEditTotalSale = new System.Windows.Forms.Label();
-            this.progessBar = new System.Windows.Forms.ProgressBar();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -74,24 +74,30 @@ namespace client.Forms
             this.pnlBody.Controls.Add(this.lblSaleReturnAmount);
             this.pnlBody.Controls.Add(this.lblCashAmount);
             this.pnlBody.Controls.Add(this.lblEditTotalSale);
-            this.pnlBody.Location = new System.Drawing.Point(2, 4);
-            this.pnlBody.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlBody.Location = new System.Drawing.Point(2, 3);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(595, 870);
+            this.pnlBody.Size = new System.Drawing.Size(521, 653);
             this.pnlBody.TabIndex = 0;
             this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);
             this.pnlBody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseMove);
             this.pnlBody.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseUp);
             // 
+            // progessBar
+            // 
+            this.progessBar.Location = new System.Drawing.Point(283, 79);
+            this.progessBar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.progessBar.Name = "progessBar";
+            this.progessBar.Size = new System.Drawing.Size(176, 22);
+            this.progessBar.TabIndex = 17;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(338, 155);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(310, 115);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(40, 33);
+            this.pictureBox1.Size = new System.Drawing.Size(35, 25);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
@@ -102,11 +108,10 @@ namespace client.Forms
             this.btnGeneratePdf.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGeneratePdf.ForeColor = System.Drawing.Color.White;
             this.btnGeneratePdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGeneratePdf.Location = new System.Drawing.Point(323, 141);
-            this.btnGeneratePdf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGeneratePdf.Location = new System.Drawing.Point(300, 106);
             this.btnGeneratePdf.Name = "btnGeneratePdf";
-            this.btnGeneratePdf.Size = new System.Drawing.Size(201, 61);
-            this.btnGeneratePdf.TabIndex = 15;
+            this.btnGeneratePdf.Size = new System.Drawing.Size(159, 46);
+            this.btnGeneratePdf.TabIndex = 0;
             this.btnGeneratePdf.Text = "Generate PDF";
             this.btnGeneratePdf.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGeneratePdf.UseVisualStyleBackColor = false;
@@ -117,11 +122,10 @@ namespace client.Forms
             this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnDelete.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(256, 787);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Location = new System.Drawing.Point(224, 590);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(122, 59);
-            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Size = new System.Drawing.Size(107, 44);
+            this.btnDelete.TabIndex = 7;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -131,11 +135,10 @@ namespace client.Forms
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnUpdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(402, 787);
-            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnUpdate.Location = new System.Drawing.Point(352, 590);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(122, 59);
-            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.Size = new System.Drawing.Size(107, 44);
+            this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Cancel";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnCancel_Click);
@@ -145,81 +148,75 @@ namespace client.Forms
             this.txtTotalSale.BackColor = System.Drawing.Color.White;
             this.txtTotalSale.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalSale.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtTotalSale.Location = new System.Drawing.Point(238, 713);
-            this.txtTotalSale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtTotalSale.Location = new System.Drawing.Point(208, 535);
             this.txtTotalSale.Name = "txtTotalSale";
             this.txtTotalSale.ReadOnly = true;
-            this.txtTotalSale.Size = new System.Drawing.Size(287, 31);
-            this.txtTotalSale.TabIndex = 12;
+            this.txtTotalSale.Size = new System.Drawing.Size(251, 26);
+            this.txtTotalSale.TabIndex = 6;
             // 
             // txtExtraAmount
             // 
             this.txtExtraAmount.BackColor = System.Drawing.Color.White;
             this.txtExtraAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtExtraAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtExtraAmount.Location = new System.Drawing.Point(238, 617);
-            this.txtExtraAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtExtraAmount.Location = new System.Drawing.Point(208, 463);
             this.txtExtraAmount.Name = "txtExtraAmount";
             this.txtExtraAmount.ReadOnly = true;
-            this.txtExtraAmount.Size = new System.Drawing.Size(287, 31);
-            this.txtExtraAmount.TabIndex = 11;
+            this.txtExtraAmount.Size = new System.Drawing.Size(251, 26);
+            this.txtExtraAmount.TabIndex = 5;
             // 
             // txtUpiAmount
             // 
             this.txtUpiAmount.BackColor = System.Drawing.Color.White;
             this.txtUpiAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUpiAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtUpiAmount.Location = new System.Drawing.Point(238, 520);
-            this.txtUpiAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUpiAmount.Location = new System.Drawing.Point(208, 390);
             this.txtUpiAmount.Name = "txtUpiAmount";
             this.txtUpiAmount.ReadOnly = true;
-            this.txtUpiAmount.Size = new System.Drawing.Size(287, 31);
-            this.txtUpiAmount.TabIndex = 10;
+            this.txtUpiAmount.Size = new System.Drawing.Size(251, 26);
+            this.txtUpiAmount.TabIndex = 4;
             // 
             // txtCardAmount
             // 
             this.txtCardAmount.BackColor = System.Drawing.Color.White;
             this.txtCardAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCardAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCardAmount.Location = new System.Drawing.Point(238, 423);
-            this.txtCardAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCardAmount.Location = new System.Drawing.Point(208, 317);
             this.txtCardAmount.Name = "txtCardAmount";
             this.txtCardAmount.ReadOnly = true;
-            this.txtCardAmount.Size = new System.Drawing.Size(287, 31);
-            this.txtCardAmount.TabIndex = 9;
+            this.txtCardAmount.Size = new System.Drawing.Size(251, 26);
+            this.txtCardAmount.TabIndex = 3;
             // 
             // txtSaleReturnAmount
             // 
             this.txtSaleReturnAmount.BackColor = System.Drawing.Color.White;
             this.txtSaleReturnAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSaleReturnAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtSaleReturnAmount.Location = new System.Drawing.Point(238, 323);
-            this.txtSaleReturnAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSaleReturnAmount.Location = new System.Drawing.Point(208, 242);
             this.txtSaleReturnAmount.Name = "txtSaleReturnAmount";
             this.txtSaleReturnAmount.ReadOnly = true;
-            this.txtSaleReturnAmount.Size = new System.Drawing.Size(287, 31);
-            this.txtSaleReturnAmount.TabIndex = 8;
+            this.txtSaleReturnAmount.Size = new System.Drawing.Size(251, 26);
+            this.txtSaleReturnAmount.TabIndex = 2;
             // 
             // txtCashAmount
             // 
             this.txtCashAmount.BackColor = System.Drawing.Color.White;
             this.txtCashAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCashAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.txtCashAmount.Location = new System.Drawing.Point(238, 231);
-            this.txtCashAmount.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCashAmount.Location = new System.Drawing.Point(208, 173);
             this.txtCashAmount.Name = "txtCashAmount";
             this.txtCashAmount.ReadOnly = true;
-            this.txtCashAmount.Size = new System.Drawing.Size(287, 31);
-            this.txtCashAmount.TabIndex = 7;
+            this.txtCashAmount.Size = new System.Drawing.Size(251, 26);
+            this.txtCashAmount.TabIndex = 1;
             // 
             // lblTotalSaleAmount
             // 
             this.lblTotalSaleAmount.AutoSize = true;
             this.lblTotalSaleAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTotalSaleAmount.ForeColor = System.Drawing.Color.Black;
-            this.lblTotalSaleAmount.Location = new System.Drawing.Point(118, 723);
+            this.lblTotalSaleAmount.Location = new System.Drawing.Point(103, 542);
             this.lblTotalSaleAmount.Name = "lblTotalSaleAmount";
-            this.lblTotalSaleAmount.Size = new System.Drawing.Size(98, 23);
+            this.lblTotalSaleAmount.Size = new System.Drawing.Size(81, 19);
             this.lblTotalSaleAmount.TabIndex = 6;
             this.lblTotalSaleAmount.Text = "Total Sale";
             // 
@@ -228,9 +225,9 @@ namespace client.Forms
             this.lblExtraAmount.AutoSize = true;
             this.lblExtraAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblExtraAmount.ForeColor = System.Drawing.Color.Black;
-            this.lblExtraAmount.Location = new System.Drawing.Point(83, 620);
+            this.lblExtraAmount.Location = new System.Drawing.Point(73, 465);
             this.lblExtraAmount.Name = "lblExtraAmount";
-            this.lblExtraAmount.Size = new System.Drawing.Size(137, 23);
+            this.lblExtraAmount.Size = new System.Drawing.Size(111, 19);
             this.lblExtraAmount.TabIndex = 5;
             this.lblExtraAmount.Text = "Extra Amount";
             // 
@@ -239,9 +236,9 @@ namespace client.Forms
             this.lblUpiAmount.AutoSize = true;
             this.lblUpiAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUpiAmount.ForeColor = System.Drawing.Color.Black;
-            this.lblUpiAmount.Location = new System.Drawing.Point(97, 520);
+            this.lblUpiAmount.Location = new System.Drawing.Point(85, 390);
             this.lblUpiAmount.Name = "lblUpiAmount";
-            this.lblUpiAmount.Size = new System.Drawing.Size(120, 23);
+            this.lblUpiAmount.Size = new System.Drawing.Size(99, 19);
             this.lblUpiAmount.TabIndex = 4;
             this.lblUpiAmount.Text = "UPI Amount";
             // 
@@ -250,9 +247,9 @@ namespace client.Forms
             this.lblCardAmount.AutoSize = true;
             this.lblCardAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCardAmount.ForeColor = System.Drawing.Color.Black;
-            this.lblCardAmount.Location = new System.Drawing.Point(93, 425);
+            this.lblCardAmount.Location = new System.Drawing.Point(81, 319);
             this.lblCardAmount.Name = "lblCardAmount";
-            this.lblCardAmount.Size = new System.Drawing.Size(130, 23);
+            this.lblCardAmount.Size = new System.Drawing.Size(107, 19);
             this.lblCardAmount.TabIndex = 3;
             this.lblCardAmount.Text = "Card Amount";
             // 
@@ -261,9 +258,9 @@ namespace client.Forms
             this.lblSaleReturnAmount.AutoSize = true;
             this.lblSaleReturnAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSaleReturnAmount.ForeColor = System.Drawing.Color.Black;
-            this.lblSaleReturnAmount.Location = new System.Drawing.Point(30, 332);
+            this.lblSaleReturnAmount.Location = new System.Drawing.Point(26, 249);
             this.lblSaleReturnAmount.Name = "lblSaleReturnAmount";
-            this.lblSaleReturnAmount.Size = new System.Drawing.Size(193, 23);
+            this.lblSaleReturnAmount.Size = new System.Drawing.Size(158, 19);
             this.lblSaleReturnAmount.TabIndex = 2;
             this.lblSaleReturnAmount.Text = "Sale Return Amount";
             // 
@@ -272,9 +269,9 @@ namespace client.Forms
             this.lblCashAmount.AutoSize = true;
             this.lblCashAmount.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCashAmount.ForeColor = System.Drawing.Color.Black;
-            this.lblCashAmount.Location = new System.Drawing.Point(88, 240);
+            this.lblCashAmount.Location = new System.Drawing.Point(77, 180);
             this.lblCashAmount.Name = "lblCashAmount";
-            this.lblCashAmount.Size = new System.Drawing.Size(130, 23);
+            this.lblCashAmount.Size = new System.Drawing.Size(107, 19);
             this.lblCashAmount.TabIndex = 1;
             this.lblCashAmount.Text = "Cash Amount";
             // 
@@ -283,29 +280,22 @@ namespace client.Forms
             this.lblEditTotalSale.AutoSize = true;
             this.lblEditTotalSale.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblEditTotalSale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblEditTotalSale.Location = new System.Drawing.Point(205, 60);
+            this.lblEditTotalSale.Location = new System.Drawing.Point(179, 45);
             this.lblEditTotalSale.Name = "lblEditTotalSale";
-            this.lblEditTotalSale.Size = new System.Drawing.Size(188, 32);
+            this.lblEditTotalSale.Size = new System.Drawing.Size(149, 25);
             this.lblEditTotalSale.TabIndex = 0;
             this.lblEditTotalSale.Text = "Edit Total Sale";
             // 
-            // progessBar
-            // 
-            this.progessBar.Location = new System.Drawing.Point(323, 105);
-            this.progessBar.Name = "progessBar";
-            this.progessBar.Size = new System.Drawing.Size(201, 29);
-            this.progessBar.TabIndex = 17;
-            // 
             // EditTotalSale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(600, 879);
+            this.ClientSize = new System.Drawing.Size(525, 659);
             this.Controls.Add(this.pnlBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EditTotalSale";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditTotalSale";
             this.Load += new System.EventHandler(this.EditTotalSale_Load);
             this.pnlBody.ResumeLayout(false);

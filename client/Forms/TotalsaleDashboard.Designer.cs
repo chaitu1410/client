@@ -148,6 +148,7 @@ namespace client.Forms
             this.Controls.Add(this.lblTotalSale);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TotalsaleDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Totalsale";
             this.Load += new System.EventHandler(this.Totalsale_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTotalSale)).EndInit();

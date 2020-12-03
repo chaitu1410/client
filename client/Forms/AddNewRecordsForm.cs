@@ -69,9 +69,10 @@ namespace client.Forms
         {
             try
             {
-                if (txtAmount.Text.Trim() == string.Empty)
+                if (txtExtra.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("Please Enter Amount....", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("All fields required....", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtAmount.Focus();
                     return;
                 }
                 Transaction transaction = new Transaction()
@@ -133,6 +134,9 @@ namespace client.Forms
             }
         }
 
-       
+        private void txtExtra_Click(object sender, EventArgs e)
+        {
+            txtExtra.Clear();
+        }
     }
 }

@@ -71,7 +71,7 @@ namespace client.Forms
             this.btnDelete.Location = new System.Drawing.Point(328, 97);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(93, 36);
-            this.btnDelete.TabIndex = 8;
+            this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
@@ -84,7 +84,7 @@ namespace client.Forms
             this.btnCancel.Location = new System.Drawing.Point(306, 369);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(115, 41);
-            this.btnCancel.TabIndex = 7;
+            this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click_1);
@@ -97,7 +97,7 @@ namespace client.Forms
             this.btnUpdate.Location = new System.Drawing.Point(185, 369);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(115, 41);
-            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click_1);
@@ -109,7 +109,7 @@ namespace client.Forms
             this.cbxIsDeposited.Location = new System.Drawing.Point(120, 309);
             this.cbxIsDeposited.Name = "cbxIsDeposited";
             this.cbxIsDeposited.Size = new System.Drawing.Size(119, 23);
-            this.cbxIsDeposited.TabIndex = 5;
+            this.cbxIsDeposited.TabIndex = 2;
             this.cbxIsDeposited.Text = "Is Deposited";
             this.cbxIsDeposited.UseVisualStyleBackColor = true;
             // 
@@ -119,7 +119,7 @@ namespace client.Forms
             this.txtAmount.Location = new System.Drawing.Point(120, 239);
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(301, 26);
-            this.txtAmount.TabIndex = 4;
+            this.txtAmount.TabIndex = 1;
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblAmount
@@ -138,7 +138,7 @@ namespace client.Forms
             this.txtName.Location = new System.Drawing.Point(120, 148);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(301, 26);
-            this.txtName.TabIndex = 2;
+            this.txtName.TabIndex = 0;
             // 
             // lblName
             // 
@@ -169,6 +169,7 @@ namespace client.Forms
             this.Controls.Add(this.pnlBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditBorrowForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditBorrowForm";
             this.Load += new System.EventHandler(this.EditBorrowForm_Load);
             this.pnlBody.ResumeLayout(false);

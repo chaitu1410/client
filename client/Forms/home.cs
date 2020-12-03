@@ -110,5 +110,28 @@ namespace client.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void home_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if(e.Modifiers==Keys.Control && e.KeyCode==Keys.N)
+            {
+                
+                    AddNewRecordsForm frm = new AddNewRecordsForm();
+                    frm.Show();
+              }
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.S)
+            {
+
+                AddSaleReturn addSaleReturn = new AddSaleReturn();
+                addSaleReturn.Show();
+            }
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.B)
+            {
+
+                AddBorrowForm frm = new AddBorrowForm();
+                frm.Show();
+            }
+        }
     }
 }
