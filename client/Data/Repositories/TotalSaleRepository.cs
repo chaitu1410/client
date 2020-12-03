@@ -211,7 +211,7 @@ namespace client.Data
                 Font fntHead = iTextSharp.text.FontFactory.GetFont(FontFactory.HELVETICA, 16, BaseColor.Black);
                 Paragraph prgHeading = new Paragraph();
                 prgHeading.Alignment = Element.ALIGN_CENTER;
-                prgHeading.Add(new Chunk("Client", fntHead));
+                prgHeading.Add(new Chunk("Aditya Medical", fntHead));
                 document.Add(prgHeading);
 
                 //Author
@@ -219,7 +219,8 @@ namespace client.Data
                 BaseFont btnAuthor = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, BaseFont.NOT_EMBEDDED);
                 Font fntAuthor = iTextSharp.text.FontFactory.GetFont(FontFactory.HELVETICA, 8, BaseColor.Black);
                 prgAuthor.Alignment = Element.ALIGN_RIGHT;
-                prgAuthor.Add(new Chunk("Author : Dotnet Mob", fntAuthor));
+                string author = Program.author != null ? Program.author : "Aditya Medical";
+                prgAuthor.Add(new Chunk($"Author : {author}", fntAuthor));
                 prgAuthor.Add(new Chunk("\nDate : " + totalSale.Date.ToShortDateString(), fntAuthor));
                 document.Add(prgAuthor);
 

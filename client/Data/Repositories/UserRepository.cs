@@ -2,29 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace client.Data
 {
     public class UserRepository
     {
-        public User GetUser()
+        public async Task<User> GetUser()
         {
             try
             {
                 AppDbContext _db = new AppDbContext();
-                return _db.Users.First();
+                return await Task.Run(() => _db.Users.First());
             }
             catch (Exception)
             {
                 throw new Exception("Failed to get User Data.");
             }
         }
-        public void Update(User user)
+        public async Task Update(User user)
         {
             try
             {
                 AppDbContext _db = new AppDbContext();
-                _db.Users.Update(user);
+                await Task.Run(() => _db.Users.Update(user));
             }
             catch (Exception)
             {

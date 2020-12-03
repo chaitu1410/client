@@ -29,7 +29,7 @@ namespace client.Data
         [DisplayName("Borrowed Deposit")]
         public bool IsReturned { get; set; } = false;
 
-        [DisplayName("Date Of Borrow Deposite")]
+        [DisplayName("Date Of Deposite")]
         public DateTime ReturnDate { get; set; }
 
         public static List<string> PdfColumnsName = new List<string> { "Customer Name", "Amount" };

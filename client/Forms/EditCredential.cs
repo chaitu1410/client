@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using client.Data;
 
@@ -14,12 +15,11 @@ namespace client.Forms
         bool flag = false;
         UserRepository _userRepository;
         User _user;
-        
+        public static event LoadData OnLoadData;
         public EditCredential()
         {
             InitializeComponent();
             _userRepository = new UserRepository();
-            _user = _userRepository.GetUser();
         }
 
         private void pnlBody_Paint(object sender, PaintEventArgs e)
@@ -45,7 +45,7 @@ namespace client.Forms
             flag = false;
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private async void btnUpdate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -69,7 +69,8 @@ namespace client.Forms
                 }
                 _user.Email = Convert.ToString(txtEmailAddress.Text);
                 _user.Password = Convert.ToString(txtPassword.Text);
-                _userRepository.Update(_user);
+                await _userRepository.Update(_user);
+                OnLoadData();
                 this.Dispose();
             }
             catch (Exception ex) { 
@@ -82,12 +83,12 @@ namespace client.Forms
             this.Dispose();
         }
 
-        private void EditCredential_Load(object sender, EventArgs e)
+        private async void EditCredential_Load(object sender, EventArgs e)
         {
             try
             {
                 this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
-
+                _user = await _userRepository.GetUser();
                 txtEmailAddress.Text = _user.Email.ToString();
                 txtPassword.Text = _user.Password.ToString();
                 txtConfirmPassword.Text = _user.Password.ToString();

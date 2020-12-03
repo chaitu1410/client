@@ -19,6 +19,7 @@ namespace client.Forms
             InitializeComponent();
             _saleReturnRepository = new SaleReturnRepository();
             _saleReturn = new SaleReturn();
+            EditSaleReturn.OnLoadData += Load_Datagridview_Data;
         }
 
         private void dtpSaleReturn_ValueChanged(object sender, EventArgs e)

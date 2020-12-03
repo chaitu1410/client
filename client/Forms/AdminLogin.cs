@@ -11,12 +11,9 @@ namespace client.Forms
 {
     public partial class Admin_login : Form
     {
-        User _user;
-        AuthRepository _authRepository;
         public Admin_login()
         {
             InitializeComponent();
-            _authRepository = new AuthRepository();
         }
 
         private void Admin_login_Load(object sender, EventArgs e)
@@ -24,7 +21,7 @@ namespace client.Forms
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
         }
 
-        private void btnLogin_Click(object sender, EventArgs e)
+        private async void btnLogin_Click(object sender, EventArgs e)
         {
 
             try
@@ -49,9 +46,10 @@ namespace client.Forms
                 }
                 String email = txtEmailAddress.Text;
                 String password = txtPassword.Text;
-                bool result = _authRepository.Authenticate(email, password);
+                bool result = await AuthRepository.Authenticate(email, password);
                 if (result == true)
                 {
+                    Program.author = email;
                     Dashboard dashboard = new Dashboard();
                     dashboard.Show();
                     this.Hide();
@@ -92,9 +90,9 @@ namespace client.Forms
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
         {
-            if (this.txtPassword.TextLength < 8)
+            if (this.txtPassword.TextLength < 5)
             {
-                this.errorProvider1.SetError(this.txtPassword, "Password must be at least 6 character");
+                this.errorProvider1.SetError(this.txtPassword, "Password must be at least 5 character");
                 e.Cancel = true;
             }
             else

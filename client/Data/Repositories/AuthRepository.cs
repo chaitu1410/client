@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace client.Data
 {
     public class AuthRepository
     {
-        public bool Authenticate(string email, string password) 
+        public static async Task<bool> Authenticate(string email, string password) 
         {
             try
             {
                 AppDbContext _db = new AppDbContext();
-                User user = _db.Users.Find(email);
+                User user = await _db.Users.FindAsync(email);
                 if (user != null && user.Password == password)
                 {
                     return true;

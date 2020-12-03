@@ -15,6 +15,8 @@ namespace client.Forms
         SaleReturnRepository _saleReturnRepository;
         SaleReturn _saleReturn;
         bool flag = false;
+        public static event LoadData OnLoadData;
+
         public EditSaleReturn(SaleReturn saleReturn)
         {
             InitializeComponent();
@@ -55,7 +57,7 @@ namespace client.Forms
                 _saleReturn.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
                 _saleReturn.CustomerName = Convert.ToString(txtName.Text);
                 await _saleReturnRepository.Update(_saleReturn);
-
+                OnLoadData();
                 this.Dispose();
             }
             catch (Exception ex)
