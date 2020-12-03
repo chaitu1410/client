@@ -61,6 +61,12 @@ namespace client.Forms
                     txtPassword.Focus();
                     return;
                 }
+                if (txtPassword.Text.Trim() != txtConfirmPassword.Text.Trim())
+                {
+                    MessageBox.Show("Password and Confirm Password should br match.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPassword.Focus();
+                    return;
+                }
                 if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmailAddress.Text, @"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
                 {
                     MessageBox.Show("Invaild Email...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

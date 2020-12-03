@@ -26,6 +26,7 @@ namespace client.Data
             {
                 AppDbContext _db = new AppDbContext();
                 await Task.Run(() => _db.Users.Update(user));
+                await _db.SaveChangesAsync();
             }
             catch (Exception)
             {
