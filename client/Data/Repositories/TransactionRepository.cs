@@ -14,58 +14,107 @@ namespace client.Data
     {
         public async Task<IEnumerable<Transaction>> GetAll()
         {
-            AppDbContext _db = new AppDbContext();
-            return await Task.Run(() => _db.Transactions);
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Transactions);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to load Daily Transaction Records.");
+            }
         }
 
         public async Task<IEnumerable<Transaction>> GetAllByDate(DateTime date) 
         {
-            AppDbContext _db = new AppDbContext();
-            return  await Task.Run(() => _db.Transactions.Where(t => t.Date.Date.Equals(date.Date)).ToList());
-            //return _db.Transactions.Where(t => new DateTime(t.Date.Year, t.Date.Month, t.Date.Day) == new DateTime(date.Year, date.Month, date.Day));
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Transactions.Where(t => t.Date.Date.Equals(date.Date)).ToList());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to load Daily Transaction Records filtered by date.");
+            }
         }
 
         public async Task Add(Transaction transaction) 
         {
-            AppDbContext _db = new AppDbContext();
-            ValidationContext context = new ValidationContext(transaction, null, null);
-            List<ValidationResult> validationResults = new List<ValidationResult>();
-            bool isValid = Validator.TryValidateObject(transaction, context, validationResults);
-
-            if (!isValid) 
+            try
             {
-                throw new InvaliedValuesException(validationResults.First().ErrorMessage);
+                AppDbContext _db = new AppDbContext();
+                ValidationContext context = new ValidationContext(transaction, null, null);
+                List<ValidationResult> validationResults = new List<ValidationResult>();
+                bool isValid = Validator.TryValidateObject(transaction, context, validationResults);
+
+                if (!isValid)
+                {
+                    throw new InvaliedValuesException(validationResults.First().ErrorMessage);
+                }
+                await _db.Transactions.AddAsync(transaction);
+                await _db.SaveChangesAsync();
             }
-             await _db.Transactions.AddAsync(transaction);
-             await _db.SaveChangesAsync();
+            catch (InvaliedValuesException ex)
+            {
+                throw ex;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Add Daily Transaction Record.");
+            }
         }
 
         public async Task<Transaction> Find(int id) 
         {
-            AppDbContext _db = new AppDbContext();
-            return await _db.Transactions.FindAsync(id);
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await _db.Transactions.FindAsync(id);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Find Daily Transaction Record.");
+            }
         }
 
         public async Task Update(Transaction transaction) 
         {
-            AppDbContext _db = new AppDbContext();
-            ValidationContext context = new ValidationContext(transaction, null, null);
-            List<ValidationResult> validationResults = new List<ValidationResult>();
-            bool isValid = Validator.TryValidateObject(transaction, context, validationResults);
-
-            if (!isValid)
+            try
             {
-                throw new InvaliedValuesException(validationResults.First().ErrorMessage);
+                AppDbContext _db = new AppDbContext();
+                ValidationContext context = new ValidationContext(transaction, null, null);
+                List<ValidationResult> validationResults = new List<ValidationResult>();
+                bool isValid = Validator.TryValidateObject(transaction, context, validationResults);
+
+                if (!isValid)
+                {
+                    throw new InvaliedValuesException(validationResults.First().ErrorMessage);
+                }
+                _db.Transactions.Update(transaction);
+                await _db.SaveChangesAsync();
             }
-            _db.Transactions.Update(transaction);
-            await _db.SaveChangesAsync();
+            catch(InvaliedValuesException ex)
+            {
+                throw ex;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Update Daily Transaction Record.");
+            }
         }
 
         public async Task Remove(Transaction transaction) 
         {
-            AppDbContext _db = new AppDbContext();
-            _db.Transactions.Remove(transaction);
-            await _db.SaveChangesAsync();
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                _db.Transactions.Remove(transaction);
+                await _db.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Remove Daily Transaction Record.");
+            }
         }
     }
 }

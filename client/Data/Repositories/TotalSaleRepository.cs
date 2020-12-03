@@ -15,16 +15,29 @@ namespace client.Data
 
         public async Task<IEnumerable<TotalSale>> GetAll()
         {
-            AppDbContext _db = new AppDbContext();
-            return await Task.Run(() => _db.TotalSales.OrderByDescending(row => row.Date).ToList());
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.TotalSales.OrderByDescending(row => row.Date).ToList());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed To Load Total Sale Records.");
+            }
         }
 
         public async Task<IEnumerable<TotalSale>> GetByDate(DateTime date)
         {
-            AppDbContext _db = new AppDbContext();
-            await CreateTotalSale(date);
-            return await Task.Run(() => _db.TotalSales.Where(row => row.Date.Date.Equals(date.Date)).ToList());
-            //return _db.Transactions.Where(t => new DateTime(t.Date.Year, t.Date.Month, t.Date.Day) == new DateTime(date.Year, date.Month, date.Day));
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                await CreateTotalSale(date);
+                return await Task.Run(() => _db.TotalSales.Where(row => row.Date.Date.Equals(date.Date)).ToList());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed To Load Total Sale Record filtered by Date.");
+            }
         }
 
         private async Task<TotalSale> FindByDate(DateTime date)
@@ -49,8 +62,15 @@ namespace client.Data
 
         public async Task<TotalSale> Find(int id)
         {
-            AppDbContext _db = new AppDbContext();
-            return await _db.TotalSales.FindAsync(id);
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await _db.TotalSales.FindAsync(id);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed To Find Total Sale Records.");
+            }
         }
 
         private async Task Update(TotalSale totalSale)
@@ -70,9 +90,16 @@ namespace client.Data
 
         public async Task Remove(TotalSale totalSale)
         {
-            AppDbContext _db = new AppDbContext();
-            _db.TotalSales.Remove(totalSale);
-            await _db.SaveChangesAsync();
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                _db.TotalSales.Remove(totalSale);
+                await _db.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed To Remove Total Sale Records.");
+            }
         }
 
         private async Task<TotalSale> CalculateTotalSale(DateTime date)
@@ -84,7 +111,7 @@ namespace client.Data
             IEnumerable<Transaction> transactions = await transactionRepository.GetAllByDate(date);
             List<Borrow> borrowsUndeposited = await borrowRepository.GetAllUndepositedByDate(date);
             List<Borrow> borrowsDeposited = await borrowRepository.GetAllDepositedByDate(date);
-            IEnumerable<SaleReturn> saleReturns = saleReturnRepository.GetAllByDate(date);
+            IEnumerable<SaleReturn> saleReturns = await saleReturnRepository.GetAllByDate(date);
 
             double CashPayment = await Task.Run(() => (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Cash).Sum(row => row.Amount));
             double CardPayment = await Task.Run(() => (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Card).Sum(row => row.Amount));
@@ -324,9 +351,9 @@ namespace client.Data
                         cdTable.AddCell(cell);
                     }
                 }
-                await Task.Run(() => document.Add(cdTable));
+                document.Add(cdTable);
                 /////////////////////////////////////////// END Credit Deposit Table ////////////////////////////////////////
-                document.Close();
+                await Task.Run(() => document.Close());
             }
             catch (DirectoryNotFoundException)
             {
@@ -342,7 +369,7 @@ namespace client.Data
                 {
                     if (document.IsOpen())
                     {
-                        document.Close();
+                        await Task.Run(() => document.Close());
                     }
                 }
             }

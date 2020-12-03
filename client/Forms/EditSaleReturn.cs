@@ -22,37 +22,46 @@ namespace client.Forms
             _saleReturn = saleReturn;
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private async void btnDelete_Click(object sender, EventArgs e)
         {
-            _saleReturnRepository.Remove(_saleReturn);
-            this.Dispose();
+            try
+            {
+                await _saleReturnRepository.Remove(_saleReturn);
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private async void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
+            try
             {
-                MessageBox.Show("All fields required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtName.Focus();
-                return;
+                if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("All fields required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtName.Focus();
+                    return;
+                }
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtName.Text, "^[a-zA-Z]"))
+                {
+                    MessageBox.Show("Invaild Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtName.Focus();
+                    txtName.Text.Remove(txtName.Text.Length - 1);
+                    return;
+                }
+                _saleReturn.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
+                _saleReturn.CustomerName = Convert.ToString(txtName.Text);
+                await _saleReturnRepository.Update(_saleReturn);
+
+                this.Dispose();
             }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtName.Text, "^[a-zA-Z]"))
+            catch (Exception ex)
             {
-                MessageBox.Show("Invaild Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtName.Focus();
-                txtName.Text.Remove(txtName.Text.Length - 1);
-                return;
+                MessageBox.Show(ex.Message);
             }
-            _saleReturn.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
-            _saleReturn.CustomerName = Convert.ToString(txtName.Text);
-
-
-
-
-            _saleReturnRepository.Update(_saleReturn);
-
-            this.Dispose();
-
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -62,8 +71,15 @@ namespace client.Forms
 
         private void EditSaleReturn_Load(object sender, EventArgs e)
         {
-            txtAmount.Text = _saleReturn.Amount.ToString();
-            txtName.Text = _saleReturn.CustomerName.ToString();
+            try
+            {
+                txtAmount.Text = _saleReturn.Amount.ToString();
+                txtName.Text = _saleReturn.CustomerName.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void pnlBody_Paint(object sender, PaintEventArgs e)

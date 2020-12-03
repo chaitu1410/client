@@ -24,8 +24,15 @@ namespace client.Forms
 
         private async void btnDelete_Click(object sender, EventArgs e)
         {
-            await _totalsalerepository.Remove(_totalsale);
-            this.Dispose();
+            try
+            {
+                await _totalsalerepository.Remove(_totalsale);
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -35,9 +42,17 @@ namespace client.Forms
 
         private async void btnGeneratePdf_Click(object sender, EventArgs e)
         {
-            progessBar.Visible = true;
-            await _totalsalerepository.GeneratePdf(_totalsale);
-            progessBar.Visible = false;
+            try
+            {
+                progessBar.Visible = true;
+                await _totalsalerepository.GeneratePdf(_totalsale);
+                progessBar.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                progessBar.Visible = false;
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void pnlBody_Paint(object sender, PaintEventArgs e)
@@ -65,12 +80,19 @@ namespace client.Forms
 
         private void EditTotalSale_Load(object sender, EventArgs e)
         {
-            txtCashAmount.Text = _totalsale.CashAmount.ToString();
-            txtCardAmount.Text = _totalsale.CardAmount.ToString();
-            txtUpiAmount.Text = _totalsale.OnlineAmount.ToString();
-            txtSaleReturnAmount.Text = _totalsale.SaleReturnAmount.ToString();
-            txtTotalSale.Text = _totalsale.TotalSaleAmount.ToString();
-            txtExtraAmount.Text = _totalsale.ExtraAmount.ToString();
+            try
+            {
+                txtCashAmount.Text = _totalsale.CashAmount.ToString();
+                txtCardAmount.Text = _totalsale.CardAmount.ToString();
+                txtUpiAmount.Text = _totalsale.OnlineAmount.ToString();
+                txtSaleReturnAmount.Text = _totalsale.SaleReturnAmount.ToString();
+                txtTotalSale.Text = _totalsale.TotalSaleAmount.ToString();
+                txtExtraAmount.Text = _totalsale.ExtraAmount.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }

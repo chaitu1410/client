@@ -43,30 +43,37 @@ namespace client.Forms
             flag = false;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private async void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
+            try
             {
-                MessageBox.Show("All fields required....", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtName.Focus();
-                return;
-            }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtName.Text, "^[a-zA-Z]"))
-            {
-                MessageBox.Show("Invaild Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtName.Focus();
-                txtName.Text.Remove(txtName.Text.Length - 1);
-                return;
-            }
-            SaleReturn _saleReturn = new SaleReturn()
-            {
-                Amount = (decimal)Convert.ToDouble(txtAmount.Text),
-                CustomerName = Convert.ToString(txtName.Text),
-                Date = DateTime.Now
+                if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("All fields required....", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtName.Focus();
+                    return;
+                }
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtName.Text, "^[a-zA-Z]"))
+                {
+                    MessageBox.Show("Invaild Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtName.Focus();
+                    txtName.Text.Remove(txtName.Text.Length - 1);
+                    return;
+                }
+                SaleReturn _saleReturn = new SaleReturn()
+                {
+                    Amount = (decimal)Convert.ToDouble(txtAmount.Text),
+                    CustomerName = Convert.ToString(txtName.Text),
+                    Date = DateTime.Now
 
-            };
-            _saleReturnRepository.Add(_saleReturn);
-            this.Dispose();
+                };
+                await _saleReturnRepository.Add(_saleReturn);
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

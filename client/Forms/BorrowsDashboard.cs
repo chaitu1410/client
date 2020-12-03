@@ -33,73 +33,108 @@ namespace client.Forms
 
         private async Task Load_Datagridview1_Data_By_Date()
         {
-            pbxBorrowingBalance.Visible = true;
-            DateTime dt = Convert.ToDateTime(dtpBorrowingBalance.Value);
-            String s1 = dt.ToString("yyyy-MM-dd");
-            DateTime dtnew = Convert.ToDateTime(s1);
+            try
+            {
+                pbxBorrowingBalance.Visible = true;
+                DateTime dt = Convert.ToDateTime(dtpBorrowingBalance.Value);
+                String s1 = dt.ToString("yyyy-MM-dd");
+                DateTime dtnew = Convert.ToDateTime(s1);
 
-            var source = new BindingSource();
-            source.DataSource = await _borrowRepository.GetAllUndepositedByDate(dtnew);
-            dgvBorrowingBalance.AutoGenerateColumns = true;
-            dgvBorrowingBalance.DataSource = source;
-            dgvBorrowingBalance.Columns["Id"].Visible = false;
-            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
-            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
-            pbxBorrowingBalance.Visible = false ;
+                var source = new BindingSource();
+                source.DataSource = await _borrowRepository.GetAllUndepositedByDate(dtnew);
+                dgvBorrowingBalance.AutoGenerateColumns = true;
+                dgvBorrowingBalance.DataSource = source;
+                dgvBorrowingBalance.Columns["Id"].Visible = false;
+                dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
+                dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+                pbxBorrowingBalance.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private async Task Load_Datagridview2_Data_By_Date()
         {
-            pbxCreditDeposit.Visible = true;
-            DateTime dt = Convert.ToDateTime(dtpCreditDeposit.Value);
-            String s1 = dt.ToString("yyyy-MM-dd");
-            DateTime dtnew = Convert.ToDateTime(s1);
+            try
+            {
+                pbxCreditDeposit.Visible = true;
+                DateTime dt = Convert.ToDateTime(dtpCreditDeposit.Value);
+                String s1 = dt.ToString("yyyy-MM-dd");
+                DateTime dtnew = Convert.ToDateTime(s1);
 
-            var source = new BindingSource();
-            source.DataSource = await _borrowRepository.GetAllDepositedByDate(dtnew);
-            dgvBorrowingBalance.AutoGenerateColumns = true;
-            dgvCreditDeposit.DataSource = source;
-            dgvCreditDeposit.Columns["Id"].Visible = false;
-            dgvCreditDeposit.Columns["IsReturned"].Visible = false;
-            pbxCreditDeposit.Visible = false;
+                var source = new BindingSource();
+                source.DataSource = await _borrowRepository.GetAllDepositedByDate(dtnew);
+                dgvBorrowingBalance.AutoGenerateColumns = true;
+                dgvCreditDeposit.DataSource = source;
+                dgvCreditDeposit.Columns["Id"].Visible = false;
+                dgvCreditDeposit.Columns["IsReturned"].Visible = false;
+                pbxCreditDeposit.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async void dgvBorrowingBalance_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvBorrowingBalance.CurrentRow != null)
+            try
             {
-                var row = dgvBorrowingBalance.CurrentRow.Cells;
-                int id = Convert.ToInt32(row["Id"].Value);
-                //Console.WriteLine(id);
-                Borrow  borrow = await _borrowRepository.Find(id);
-                EditBorrowForm edf = new EditBorrowForm(borrow);
-                edf.Show();
+                if (dgvBorrowingBalance.CurrentRow != null)
+                {
+                    var row = dgvBorrowingBalance.CurrentRow.Cells;
+                    int id = Convert.ToInt32(row["Id"].Value);
+                    //Console.WriteLine(id);
+                    Borrow borrow = await _borrowRepository.Find(id);
+                    EditBorrowForm edf = new EditBorrowForm(borrow);
+                    edf.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
         private async Task Load_Datagridview1_Data()
         {
-            pbxBorrowingBalance.Visible = true;
-            var source = new BindingSource();
-            source.DataSource = await _borrowRepository.GetAllUndeposited();
-            dgvBorrowingBalance.AutoGenerateColumns = true;
-            dgvBorrowingBalance.DataSource = source;
-            dgvBorrowingBalance.Columns["Id"].Visible = false;
-            dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
-            dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
-            pbxBorrowingBalance.Visible = false;
+            try
+            {
+                pbxBorrowingBalance.Visible = true;
+                var source = new BindingSource();
+                source.DataSource = await _borrowRepository.GetAllUndeposited();
+                dgvBorrowingBalance.AutoGenerateColumns = true;
+                dgvBorrowingBalance.DataSource = source;
+                dgvBorrowingBalance.Columns["Id"].Visible = false;
+                dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
+                dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+                pbxBorrowingBalance.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async Task Load_Datagridview2_Data()
         {
-            pbxCreditDeposit.Visible = true;
-            var source = new BindingSource();
-            source.DataSource = await _borrowRepository.GetAllDeposited();
-            dgvCreditDeposit.AutoGenerateColumns = true;
-            dgvCreditDeposit.DataSource = source;
-            dgvCreditDeposit.Columns["Id"].Visible = false;
-            dgvCreditDeposit.Columns["IsReturned"].Visible = false;
-            /// dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
-            pbxCreditDeposit.Visible = false;
+            try
+            {
+                pbxCreditDeposit.Visible = true;
+                var source = new BindingSource();
+                source.DataSource = await _borrowRepository.GetAllDeposited();
+                dgvCreditDeposit.AutoGenerateColumns = true;
+                dgvCreditDeposit.DataSource = source;
+                dgvCreditDeposit.Columns["Id"].Visible = false;
+                dgvCreditDeposit.Columns["IsReturned"].Visible = false;
+                /// dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+                pbxCreditDeposit.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void BorrowsDashboard_MouseDown(object sender, MouseEventArgs e)

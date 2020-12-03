@@ -26,25 +26,40 @@ namespace client.Forms
         }
         private void Load_Datagridview_Data()
         {
-            var source = new BindingSource();
-            source.DataSource = _userRepository.GetUser();
-            dgvEditCredentials.AutoGenerateColumns = true;
-            dgvEditCredentials.DataSource = source;
+            try
+            {
+                var source = new BindingSource();
+                source.DataSource = _userRepository.GetUser();
+                dgvEditCredentials.AutoGenerateColumns = true;
+                dgvEditCredentials.DataSource = source;
+                dgvEditCredentials.Columns["Id"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             //dgvEditCredentials.Columns["Id"].Visible = false;
         }
 
         private void dgvEditCredentials_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvEditCredentials.CurrentRow != null)
+            try
             {
-                var row = dgvEditCredentials.CurrentRow.Cells;
-                // int id = Convert.ToInt32(row["TransactionId"].Value);
-                //Console.WriteLine(id);
+                if (dgvEditCredentials.CurrentRow != null)
+                {
+                    var row = dgvEditCredentials.CurrentRow.Cells;
+                    // int id = Convert.ToInt32(row["TransactionId"].Value);
+                    //Console.WriteLine(id);
 
-                //Transaction transaction = await _transactionRepository.Find(id);
-                EditCredential editCredential = new EditCredential();
-                editCredential.Show();
+                    //Transaction transaction = await _transactionRepository.Find(id);
+                    EditCredential editCredential = new EditCredential();
+                    editCredential.Show();
 
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

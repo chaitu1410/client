@@ -31,7 +31,14 @@ namespace client.Forms
 
         private void AddNewRecordsForm_Load(object sender, EventArgs e)
         {
-            SetupComboBox();
+            try
+            {
+                SetupComboBox();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void SetupComboBox()
@@ -60,21 +67,28 @@ namespace client.Forms
 
         private async void btnSave_Click_1(object sender, EventArgs e)
         {
-            if(txtAmount.Text.Trim()==string.Empty)
+            try
             {
-                MessageBox.Show("Please Enter Amount....", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
+                if (txtAmount.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("Please Enter Amount....", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                Transaction transaction = new Transaction()
+                {
+                    Amount = (decimal)Convert.ToDouble(txtAmount.Text),
+                    Extras = (double)Convert.ToDouble(txtExtra.Text),
+                    PaymentMethod = GetSelectedPaymentMethod(),
+                    Date = DateTime.Now
+                };
+                await _transactionRepository.Add(transaction);
+                OnLoadData();
+                this.Dispose();
             }
-            Transaction transaction = new Transaction()
+            catch (Exception ex)
             {
-                Amount = (decimal)Convert.ToDouble(txtAmount.Text),
-                Extras = (double)Convert.ToDouble(txtExtra.Text),
-                PaymentMethod = GetSelectedPaymentMethod(),
-                Date = DateTime.Now
-            };
-            await _transactionRepository.Add(transaction);
-            OnLoadData();
-            this.Dispose();
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void pnlBody_MouseDown(object sender, MouseEventArgs e)

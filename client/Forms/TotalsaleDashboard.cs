@@ -25,14 +25,21 @@ namespace client.Forms
 
         private async void dgvTotalSale_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvTotalSale.CurrentRow != null)
+            try
             {
-                var row = dgvTotalSale.CurrentRow.Cells;
-                int id = Convert.ToInt32(row["Id"].Value);
-                //Console.WriteLine(id);
-                TotalSale _totalsale = await _totalsalerepository.Find(id);
-                EditTotalSale ets = new EditTotalSale(_totalsale);
-                ets.Show();
+                if (dgvTotalSale.CurrentRow != null)
+                {
+                    var row = dgvTotalSale.CurrentRow.Cells;
+                    int id = Convert.ToInt32(row["Id"].Value);
+                    //Console.WriteLine(id);
+                    TotalSale _totalsale = await _totalsalerepository.Find(id);
+                    EditTotalSale ets = new EditTotalSale(_totalsale);
+                    ets.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -48,27 +55,40 @@ namespace client.Forms
 
         private async void Load_Datagridview_Data()
         {
-            pbxTotalSale.Visible = true;
-            DateTime dt = Convert.ToDateTime(dtpTotalSale.Value);
-            String s1 = dt.ToString("yyyy-MM-dd");
-            DateTime dtnew = Convert.ToDateTime(s1);
+            try
+            {
+                pbxTotalSale.Visible = true;
+                DateTime dt = Convert.ToDateTime(dtpTotalSale.Value);
+                String s1 = dt.ToString("yyyy-MM-dd");
+                DateTime dtnew = Convert.ToDateTime(s1);
 
-            var source = new BindingSource();
-            source.DataSource =  await _totalsalerepository.GetByDate(dtnew);
-            dgvTotalSale.AutoGenerateColumns = true;
-            dgvTotalSale.DataSource = source;
-            dgvTotalSale.Columns["Id"].Visible = false;
-            pbxTotalSale.Visible = false;
+                var source = new BindingSource();
+                source.DataSource = await _totalsalerepository.GetByDate(dtnew);
+                dgvTotalSale.AutoGenerateColumns = true;
+                dgvTotalSale.DataSource = source;
+                dgvTotalSale.Columns["Id"].Visible = false;
+                pbxTotalSale.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async void btnClearFilter_Click(object sender, EventArgs e)
         {
-            var source = new BindingSource();
-            source.DataSource = await _totalsalerepository.GetAll();
-            dgvTotalSale.AutoGenerateColumns = true;
-            dgvTotalSale.DataSource = source;
-            dgvTotalSale.Columns["Id"].Visible = false;
-            
+            try
+            {
+                var source = new BindingSource();
+                source.DataSource = await _totalsalerepository.GetAll();
+                dgvTotalSale.AutoGenerateColumns = true;
+                dgvTotalSale.DataSource = source;
+                dgvTotalSale.Columns["Id"].Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

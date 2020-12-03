@@ -61,13 +61,20 @@ namespace client.Forms
 
         private void btnViewBorrows_Click(object sender, EventArgs e)
         {
-            pnlBody.Controls.Clear();
-            BorrowsDashboard bd = new BorrowsDashboard();
-            bd.TopLevel = false;
-            pnlBody.Controls.Add(bd);
-            bd.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            bd.Dock = DockStyle.Fill;
-            bd.Show();
+            try
+            {
+                pnlBody.Controls.Clear();
+                BorrowsDashboard bd = new BorrowsDashboard();
+                bd.TopLevel = false;
+                pnlBody.Controls.Add(bd);
+                bd.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                bd.Dock = DockStyle.Fill;
+                bd.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnHome_MouseEnter(object sender, EventArgs e)
@@ -84,33 +91,54 @@ namespace client.Forms
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            pnlBody.Controls.Clear();
-            home home = new home();
-            home.TopLevel = false;
-            pnlBody.Controls.Add(home);
-            home.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            home.Dock = DockStyle.Fill;
-            home.Show();
+            try
+            {
+                pnlBody.Controls.Clear();
+                home home = new home();
+                home.TopLevel = false;
+                pnlBody.Controls.Add(home);
+                home.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                home.Dock = DockStyle.Fill;
+                home.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         private void btnViewTotalSale_Click(object sender, EventArgs e)
         {
-            pnlBody.Controls.Clear();
-            TotalsaleDashboard totalsale = new TotalsaleDashboard();
-            totalsale.TopLevel = false;
-            pnlBody.Controls.Add(totalsale);
-            totalsale.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            totalsale.Dock = DockStyle.Fill;
-            totalsale.Show();
+            try
+            {
+                pnlBody.Controls.Clear();
+                TotalsaleDashboard totalsale = new TotalsaleDashboard();
+                totalsale.TopLevel = false;
+                pnlBody.Controls.Add(totalsale);
+                totalsale.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                totalsale.Dock = DockStyle.Fill;
+                totalsale.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            home home = new home();
-            home.TopLevel = false;
-            pnlBody.Controls.Add(home);
-            home.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            home.Dock = DockStyle.Fill;
-            home.Show();
+            try
+            {
+                home home = new home();
+                home.TopLevel = false;
+                pnlBody.Controls.Add(home);
+                home.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                home.Dock = DockStyle.Fill;
+                home.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnClose_MouseEnter(object sender, EventArgs e)
@@ -157,13 +185,20 @@ namespace client.Forms
 
         private void btnSaleReturn_Click(object sender, EventArgs e)
         {
-            pnlBody.Controls.Clear();
-            SaleReturnDashboard saleReturnDashboard = new SaleReturnDashboard();
-            saleReturnDashboard.TopLevel = false;
-            pnlBody.Controls.Add(saleReturnDashboard);
-            saleReturnDashboard.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            saleReturnDashboard.Dock = DockStyle.Fill;
-            saleReturnDashboard.Show();
+            try
+            {
+                pnlBody.Controls.Clear();
+                SaleReturnDashboard saleReturnDashboard = new SaleReturnDashboard();
+                saleReturnDashboard.TopLevel = false;
+                pnlBody.Controls.Add(saleReturnDashboard);
+                saleReturnDashboard.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                saleReturnDashboard.Dock = DockStyle.Fill;
+                saleReturnDashboard.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnSaleReturn_MouseEnter(object sender, EventArgs e)
@@ -179,13 +214,20 @@ namespace client.Forms
 
         private void btnCredentials_Click(object sender, EventArgs e)
         {
-            pnlBody.Controls.Clear();
-            EditCredentialsDashboard editCredentialsDashboard = new EditCredentialsDashboard();
-            editCredentialsDashboard.TopLevel = false;
-            pnlBody.Controls.Add(editCredentialsDashboard);
-            editCredentialsDashboard.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            editCredentialsDashboard.Dock = DockStyle.Fill;
-            editCredentialsDashboard.Show();
+            try
+            {
+                pnlBody.Controls.Clear();
+                EditCredentialsDashboard editCredentialsDashboard = new EditCredentialsDashboard();
+                editCredentialsDashboard.TopLevel = false;
+                pnlBody.Controls.Add(editCredentialsDashboard);
+                editCredentialsDashboard.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                editCredentialsDashboard.Dock = DockStyle.Fill;
+                editCredentialsDashboard.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

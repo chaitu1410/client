@@ -11,85 +11,164 @@ namespace client.Data
     {
         public async Task<IEnumerable<Borrow>> GetAll() 
         {
-            AppDbContext _db = new AppDbContext();
-            return await Task.Run(() => _db.Borrows.ToList());
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.ToList());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Get Borrow Records.");
+            }
         }
 
         public async Task<IEnumerable<Borrow>> GetAllDeposited()
         {
-            AppDbContext _db = new AppDbContext();
-            return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == true).ToList());
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == true).ToList());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Get Credit Deposit Records.");
+            }
         }
 
         public async Task<IEnumerable<Borrow>> GetAllUndeposited()
         {
-            AppDbContext _db = new AppDbContext();
-            return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == false).ToList());
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == false).ToList());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Get Borrowing Balance Records.");
+            }
         }
 
         public async Task<IEnumerable<Borrow>> GetAllByDate(DateTime date)
         {
-            AppDbContext _db = new AppDbContext();
-            return await Task.Run(() => _db.Borrows.Where(t => t.Date.Date.Equals(date.Date)).ToList());
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.Where(t => t.Date.Date.Equals(date.Date)).ToList());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Get Borrow Records filtered by date.");
+            }
         }
 
         public async Task<List<Borrow>> GetAllDepositedByDate(DateTime date)
         {
-            AppDbContext _db = new AppDbContext();
-            return await Task.Run(() => _db.Borrows.Where(row => row.ReturnDate.Date.Equals(date.Date) && row.IsReturned == true).ToList());
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.Where(row => row.ReturnDate.Date.Equals(date.Date) && row.IsReturned == true).ToList());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Get Credit Deposit Records filtered by date.");
+            }
         }
 
         public async Task<List<Borrow>> GetAllUndepositedByDate(DateTime date)
         {
-            AppDbContext _db = new AppDbContext();
-            return await Task.Run(() => _db.Borrows.Where(row => row.Date.Date.Equals(date.Date) && row.IsReturned == false).ToList());
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.Where(row => row.Date.Date.Equals(date.Date) && row.IsReturned == false).ToList());
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Failed to Get Borrowing Balance Records filtered by date.");
+            }
         }
 
         public async Task Add(Borrow borrow) 
         {
-            AppDbContext _db = new AppDbContext();
-            ValidationContext context = new ValidationContext(borrow, null, null);
-            List<ValidationResult> validationResults = new List<ValidationResult>();
-            bool isValid = Validator.TryValidateObject(borrow, context, validationResults);
-
-            if (!isValid)
+            try
             {
-                throw new InvaliedValuesException(validationResults.First().ErrorMessage);
+                AppDbContext _db = new AppDbContext();
+                ValidationContext context = new ValidationContext(borrow, null, null);
+                List<ValidationResult> validationResults = new List<ValidationResult>();
+                bool isValid = Validator.TryValidateObject(borrow, context, validationResults);
+
+                if (!isValid)
+                {
+                    throw new InvaliedValuesException(validationResults.First().ErrorMessage);
+                }
+                await _db.Borrows.AddAsync(borrow);
+                await _db.SaveChangesAsync();
             }
-            await _db.Borrows.AddAsync(borrow);
-            await _db.SaveChangesAsync();
+            catch (InvaliedValuesException ex)
+            {
+                throw ex;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Add Borrow Record.");
+            }
         }
 
         public async Task Update(Borrow borrow) 
         {
-            AppDbContext _db = new AppDbContext();
-            ValidationContext context = new ValidationContext(borrow, null, null);
-            List<ValidationResult> validationResults = new List<ValidationResult>();
-            bool isValid = Validator.TryValidateObject(borrow, context, validationResults);
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                ValidationContext context = new ValidationContext(borrow, null, null);
+                List<ValidationResult> validationResults = new List<ValidationResult>();
+                bool isValid = Validator.TryValidateObject(borrow, context, validationResults);
 
-            if (!isValid)
-            {
-                throw new InvaliedValuesException(validationResults.First().ErrorMessage);
+                if (!isValid)
+                {
+                    throw new InvaliedValuesException(validationResults.First().ErrorMessage);
+                }
+                if (borrow.IsReturned && borrow.ReturnDate.Equals(new DateTime(0001, 01, 01)))
+                {
+                    borrow.ReturnDate = DateTime.Now;
+                }
+                await Task.Run(() => _db.Borrows.Update(borrow));
+                await _db.SaveChangesAsync();
             }
-            if (borrow.IsReturned && borrow.ReturnDate.Equals(new DateTime(0001,01,01)))
+            catch (InvaliedValuesException ex)
             {
-                borrow.ReturnDate = DateTime.Now;
+                throw ex;
             }
-            _db.Borrows.Update(borrow);
-            await _db.SaveChangesAsync();
+            catch (Exception)
+            {
+                throw new Exception("Failed to Update Borrow Record.");
+            }
         }
 
         public async Task<Borrow> Find(int id)
         {
-            AppDbContext _db = new AppDbContext();
-            return await _db.Borrows.FindAsync(id);
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await _db.Borrows.FindAsync(id);
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Find Borrow Record.");
+            }
         }
 
         public async Task Remove(Borrow borrow)
         {
-            AppDbContext _db = new AppDbContext();
-            _db.Borrows.Remove(borrow);
-            await _db.SaveChangesAsync();
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                await Task.Run(() => _db.Borrows.Remove(borrow));
+                await _db.SaveChangesAsync();
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Remove Borrow Record.");
+            }
         }
     }
 }

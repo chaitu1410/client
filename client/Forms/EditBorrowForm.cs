@@ -20,18 +20,25 @@ namespace client.Forms
         {
             InitializeComponent();
             _borrowRepository = new BorrowRepository();
-            _borrow =borrow;
+            _borrow = borrow;
            
         }
 
         private void EditBorrowForm_Load(object sender, EventArgs e)
         {
-            txtAmount.Text = _borrow.Amount.ToString();
-            txtName.Text = _borrow.CustomerName.ToString();
-            cbxIsDeposited.Checked = _borrow.IsReturned;
-            if (_borrow.IsReturned)
+            try
             {
-                cbxIsDeposited.Enabled = false;
+                txtAmount.Text = _borrow.Amount.ToString();
+                txtName.Text = _borrow.CustomerName.ToString();
+                cbxIsDeposited.Checked = _borrow.IsReturned;
+                if (_borrow.IsReturned)
+                {
+                    cbxIsDeposited.Enabled = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -39,35 +46,47 @@ namespace client.Forms
 
         private async void btnDelete_Click_1(object sender, EventArgs e)
         {
-            await _borrowRepository.Remove(_borrow);
-            OnLoadData();
-            this.Dispose();
+            try
+            {
+                await _borrowRepository.Remove(_borrow);
+                OnLoadData();
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
+            try
             {
-                MessageBox.Show("All fields required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtName.Focus();
-                return;
+                if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("All fields required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtName.Focus();
+                    return;
+                }
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtName.Text, "^[a-zA-Z]"))
+                {
+                    MessageBox.Show("Invaild Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtName.Focus();
+                    txtName.Text.Remove(txtName.Text.Length - 1);
+                    return;
+                }
+                _borrow.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
+                _borrow.CustomerName = Convert.ToString(txtName.Text);
+                _borrow.IsReturned = cbxIsDeposited.Checked;
+
+                await _borrowRepository.Update(_borrow);
+                OnLoadData();
+                this.Dispose();
             }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtName.Text, "^[a-zA-Z]"))
+            catch (Exception ex)
             {
-                MessageBox.Show("Invaild Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtName.Focus();
-                txtName.Text.Remove(txtName.Text.Length - 1);
-                return;
+                MessageBox.Show(ex.Message);
             }
-            _borrow.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
-            _borrow.CustomerName = Convert.ToString(txtName.Text);
-            _borrow.IsReturned = cbxIsDeposited.Checked;
-
-
-
-            await _borrowRepository.Update(_borrow);
-            OnLoadData();
-            this.Dispose();
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)

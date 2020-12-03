@@ -25,10 +25,17 @@ namespace client.Forms
         bool flag = false;
         private void EditRecordsForm_Load(object sender, EventArgs e)
         {
-            SetupComboBox();
-            txtAmount.Text = _transaction.Amount.ToString();
-            txtExtra.Text = _transaction.Extras.ToString();
-            cbxPaymentMethod.SelectedItem = _transaction.PaymentMethod;
+            try
+            {
+                SetupComboBox();
+                txtAmount.Text = _transaction.Amount.ToString();
+                txtExtra.Text = _transaction.Extras.ToString();
+                cbxPaymentMethod.SelectedItem = _transaction.PaymentMethod;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
        
@@ -43,28 +50,49 @@ namespace client.Forms
 
         private void SetupComboBox()
         {
-            cbxPaymentMethod.DataSource = Enum.GetValues(typeof(PaymentMethods));
-            AutoCompleteStringCollection cbPaymentMethodsAutoCompleteStrings = new AutoCompleteStringCollection();
-            cbPaymentMethodsAutoCompleteStrings.AddRange(Enum.GetNames(typeof(PaymentMethods)));
-            cbxPaymentMethod.AutoCompleteCustomSource = cbPaymentMethodsAutoCompleteStrings;
+            try
+            {
+                cbxPaymentMethod.DataSource = Enum.GetValues(typeof(PaymentMethods));
+                AutoCompleteStringCollection cbPaymentMethodsAutoCompleteStrings = new AutoCompleteStringCollection();
+                cbPaymentMethodsAutoCompleteStrings.AddRange(Enum.GetNames(typeof(PaymentMethods)));
+                cbxPaymentMethod.AutoCompleteCustomSource = cbPaymentMethodsAutoCompleteStrings;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private async void btnDelete_Click_1(object sender, EventArgs e)
         {
-            await _transactionRepository.Remove(_transaction);
-            OnLoadData();
-            this.Dispose();
+            try
+            {
+                await _transactionRepository.Remove(_transaction);
+                OnLoadData();
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private  async void btnUpdate_Click_1(object sender, EventArgs e)
         {
-            _transaction.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
-            _transaction.Extras = (double)Convert.ToDouble(txtExtra.Text);
-            _transaction.PaymentMethod = GetSelectedPaymentMethod();
+            try
+            {
+                _transaction.Amount = (decimal)Convert.ToDouble(txtAmount.Text);
+                _transaction.Extras = (double)Convert.ToDouble(txtExtra.Text);
+                _transaction.PaymentMethod = GetSelectedPaymentMethod();
 
-            await _transactionRepository.Update(_transaction);
-            OnLoadData();
-            this.Dispose();
+                await _transactionRepository.Update(_transaction);
+                OnLoadData();
+                this.Dispose();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnCancel_Click_1(object sender, EventArgs e)

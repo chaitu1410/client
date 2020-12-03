@@ -47,33 +47,34 @@ namespace client.Forms
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtEmailAddress.Text.Trim() == string.Empty)
+            try
             {
-                MessageBox.Show("Please Enter Email Address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtEmailAddress.Focus();
-                return;
-                
-            }
-            if (txtPassword.Text.Trim() == string.Empty)
-            {
-                MessageBox.Show("Please Enter Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtPassword.Focus();
-                return;
-            }
-            if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmailAddress.Text, @"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
-            {
-                MessageBox.Show("Invaild Email...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtEmailAddress.Focus();
-                return;
-            }
-            _user.Email = Convert.ToString(txtEmailAddress.Text);
-            _user.Password = Convert.ToString(txtPassword.Text);
-           
-            
+                if (txtEmailAddress.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("Please Enter Email Address.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmailAddress.Focus();
+                    return;
+                }
+                if (txtPassword.Text.Trim() == string.Empty)
+                {
+                    MessageBox.Show("Please Enter Password.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtPassword.Focus();
+                    return;
+                }
+                if (!System.Text.RegularExpressions.Regex.IsMatch(txtEmailAddress.Text, @"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$"))
+                {
+                    MessageBox.Show("Invaild Email...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtEmailAddress.Focus();
+                    return;
+                }
+                _user.Email = Convert.ToString(txtEmailAddress.Text);
+                _user.Password = Convert.ToString(txtPassword.Text);
                 _userRepository.Update(_user);
                 this.Dispose();
-            
-           
+            }
+            catch (Exception ex) { 
+                MessageBox.Show(ex.Message); 
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -83,11 +84,18 @@ namespace client.Forms
 
         private void EditCredential_Load(object sender, EventArgs e)
         {
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
+            try
+            {
+                this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
 
-            txtEmailAddress.Text = _user.Email.ToString();
-            txtPassword.Text = _user.Password.ToString();
-            txtConfirmPassword.Text = _user.Password.ToString();
+                txtEmailAddress.Text = _user.Email.ToString();
+                txtPassword.Text = _user.Password.ToString();
+                txtConfirmPassword.Text = _user.Password.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void txtPassword_Validating(object sender, CancelEventArgs e)
