@@ -189,6 +189,7 @@ namespace client.Data
         public async Task GeneratePdf(TotalSale totalSale)
         {
             Document document = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
+            FileStream fs = null;
             try
             {
                 BorrowRepository borrowRepository = new BorrowRepository();
@@ -203,7 +204,8 @@ namespace client.Data
                 fileName = fileName.Replace(" ", "");
                 fileName += ".pdf";
                 string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + $"\\Client\\{fileName}";
-                PdfWriter.GetInstance(document, new FileStream(path, FileMode.OpenOrCreate));
+                fs = new FileStream(path, FileMode.OpenOrCreate);
+                PdfWriter.GetInstance(document, fs);
 
                 document.Open();
                 //Report Header
@@ -354,7 +356,8 @@ namespace client.Data
                 }
                 document.Add(cdTable);
                 /////////////////////////////////////////// END Credit Deposit Table ////////////////////////////////////////
-                await Task.Run(() => document.Close());
+                document.Close();
+                fs.Close();
             }
             catch (DirectoryNotFoundException)
             {
@@ -370,8 +373,12 @@ namespace client.Data
                 {
                     if (document.IsOpen())
                     {
-                        await Task.Run(() => document.Close());
+                        document.Close();
                     }
+                }
+                if (fs != null)
+                {
+                    fs.Close();
                 }
             }
         }
