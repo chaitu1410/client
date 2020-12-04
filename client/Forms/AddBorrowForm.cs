@@ -30,7 +30,7 @@ namespace client.Forms
             {
                 if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("All fields required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("All fields required.....", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtName.Focus();
                     return;
                 }

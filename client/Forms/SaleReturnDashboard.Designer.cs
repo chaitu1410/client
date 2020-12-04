@@ -159,6 +159,7 @@ namespace client.Forms
             this.Controls.Add(this.lblSaleReturn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SaleReturnDashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SaleReturnDashboard";
             this.Activated += new System.EventHandler(this.SaleReturnDashboard_Activated);
             this.Load += new System.EventHandler(this.SaleReturnDashboard_Load);

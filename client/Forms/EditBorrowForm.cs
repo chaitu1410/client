@@ -64,13 +64,13 @@ namespace client.Forms
             {
                 if (txtName.Text.Trim() == string.Empty || txtAmount.Text.Trim() == string.Empty)
                 {
-                    MessageBox.Show("All fields required", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("All fields required...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtName.Focus();
                     return;
                 }
                 if (!System.Text.RegularExpressions.Regex.IsMatch(txtName.Text, "^[a-zA-Z]"))
                 {
-                    MessageBox.Show("Invaild Name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invaild Name...", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txtName.Focus();
                     txtName.Text.Remove(txtName.Text.Length - 1);
                     return;
