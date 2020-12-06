@@ -36,6 +36,32 @@ namespace client.Data
             }
         }
 
+        public async Task<IEnumerable<SaleReturn>> GetAllByName(string name)
+        {
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.SaleReturns.Where(t => t.CustomerName.Contains(name)).ToList());
+            }
+            catch (Exception)
+            {
+                throw new DatabaseException("Failed to fetch Sale Return Records filtered by Date.");
+            }
+        }
+
+        public async Task<string[]> GetAllName(string name)
+        {
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.SaleReturns.Where(t => t.CustomerName.Contains(name)).Select(t => t.CustomerName).ToArray());
+            }
+            catch (Exception)
+            {
+                throw new DatabaseException("Failed to fetch Sale Return Records filtered by Date.");
+            }
+        }
+
         public async Task Add(SaleReturn saleReturn)
         {
             try

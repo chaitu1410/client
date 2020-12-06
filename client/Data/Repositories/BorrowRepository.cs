@@ -88,6 +88,59 @@ namespace client.Data
             }
         }
 
+        public async Task<List<Borrow>> GetAllDepositedByName(string name)
+        {
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.Where(row => row.CustomerName.Contains(name) && row.IsReturned == true).ToList());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Get Credit Deposit Records filtered by date.");
+            }
+        }
+
+        public async Task<List<Borrow>> GetAllUndepositedByName(string name)
+        {
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.Where(row => row.CustomerName.Contains(name) && row.IsReturned == false).ToList());
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Failed to Get Borrowing Balance Records filtered by date.");
+            }
+        }
+
+        public async Task<string[]> GetAllDepositedName()
+        {
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == true).Select(row => row.CustomerName).ToArray());
+            }
+            catch (Exception)
+            {
+                throw new Exception("Failed to Get Credit Deposit Records filtered by date.");
+            }
+        }
+
+        public async Task<string[]> GetAllUndepositedName()
+        {
+            try
+            {
+                AppDbContext _db = new AppDbContext();
+                return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == false).Select(row => row.CustomerName).ToArray());
+            }
+            catch (Exception)
+            {
+
+                throw new Exception("Failed to Get Borrowing Balance Records filtered by date.");
+            }
+        }
         public async Task Add(Borrow borrow) 
         {
             try

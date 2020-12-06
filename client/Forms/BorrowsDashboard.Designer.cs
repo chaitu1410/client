@@ -29,14 +29,14 @@ namespace client.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblBorrows = new System.Windows.Forms.Label();
             this.pnlBody = new System.Windows.Forms.Panel();
             this.btnSearchName = new System.Windows.Forms.Button();
@@ -78,9 +78,9 @@ namespace client.Forms
             this.lblBorrows.AutoSize = true;
             this.lblBorrows.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblBorrows.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblBorrows.Location = new System.Drawing.Point(12, 20);
+            this.lblBorrows.Location = new System.Drawing.Point(14, 27);
             this.lblBorrows.Name = "lblBorrows";
-            this.lblBorrows.Size = new System.Drawing.Size(97, 25);
+            this.lblBorrows.Size = new System.Drawing.Size(119, 32);
             this.lblBorrows.TabIndex = 1;
             this.lblBorrows.Text = "Borrows";
             // 
@@ -106,9 +106,10 @@ namespace client.Forms
             this.pnlBody.Controls.Add(this.lblCreditDeposit);
             this.pnlBody.Controls.Add(this.lblBorrowingBalance);
             this.pnlBody.Controls.Add(this.dgvBorrowingBalance);
-            this.pnlBody.Location = new System.Drawing.Point(7, 60);
+            this.pnlBody.Location = new System.Drawing.Point(8, 80);
+            this.pnlBody.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(964, 670);
+            this.pnlBody.Size = new System.Drawing.Size(1102, 893);
             this.pnlBody.TabIndex = 2;
             // 
             // btnSearchName
@@ -116,21 +117,24 @@ namespace client.Forms
             this.btnSearchName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnSearchName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSearchName.ForeColor = System.Drawing.Color.White;
-            this.btnSearchName.Location = new System.Drawing.Point(770, 87);
+            this.btnSearchName.Location = new System.Drawing.Point(880, 116);
+            this.btnSearchName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearchName.Name = "btnSearchName";
-            this.btnSearchName.Size = new System.Drawing.Size(82, 28);
+            this.btnSearchName.Size = new System.Drawing.Size(94, 37);
             this.btnSearchName.TabIndex = 20;
             this.btnSearchName.Text = "Search";
             this.btnSearchName.UseVisualStyleBackColor = false;
+            this.btnSearchName.Click += new System.EventHandler(this.btnSearchName_Click);
             // 
             // txtFilterName
             // 
             this.txtFilterName.BackColor = System.Drawing.Color.White;
             this.txtFilterName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtFilterName.ForeColor = System.Drawing.Color.Black;
-            this.txtFilterName.Location = new System.Drawing.Point(611, 88);
+            this.txtFilterName.Location = new System.Drawing.Point(698, 117);
+            this.txtFilterName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFilterName.Name = "txtFilterName";
-            this.txtFilterName.Size = new System.Drawing.Size(153, 25);
+            this.txtFilterName.Size = new System.Drawing.Size(174, 29);
             this.txtFilterName.TabIndex = 19;
             // 
             // lblFilterName
@@ -138,9 +142,9 @@ namespace client.Forms
             this.lblFilterName.AutoSize = true;
             this.lblFilterName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblFilterName.ForeColor = System.Drawing.Color.Black;
-            this.lblFilterName.Location = new System.Drawing.Point(497, 92);
+            this.lblFilterName.Location = new System.Drawing.Point(568, 123);
             this.lblFilterName.Name = "lblFilterName";
-            this.lblFilterName.Size = new System.Drawing.Size(107, 17);
+            this.lblFilterName.Size = new System.Drawing.Size(135, 22);
             this.lblFilterName.TabIndex = 18;
             this.lblFilterName.Text = "Filter by name";
             // 
@@ -149,21 +153,24 @@ namespace client.Forms
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnSearch.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(285, 87);
+            this.btnSearch.Location = new System.Drawing.Point(326, 116);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(82, 28);
+            this.btnSearch.Size = new System.Drawing.Size(94, 37);
             this.btnSearch.TabIndex = 17;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // txtFilterByName
             // 
             this.txtFilterByName.BackColor = System.Drawing.Color.White;
             this.txtFilterByName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtFilterByName.ForeColor = System.Drawing.Color.Black;
-            this.txtFilterByName.Location = new System.Drawing.Point(126, 87);
+            this.txtFilterByName.Location = new System.Drawing.Point(144, 116);
+            this.txtFilterByName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFilterByName.Name = "txtFilterByName";
-            this.txtFilterByName.Size = new System.Drawing.Size(153, 25);
+            this.txtFilterByName.Size = new System.Drawing.Size(174, 29);
             this.txtFilterByName.TabIndex = 16;
             // 
             // lblFilterByName
@@ -171,42 +178,46 @@ namespace client.Forms
             this.lblFilterByName.AutoSize = true;
             this.lblFilterByName.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblFilterByName.ForeColor = System.Drawing.Color.Black;
-            this.lblFilterByName.Location = new System.Drawing.Point(13, 92);
+            this.lblFilterByName.Location = new System.Drawing.Point(15, 123);
             this.lblFilterByName.Name = "lblFilterByName";
-            this.lblFilterByName.Size = new System.Drawing.Size(107, 17);
+            this.lblFilterByName.Size = new System.Drawing.Size(135, 22);
             this.lblFilterByName.TabIndex = 15;
             this.lblFilterByName.Text = "Filter by name";
             // 
             // pbxCreditDeposit
             // 
-            this.pbxCreditDeposit.Location = new System.Drawing.Point(649, 336);
+            this.pbxCreditDeposit.Location = new System.Drawing.Point(742, 448);
+            this.pbxCreditDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbxCreditDeposit.Name = "pbxCreditDeposit";
-            this.pbxCreditDeposit.Size = new System.Drawing.Size(160, 20);
+            this.pbxCreditDeposit.Size = new System.Drawing.Size(183, 27);
             this.pbxCreditDeposit.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pbxCreditDeposit.TabIndex = 14;
             // 
             // pbxBorrowingBalance
             // 
-            this.pbxBorrowingBalance.Location = new System.Drawing.Point(160, 336);
+            this.pbxBorrowingBalance.Location = new System.Drawing.Point(183, 448);
+            this.pbxBorrowingBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbxBorrowingBalance.Name = "pbxBorrowingBalance";
-            this.pbxBorrowingBalance.Size = new System.Drawing.Size(160, 20);
+            this.pbxBorrowingBalance.Size = new System.Drawing.Size(183, 27);
             this.pbxBorrowingBalance.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pbxBorrowingBalance.TabIndex = 13;
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(-145, 127);
+            this.progressBar1.Location = new System.Drawing.Point(-166, 169);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(100, 23);
+            this.progressBar1.Size = new System.Drawing.Size(114, 31);
             this.progressBar1.TabIndex = 12;
             // 
             // dtpCreditDeposit
             // 
             this.dtpCreditDeposit.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpCreditDeposit.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpCreditDeposit.Location = new System.Drawing.Point(613, 116);
+            this.dtpCreditDeposit.Location = new System.Drawing.Point(701, 155);
+            this.dtpCreditDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpCreditDeposit.Name = "dtpCreditDeposit";
-            this.dtpCreditDeposit.Size = new System.Drawing.Size(239, 25);
+            this.dtpCreditDeposit.Size = new System.Drawing.Size(273, 29);
             this.dtpCreditDeposit.TabIndex = 11;
             this.dtpCreditDeposit.ValueChanged += new System.EventHandler(this.dtpCreditDeposit_ValueChanged);
             // 
@@ -214,9 +225,9 @@ namespace client.Forms
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(497, 122);
+            this.label3.Location = new System.Drawing.Point(568, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 17);
+            this.label3.Size = new System.Drawing.Size(125, 22);
             this.label3.TabIndex = 10;
             this.label3.Text = "Filter by date";
             // 
@@ -224,9 +235,10 @@ namespace client.Forms
             // 
             this.dtpBorrowingBalance.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpBorrowingBalance.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpBorrowingBalance.Location = new System.Drawing.Point(126, 116);
+            this.dtpBorrowingBalance.Location = new System.Drawing.Point(144, 155);
+            this.dtpBorrowingBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpBorrowingBalance.Name = "dtpBorrowingBalance";
-            this.dtpBorrowingBalance.Size = new System.Drawing.Size(241, 25);
+            this.dtpBorrowingBalance.Size = new System.Drawing.Size(275, 29);
             this.dtpBorrowingBalance.TabIndex = 9;
             this.dtpBorrowingBalance.ValueChanged += new System.EventHandler(this.dtpBorrowingBalance_ValueChanged);
             // 
@@ -234,56 +246,57 @@ namespace client.Forms
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterBy.Location = new System.Drawing.Point(13, 122);
+            this.lblFilterBy.Location = new System.Drawing.Point(15, 163);
             this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(99, 17);
+            this.lblFilterBy.Size = new System.Drawing.Size(125, 22);
             this.lblFilterBy.TabIndex = 8;
             this.lblFilterBy.Text = "Filter by date";
             // 
             // dgvCreditDeposit
             // 
             this.dgvCreditDeposit.AllowUserToAddRows = false;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvCreditDeposit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvCreditDeposit.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvCreditDeposit.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCreditDeposit.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvCreditDeposit.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCreditDeposit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCreditDeposit.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvCreditDeposit.ColumnHeadersHeight = 50;
             this.dgvCreditDeposit.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvCreditDeposit.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvCreditDeposit.DefaultCellStyle = dataGridViewCellStyle19;
             this.dgvCreditDeposit.GridColor = System.Drawing.Color.LightGray;
-            this.dgvCreditDeposit.Location = new System.Drawing.Point(497, 153);
+            this.dgvCreditDeposit.Location = new System.Drawing.Point(568, 204);
+            this.dgvCreditDeposit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvCreditDeposit.Name = "dgvCreditDeposit";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCreditDeposit.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCreditDeposit.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgvCreditDeposit.RowHeadersVisible = false;
             this.dgvCreditDeposit.RowHeadersWidth = 51;
             this.dgvCreditDeposit.RowTemplate.Height = 40;
-            this.dgvCreditDeposit.Size = new System.Drawing.Size(457, 453);
+            this.dgvCreditDeposit.Size = new System.Drawing.Size(522, 604);
             this.dgvCreditDeposit.TabIndex = 7;
             // 
             // btnClearFilter
@@ -291,9 +304,10 @@ namespace client.Forms
             this.btnClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnClearFilter.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearFilter.ForeColor = System.Drawing.Color.White;
-            this.btnClearFilter.Location = new System.Drawing.Point(844, 612);
+            this.btnClearFilter.Location = new System.Drawing.Point(965, 816);
+            this.btnClearFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClearFilter.Name = "btnClearFilter";
-            this.btnClearFilter.Size = new System.Drawing.Size(110, 36);
+            this.btnClearFilter.Size = new System.Drawing.Size(126, 48);
             this.btnClearFilter.TabIndex = 5;
             this.btnClearFilter.Text = "Clear Filter";
             this.btnClearFilter.UseVisualStyleBackColor = false;
@@ -304,9 +318,10 @@ namespace client.Forms
             this.btnClrFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnClrFilter.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClrFilter.ForeColor = System.Drawing.Color.White;
-            this.btnClrFilter.Location = new System.Drawing.Point(346, 612);
+            this.btnClrFilter.Location = new System.Drawing.Point(395, 816);
+            this.btnClrFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClrFilter.Name = "btnClrFilter";
-            this.btnClrFilter.Size = new System.Drawing.Size(110, 36);
+            this.btnClrFilter.Size = new System.Drawing.Size(126, 48);
             this.btnClrFilter.TabIndex = 4;
             this.btnClrFilter.Text = "Clear Filter";
             this.btnClrFilter.UseVisualStyleBackColor = false;
@@ -317,9 +332,9 @@ namespace client.Forms
             this.lblCreditDeposit.AutoSize = true;
             this.lblCreditDeposit.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblCreditDeposit.ForeColor = System.Drawing.Color.Black;
-            this.lblCreditDeposit.Location = new System.Drawing.Point(649, 25);
+            this.lblCreditDeposit.Location = new System.Drawing.Point(742, 33);
             this.lblCreditDeposit.Name = "lblCreditDeposit";
-            this.lblCreditDeposit.Size = new System.Drawing.Size(149, 22);
+            this.lblCreditDeposit.Size = new System.Drawing.Size(189, 28);
             this.lblCreditDeposit.TabIndex = 3;
             this.lblCreditDeposit.Text = "Credit Deposit\'s";
             // 
@@ -328,9 +343,9 @@ namespace client.Forms
             this.lblBorrowingBalance.AutoSize = true;
             this.lblBorrowingBalance.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblBorrowingBalance.ForeColor = System.Drawing.Color.Black;
-            this.lblBorrowingBalance.Location = new System.Drawing.Point(131, 25);
+            this.lblBorrowingBalance.Location = new System.Drawing.Point(150, 33);
             this.lblBorrowingBalance.Name = "lblBorrowingBalance";
-            this.lblBorrowingBalance.Size = new System.Drawing.Size(189, 22);
+            this.lblBorrowingBalance.Size = new System.Drawing.Size(238, 28);
             this.lblBorrowingBalance.TabIndex = 2;
             this.lblBorrowingBalance.Text = "Borrowing Balance\'s";
             // 
@@ -338,47 +353,48 @@ namespace client.Forms
             // 
             this.dgvBorrowingBalance.AllowUserToAddRows = false;
             this.dgvBorrowingBalance.AllowUserToResizeColumns = false;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvBorrowingBalance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle21.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvBorrowingBalance.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvBorrowingBalance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBorrowingBalance.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvBorrowingBalance.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBorrowingBalance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBorrowingBalance.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
             this.dgvBorrowingBalance.ColumnHeadersHeight = 50;
             this.dgvBorrowingBalance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBorrowingBalance.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle23.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBorrowingBalance.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvBorrowingBalance.GridColor = System.Drawing.Color.LightGray;
-            this.dgvBorrowingBalance.Location = new System.Drawing.Point(13, 153);
+            this.dgvBorrowingBalance.Location = new System.Drawing.Point(15, 204);
+            this.dgvBorrowingBalance.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvBorrowingBalance.Name = "dgvBorrowingBalance";
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBorrowingBalance.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBorrowingBalance.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvBorrowingBalance.RowHeadersVisible = false;
             this.dgvBorrowingBalance.RowHeadersWidth = 51;
             this.dgvBorrowingBalance.RowTemplate.Height = 40;
-            this.dgvBorrowingBalance.Size = new System.Drawing.Size(443, 453);
+            this.dgvBorrowingBalance.Size = new System.Drawing.Size(506, 604);
             this.dgvBorrowingBalance.TabIndex = 0;
             this.dgvBorrowingBalance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowingBalance_CellContentClick);
             this.dgvBorrowingBalance.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowingBalance_CellDoubleClick);
@@ -458,15 +474,17 @@ namespace client.Forms
             // 
             // BorrowsDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 742);
+            this.ClientSize = new System.Drawing.Size(1123, 989);
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.lblBorrows);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "BorrowsDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BorrowsDashboard";
+            this.Load += new System.EventHandler(this.BorrowsDashboard_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BorrowsDashboard_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.BorrowsDashboard_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.BorrowsDashboard_MouseUp);

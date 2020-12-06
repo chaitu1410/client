@@ -83,6 +83,7 @@ namespace client.Forms
         {
             try
             {
+                this.IsMdiContainer = true;
                 txtCashAmount.Text = _totalsale.CashAmount.ToString();
                 txtCardAmount.Text = _totalsale.CardAmount.ToString();
                 txtUpiAmount.Text = _totalsale.OnlineAmount.ToString();

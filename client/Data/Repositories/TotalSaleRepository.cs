@@ -190,6 +190,7 @@ namespace client.Data
         {
             Document document = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
             FileStream fs = null;
+            string path = "";
             try
             {
                 BorrowRepository borrowRepository = new BorrowRepository();
@@ -203,7 +204,7 @@ namespace client.Data
                 fileName = fileName.Replace(":", "");
                 fileName = fileName.Replace(" ", "");
                 fileName += ".pdf";
-                string path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + $"\\Client\\{fileName}";
+                path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + $"\\Client\\{fileName}";
                 fs = new FileStream(path, FileMode.OpenOrCreate);
                 PdfWriter.GetInstance(document, fs);
 
@@ -381,6 +382,7 @@ namespace client.Data
                     fs.Close();
                 }
             }
+            System.Diagnostics.Process.Start(path);
         }
     }
 }

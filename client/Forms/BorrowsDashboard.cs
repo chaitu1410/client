@@ -23,6 +23,8 @@ namespace client.Forms
             borrow = new Borrow();
             Load_Datagridview_Data();
             EditBorrowForm.OnLoadData += Load_Datagridview_Data;
+            EditBorrowForm.OnLoadData += SetupTextboxes;
+
         }
 
         private async void Load_Datagridview_Data()
@@ -181,6 +183,85 @@ namespace client.Forms
         private void dgvBorrowingBalance_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void BorrowsDashboard_Load(object sender, EventArgs e)
+        {
+            SetupTextboxes();
+        }
+
+        private async Task SetupUndepositedTextbox()
+        {
+            AutoCompleteStringCollection depositedCollection = new AutoCompleteStringCollection();
+            depositedCollection.AddRange(await _borrowRepository.GetAllUndepositedName());
+            txtFilterByName.AutoCompleteCustomSource = depositedCollection;
+            txtFilterByName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtFilterByName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+        private async Task SetupDepositedTextbox()
+        {
+            AutoCompleteStringCollection depositedCollection = new AutoCompleteStringCollection();
+            depositedCollection.AddRange(await _borrowRepository.GetAllDepositedName());
+            txtFilterName.AutoCompleteCustomSource = depositedCollection;
+            txtFilterName.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtFilterName.AutoCompleteSource = AutoCompleteSource.CustomSource;
+        }
+
+        private async void SetupTextboxes()
+        {
+            await SetupUndepositedTextbox();
+            await SetupDepositedTextbox();
+        }
+
+        private async Task Load_Datagridview1_Data_By_Name()
+        {
+            try
+            {
+                pbxBorrowingBalance.Visible = true;
+                var source = new BindingSource();
+                source.DataSource = await _borrowRepository.GetAllUndepositedByName(txtFilterByName.Text);
+                dgvBorrowingBalance.AutoGenerateColumns = true;
+                dgvBorrowingBalance.DataSource = source;
+                dgvBorrowingBalance.Columns["Id"].Visible = false;
+                dgvBorrowingBalance.Columns["IsReturned"].Visible = false;
+                dgvBorrowingBalance.Columns["ReturnDate"].Visible = false;
+                pbxBorrowingBalance.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        private async Task Load_Datagridview2_Data_By_Name()
+        {
+            try
+            {
+                pbxCreditDeposit.Visible = true;
+                var source = new BindingSource();
+                source.DataSource = await _borrowRepository.GetAllDepositedByName(txtFilterName.Text);
+                dgvBorrowingBalance.AutoGenerateColumns = true;
+                dgvCreditDeposit.DataSource = source;
+                dgvCreditDeposit.Columns["Id"].Visible = false;
+                dgvCreditDeposit.Columns["IsReturned"].Visible = false;
+                pbxCreditDeposit.Visible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private async void btnSearch_Click(object sender, EventArgs e)
+        {
+            if(txtFilterByName.Text.Trim() != "")
+                await Load_Datagridview1_Data_By_Name();
+        }
+
+        private async void btnSearchName_Click(object sender, EventArgs e)
+        {
+            if (txtFilterName.Text.Trim() != "")
+                await Load_Datagridview2_Data_By_Name();
         }
     }
 }
