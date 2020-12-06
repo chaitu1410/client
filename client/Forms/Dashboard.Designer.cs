@@ -85,11 +85,14 @@ namespace client.Forms
             this.pnlDashboard.Name = "pnlDashboard";
             this.pnlDashboard.Size = new System.Drawing.Size(283, 783);
             this.pnlDashboard.TabIndex = 0;
+            this.pnlDashboard.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlDashboard_MouseDown);
+            this.pnlDashboard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlDashboard_MouseMove);
+            this.pnlDashboard.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlDashboard_MouseUp);
             // 
             // PbxSaleReturn
             // 
             this.PbxSaleReturn.Image = ((System.Drawing.Image)(resources.GetObject("PbxSaleReturn.Image")));
-            this.PbxSaleReturn.Location = new System.Drawing.Point(13, 459);
+            this.PbxSaleReturn.Location = new System.Drawing.Point(13, 360);
             this.PbxSaleReturn.Name = "PbxSaleReturn";
             this.PbxSaleReturn.Size = new System.Drawing.Size(48, 31);
             this.PbxSaleReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -104,7 +107,7 @@ namespace client.Forms
             this.btnSaleReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaleReturn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSaleReturn.ForeColor = System.Drawing.Color.White;
-            this.btnSaleReturn.Location = new System.Drawing.Point(-2, 444);
+            this.btnSaleReturn.Location = new System.Drawing.Point(-2, 349);
             this.btnSaleReturn.Name = "btnSaleReturn";
             this.btnSaleReturn.Size = new System.Drawing.Size(283, 58);
             this.btnSaleReturn.TabIndex = 10;
@@ -155,7 +158,7 @@ namespace client.Forms
             // pbxCredentials
             // 
             this.pbxCredentials.Image = ((System.Drawing.Image)(resources.GetObject("pbxCredentials.Image")));
-            this.pbxCredentials.Location = new System.Drawing.Point(13, 552);
+            this.pbxCredentials.Location = new System.Drawing.Point(13, 555);
             this.pbxCredentials.Name = "pbxCredentials";
             this.pbxCredentials.Size = new System.Drawing.Size(48, 31);
             this.pbxCredentials.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -170,7 +173,7 @@ namespace client.Forms
             this.btnCredentials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCredentials.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCredentials.ForeColor = System.Drawing.Color.White;
-            this.btnCredentials.Location = new System.Drawing.Point(0, 541);
+            this.btnCredentials.Location = new System.Drawing.Point(0, 544);
             this.btnCredentials.Name = "btnCredentials";
             this.btnCredentials.Size = new System.Drawing.Size(281, 58);
             this.btnCredentials.TabIndex = 5;
@@ -183,7 +186,7 @@ namespace client.Forms
             // pbxDailySale
             // 
             this.pbxDailySale.Image = ((System.Drawing.Image)(resources.GetObject("pbxDailySale.Image")));
-            this.pbxDailySale.Location = new System.Drawing.Point(13, 362);
+            this.pbxDailySale.Location = new System.Drawing.Point(13, 457);
             this.pbxDailySale.Name = "pbxDailySale";
             this.pbxDailySale.Size = new System.Drawing.Size(48, 31);
             this.pbxDailySale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -198,7 +201,7 @@ namespace client.Forms
             this.btnViewTotalSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewTotalSale.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnViewTotalSale.ForeColor = System.Drawing.Color.White;
-            this.btnViewTotalSale.Location = new System.Drawing.Point(0, 352);
+            this.btnViewTotalSale.Location = new System.Drawing.Point(0, 446);
             this.btnViewTotalSale.Name = "btnViewTotalSale";
             this.btnViewTotalSale.Size = new System.Drawing.Size(283, 58);
             this.btnViewTotalSale.TabIndex = 3;
@@ -245,6 +248,9 @@ namespace client.Forms
             this.pnlTopDashboard.Name = "pnlTopDashboard";
             this.pnlTopDashboard.Size = new System.Drawing.Size(283, 102);
             this.pnlTopDashboard.TabIndex = 0;
+            this.pnlTopDashboard.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopDashboard_MouseDown);
+            this.pnlTopDashboard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTopDashboard_MouseMove);
+            this.pnlTopDashboard.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlTopDashboard_MouseUp);
             // 
             // label1
             // 
@@ -262,9 +268,9 @@ namespace client.Forms
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1261, 0);
+            this.btnClose.Location = new System.Drawing.Point(1252, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(25, 26);
+            this.btnClose.Size = new System.Drawing.Size(34, 26);
             this.btnClose.TabIndex = 7;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -278,15 +284,18 @@ namespace client.Forms
             this.pnlBody.Size = new System.Drawing.Size(983, 742);
             this.pnlBody.TabIndex = 8;
             this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
+            this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);
+            this.pnlBody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseMove);
+            this.pnlBody.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseUp);
             // 
             // btnMinimize
             // 
             this.btnMinimize.BackColor = System.Drawing.Color.White;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1239, 0);
+            this.btnMinimize.Location = new System.Drawing.Point(1224, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(25, 26);
+            this.btnMinimize.Size = new System.Drawing.Size(31, 26);
             this.btnMinimize.TabIndex = 9;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
@@ -305,6 +314,7 @@ namespace client.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
+            //this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dashboard_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseUp);

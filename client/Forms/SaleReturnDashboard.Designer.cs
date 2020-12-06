@@ -39,6 +39,9 @@ namespace client.Forms
             this.dtpSaleReturn = new System.Windows.Forms.DateTimePicker();
             this.btnClearFilter = new System.Windows.Forms.Button();
             this.pbxSaleReturn = new System.Windows.Forms.ProgressBar();
+            this.lblFilterByName = new System.Windows.Forms.Label();
+            this.txtFilterByName = new System.Windows.Forms.TextBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSaleReturn)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,7 +50,7 @@ namespace client.Forms
             this.lblSaleReturn.AutoSize = true;
             this.lblSaleReturn.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSaleReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblSaleReturn.Location = new System.Drawing.Point(40, 31);
+            this.lblSaleReturn.Location = new System.Drawing.Point(21, 26);
             this.lblSaleReturn.Name = "lblSaleReturn";
             this.lblSaleReturn.Size = new System.Drawing.Size(125, 25);
             this.lblSaleReturn.TabIndex = 0;
@@ -87,7 +90,7 @@ namespace client.Forms
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSaleReturn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSaleReturn.GridColor = System.Drawing.Color.LightGray;
-            this.dgvSaleReturn.Location = new System.Drawing.Point(-1, 140);
+            this.dgvSaleReturn.Location = new System.Drawing.Point(2, 140);
             this.dgvSaleReturn.Name = "dgvSaleReturn";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -100,28 +103,27 @@ namespace client.Forms
             this.dgvSaleReturn.RowHeadersVisible = false;
             this.dgvSaleReturn.RowHeadersWidth = 50;
             this.dgvSaleReturn.RowTemplate.Height = 30;
-            this.dgvSaleReturn.Size = new System.Drawing.Size(983, 486);
+            this.dgvSaleReturn.Size = new System.Drawing.Size(980, 486);
             this.dgvSaleReturn.TabIndex = 1;
-            this.dgvSaleReturn.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleReturn_CellContentClick);
             this.dgvSaleReturn.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleReturn_CellDoubleClick);
             // 
             // lblFilterBy
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterBy.Location = new System.Drawing.Point(40, 102);
+            this.lblFilterBy.Location = new System.Drawing.Point(21, 105);
             this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(70, 19);
+            this.lblFilterBy.Size = new System.Drawing.Size(107, 19);
             this.lblFilterBy.TabIndex = 2;
-            this.lblFilterBy.Text = "Filter by";
+            this.lblFilterBy.Text = "Filter by date";
             // 
             // dtpSaleReturn
             // 
             this.dtpSaleReturn.CalendarFont = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpSaleReturn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpSaleReturn.Location = new System.Drawing.Point(116, 99);
+            this.dtpSaleReturn.Location = new System.Drawing.Point(134, 102);
             this.dtpSaleReturn.Name = "dtpSaleReturn";
-            this.dtpSaleReturn.Size = new System.Drawing.Size(254, 26);
+            this.dtpSaleReturn.Size = new System.Drawing.Size(239, 26);
             this.dtpSaleReturn.TabIndex = 3;
             this.dtpSaleReturn.ValueChanged += new System.EventHandler(this.dtpSaleReturn_ValueChanged);
             // 
@@ -146,11 +148,46 @@ namespace client.Forms
             this.pbxSaleReturn.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pbxSaleReturn.TabIndex = 5;
             // 
+            // lblFilterByName
+            // 
+            this.lblFilterByName.AutoSize = true;
+            this.lblFilterByName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblFilterByName.Location = new System.Drawing.Point(593, 105);
+            this.lblFilterByName.Name = "lblFilterByName";
+            this.lblFilterByName.Size = new System.Drawing.Size(115, 19);
+            this.lblFilterByName.TabIndex = 6;
+            this.lblFilterByName.Text = "Filter by name";
+            // 
+            // txtFilterByName
+            // 
+            this.txtFilterByName.BackColor = System.Drawing.Color.White;
+            this.txtFilterByName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.txtFilterByName.ForeColor = System.Drawing.Color.Black;
+            this.txtFilterByName.Location = new System.Drawing.Point(714, 102);
+            this.txtFilterByName.Name = "txtFilterByName";
+            this.txtFilterByName.Size = new System.Drawing.Size(151, 26);
+            this.txtFilterByName.TabIndex = 7;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
+            this.btnSearch.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Location = new System.Drawing.Point(871, 95);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(91, 38);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            // 
             // SaleReturnDashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(983, 742);
+            this.Controls.Add(this.btnSearch);
+            this.Controls.Add(this.txtFilterByName);
+            this.Controls.Add(this.lblFilterByName);
             this.Controls.Add(this.pbxSaleReturn);
             this.Controls.Add(this.btnClearFilter);
             this.Controls.Add(this.dtpSaleReturn);
@@ -177,5 +214,8 @@ namespace client.Forms
         private System.Windows.Forms.DateTimePicker dtpSaleReturn;
         private System.Windows.Forms.Button btnClearFilter;
         private System.Windows.Forms.ProgressBar pbxSaleReturn;
+        private System.Windows.Forms.Label lblFilterByName;
+        private System.Windows.Forms.TextBox txtFilterByName;
+        private System.Windows.Forms.Button btnSearch;
     }
 }

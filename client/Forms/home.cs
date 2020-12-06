@@ -13,6 +13,7 @@ namespace client.Forms
     public partial class home : Form
     {
         TransactionRepository _transactionRepository;
+        bool flag = false;
         public home()
         {
             InitializeComponent();
@@ -133,5 +134,7 @@ namespace client.Forms
                 frm.Show();
             }
         }
+
+       
     }
 }

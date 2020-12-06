@@ -74,9 +74,9 @@ namespace client.Forms
             this.pnlBody.Controls.Add(this.lblSaleReturnAmount);
             this.pnlBody.Controls.Add(this.lblCashAmount);
             this.pnlBody.Controls.Add(this.lblEditTotalSale);
-            this.pnlBody.Location = new System.Drawing.Point(2, 3);
+            this.pnlBody.Location = new System.Drawing.Point(2, 2);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(521, 653);
+            this.pnlBody.Size = new System.Drawing.Size(521, 656);
             this.pnlBody.TabIndex = 0;
             this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);

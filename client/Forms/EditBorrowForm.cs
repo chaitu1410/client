@@ -46,15 +46,23 @@ namespace client.Forms
 
         private async void btnDelete_Click_1(object sender, EventArgs e)
         {
-            try
+            var confirmResult = MessageBox.Show("Are you sure to delete??", "Confirm Delete!!!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            if (confirmResult == DialogResult.Yes)
             {
-                await _borrowRepository.Remove(_borrow);
-                OnLoadData();
-                this.Dispose();
+                try
+                {
+                    await _borrowRepository.Remove(_borrow);
+                    OnLoadData();
+                    this.Dispose();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
+
             }
         }
 
