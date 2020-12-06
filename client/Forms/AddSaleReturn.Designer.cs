@@ -95,7 +95,6 @@ namespace client.Forms
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(264, 26);
             this.txtAmount.TabIndex = 1;
-            this.txtAmount.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             this.txtAmount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAmount_KeyPress);
             // 
             // lblAmount

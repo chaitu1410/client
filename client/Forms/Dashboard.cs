@@ -173,11 +173,6 @@ namespace client.Forms
             flag = false;
         }
 
-        private void pnlBody_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnMinimize_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;

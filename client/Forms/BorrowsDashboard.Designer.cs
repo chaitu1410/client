@@ -382,7 +382,6 @@ namespace client.Forms
             this.dgvBorrowingBalance.RowTemplate.Height = 40;
             this.dgvBorrowingBalance.Size = new System.Drawing.Size(443, 453);
             this.dgvBorrowingBalance.TabIndex = 0;
-            this.dgvBorrowingBalance.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowingBalance_CellContentClick);
             this.dgvBorrowingBalance.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBorrowingBalance_CellDoubleClick);
             // 
             // dataGridView3
@@ -494,7 +493,6 @@ namespace client.Forms
         private System.Windows.Forms.Label lblBorrowingBalance;
         private System.Windows.Forms.DataGridView dgvBorrowingBalance;
         private System.Windows.Forms.DataGridView dgvCreditDeposit;
-        //////private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Button button1;

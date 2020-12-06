@@ -172,17 +172,14 @@ namespace client.Forms
             //first
             //dtpBorrowingBalance.Value = DateTime.Now;
             await Load_Datagridview1_Data();
+            txtFilterByName.Clear();
         }
 
         private async void btnClearFilter_Click(object sender, EventArgs e)
         {
             //dtpCreditDeposit.Value = DateTime.Now;
             await Load_Datagridview2_Data();
-        }
-
-        private void dgvBorrowingBalance_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            txtFilterName.Clear();
         }
 
         private void BorrowsDashboard_Load(object sender, EventArgs e)
