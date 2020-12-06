@@ -229,5 +229,60 @@ namespace client.Forms
                 MessageBox.Show(ex.Message);
             }
         }
-    }
+
+        private void pnlDashboard_MouseDown(object sender, MouseEventArgs e)
+        {
+            flag = true;
+        }
+
+        private void pnlDashboard_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (flag == true)
+            {
+                this.Location = Cursor.Position;
+            }
+        }
+
+        private void pnlDashboard_MouseUp(object sender, MouseEventArgs e)
+        {
+            flag = false;
+        }
+
+        private void pnlTopDashboard_MouseDown(object sender, MouseEventArgs e)
+        {
+            flag = true;
+        }
+
+        private void pnlTopDashboard_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (flag == true)
+            {
+                this.Location = Cursor.Position;
+            }
+        }
+
+        private void pnlTopDashboard_MouseUp(object sender, MouseEventArgs e)
+        {
+            flag = false;
+        }
+
+        private void pnlBody_MouseDown(object sender, MouseEventArgs e)
+        {
+            flag = true;
+        }
+
+        private void pnlBody_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (flag == true)
+            {
+                this.Location = Cursor.Position;
+            }
+        }
+
+        private void pnlBody_MouseUp(object sender, MouseEventArgs e)
+        {
+            flag = false;
+        }
+
+     }
 }

@@ -94,9 +94,8 @@ namespace client.Forms
             Load_Datagridview_Data();
         }
 
-        private void dgvSaleReturn_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+       
 
-        }
+       
     }
 }

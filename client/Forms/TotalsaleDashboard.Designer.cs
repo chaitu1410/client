@@ -29,9 +29,9 @@ namespace client.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblTotalSale = new System.Windows.Forms.Label();
             this.dgvTotalSale = new System.Windows.Forms.DataGridView();
             this.lblFilterBy = new System.Windows.Forms.Label();
@@ -46,51 +46,52 @@ namespace client.Forms
             this.lblTotalSale.AutoSize = true;
             this.lblTotalSale.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblTotalSale.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblTotalSale.Location = new System.Drawing.Point(22, 20);
+            this.lblTotalSale.Location = new System.Drawing.Point(12, 25);
             this.lblTotalSale.Name = "lblTotalSale";
             this.lblTotalSale.Size = new System.Drawing.Size(104, 25);
             this.lblTotalSale.TabIndex = 0;
             this.lblTotalSale.Text = "Total Sale";
+           // this.lblTotalSale.Click += new System.EventHandler(this.lblTotalSale_Click);
             // 
             // dgvTotalSale
             // 
             this.dgvTotalSale.AllowUserToAddRows = false;
             this.dgvTotalSale.AllowUserToResizeColumns = false;
             this.dgvTotalSale.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvTotalSale.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            this.dgvTotalSale.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvTotalSale.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvTotalSale.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTotalSale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Cambria", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTotalSale.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTotalSale.ColumnHeadersHeight = 50;
             this.dgvTotalSale.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTotalSale.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTotalSale.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgvTotalSale.GridColor = System.Drawing.Color.LightGray;
-            this.dgvTotalSale.Location = new System.Drawing.Point(0, 144);
+            this.dgvTotalSale.Location = new System.Drawing.Point(3, 144);
             this.dgvTotalSale.Name = "dgvTotalSale";
             this.dgvTotalSale.RowHeadersVisible = false;
             this.dgvTotalSale.RowHeadersWidth = 50;
             this.dgvTotalSale.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgvTotalSale.RowTemplate.Height = 30;
-            this.dgvTotalSale.Size = new System.Drawing.Size(983, 486);
+            this.dgvTotalSale.Size = new System.Drawing.Size(978, 486);
             this.dgvTotalSale.TabIndex = 1;
             this.dgvTotalSale.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTotalSale_CellDoubleClick);
             // 
@@ -98,7 +99,7 @@ namespace client.Forms
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterBy.Location = new System.Drawing.Point(22, 108);
+            this.lblFilterBy.Location = new System.Drawing.Point(12, 107);
             this.lblFilterBy.Name = "lblFilterBy";
             this.lblFilterBy.Size = new System.Drawing.Size(67, 17);
             this.lblFilterBy.TabIndex = 2;
@@ -108,7 +109,7 @@ namespace client.Forms
             // 
             this.dtpTotalSale.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpTotalSale.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpTotalSale.Location = new System.Drawing.Point(95, 104);
+            this.dtpTotalSale.Location = new System.Drawing.Point(85, 104);
             this.dtpTotalSale.Name = "dtpTotalSale";
             this.dtpTotalSale.Size = new System.Drawing.Size(234, 25);
             this.dtpTotalSale.TabIndex = 3;
@@ -129,7 +130,7 @@ namespace client.Forms
             // 
             // pbxTotalSale
             // 
-            this.pbxTotalSale.Location = new System.Drawing.Point(389, 329);
+            this.pbxTotalSale.Location = new System.Drawing.Point(368, 343);
             this.pbxTotalSale.Name = "pbxTotalSale";
             this.pbxTotalSale.Size = new System.Drawing.Size(212, 23);
             this.pbxTotalSale.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
