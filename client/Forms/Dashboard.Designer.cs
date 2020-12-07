@@ -283,7 +283,6 @@ namespace client.Forms
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(983, 742);
             this.pnlBody.TabIndex = 8;
-            this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);
             this.pnlBody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseMove);
             this.pnlBody.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseUp);
@@ -314,7 +313,6 @@ namespace client.Forms
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";
             this.Load += new System.EventHandler(this.Dashboard_Load);
-            //this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Dashboard_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Dashboard_MouseUp);

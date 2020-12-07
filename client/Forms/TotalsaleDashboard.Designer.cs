@@ -51,8 +51,7 @@ namespace client.Forms
             this.lblTotalSale.Size = new System.Drawing.Size(104, 25);
             this.lblTotalSale.TabIndex = 0;
             this.lblTotalSale.Text = "Total Sale";
-           // this.lblTotalSale.Click += new System.EventHandler(this.lblTotalSale_Click);
-            // 
+                       // 
             // dgvTotalSale
             // 
             this.dgvTotalSale.AllowUserToAddRows = false;
