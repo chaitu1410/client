@@ -132,6 +132,14 @@ namespace client.Forms
             {
                 e.Handled = true;
             }
+            if(!char.IsControl(e.KeyChar)&&(!char.IsDigit(e.KeyChar))&&(e.KeyChar!='.') &&(e.KeyChar!='-'))
+            {
+                e.Handled = true;
+            }
+            else
+            {
+                e.Handled = false;
+            }
         }
 
         private void txtExtra_Click(object sender, EventArgs e)
