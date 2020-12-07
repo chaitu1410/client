@@ -104,9 +104,9 @@ namespace client.Data
                 await Task.Run(() => _db.SaleReturns.Update(saleReturn));
                 await _db.SaveChangesAsync();
             }
-            catch (InvaliedValuesException ex)
+            catch (InvaliedValuesException e)
             {
-                throw ex;
+                throw e;
             }
             catch (Exception)
             {
