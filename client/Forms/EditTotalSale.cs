@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -14,6 +15,7 @@ namespace client.Forms
         TotalSaleRepository _totalsalerepository;
         TotalSale _totalsale;
         bool flag = false;
+        public static event LoadData OnLoadData;
         public EditTotalSale(TotalSale totalSale)
         {
             InitializeComponent();
@@ -30,6 +32,7 @@ namespace client.Forms
                 try
                 {
                     await _totalsalerepository.Remove(_totalsale);
+                    OnLoadData();
                     this.Dispose();
                 }
                 catch (Exception ex)
@@ -53,9 +56,12 @@ namespace client.Forms
             try
             {
                 progessBar.Visible = true;
-                await _totalsalerepository.GeneratePdf(_totalsale);
+                string path = await _totalsalerepository.GeneratePdf(_totalsale);
                 MessageBox.Show("PDF Generated Successfully", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 progessBar.Visible = false;
+                path = path.Replace("\\", "/");
+                path = @"file:///" + path;
+                Process.Start(new ProcessStartInfo("cmd", $"/c start {path}") { CreateNoWindow = true });
             }
             catch (Exception ex)
             {

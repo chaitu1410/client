@@ -260,5 +260,25 @@ namespace client.Forms
             if (txtFilterName.Text.Trim() != "")
                 await Load_Datagridview2_Data_By_Name();
         }
+
+        private async void dgvCreditDeposit_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvCreditDeposit.CurrentRow != null)
+                {
+                    var row = dgvCreditDeposit.CurrentRow.Cells;
+                    int id = Convert.ToInt32(row["Id"].Value);
+                    //Console.WriteLine(id);
+                    Borrow borrow = await _borrowRepository.Find(id);
+                    EditBorrowForm edf = new EditBorrowForm(borrow);
+                    edf.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

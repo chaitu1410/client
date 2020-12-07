@@ -11,9 +11,9 @@ namespace client.Data
         {
             try
             {
-                AppDbContext _db = new AppDbContext();
-                User user = await _db.Users.FindAsync(email);
-                if (user != null && user.Password == password)
+                UserRepository _userRepository = new UserRepository();
+                User user = await _userRepository.GetUser();
+                if (user != null && user.Email == email && user.Password == password)
                 {
                     return true;
                 }

@@ -68,3 +68,9 @@ client/bin/Debug/netcoreapp3.1/client.dll
 client/bin/Debug/netcoreapp3.1/client.exe
 client/bin/Debug/netcoreapp3.1/Database.mdf
 client/bin/Debug/netcoreapp3.1/Database_log.ldf
+*.json
+*.dll
+*.mdf
+*.ldf
+*.csproj
+*.ldf

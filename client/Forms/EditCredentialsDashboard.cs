@@ -33,6 +33,8 @@ namespace client.Forms
                 source.DataSource = await _userRepository.GetUser();
                 dgvEditCredentials.AutoGenerateColumns = true;
                 dgvEditCredentials.DataSource = source;
+                dgvEditCredentials.Columns["Password"].Visible = false;
+                dgvEditCredentials.Columns["Id"].Visible = false;
             }
             catch (Exception ex)
             {

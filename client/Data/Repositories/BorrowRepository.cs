@@ -9,7 +9,7 @@ namespace client.Data
 {
     public class BorrowRepository
     {
-        public async Task<IEnumerable<Borrow>> GetAll() 
+        /*public async Task<IEnumerable<Borrow>> GetAll() 
         {
             try
             {
@@ -20,14 +20,14 @@ namespace client.Data
             {
                 throw new Exception("Failed to Get Borrow Records.");
             }
-        }
+        }*/
 
         public async Task<IEnumerable<Borrow>> GetAllDeposited()
         {
             try
             {
                 AppDbContext _db = new AppDbContext();
-                return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == true).ToList());
+                return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == true).OrderByDescending(row => row.ReturnDate).ToList());
             }
             catch (Exception)
             {
@@ -40,14 +40,14 @@ namespace client.Data
             try
             {
                 AppDbContext _db = new AppDbContext();
-                return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == false).ToList());
+                return await Task.Run(() => _db.Borrows.Where(row => row.IsReturned == false).OrderByDescending(row => row.Date).ToList());
             }
             catch (Exception)
             {
                 throw new Exception("Failed to Get Borrowing Balance Records.");
             }
         }
-
+        /*
         public async Task<IEnumerable<Borrow>> GetAllByDate(DateTime date)
         {
             try
@@ -60,7 +60,7 @@ namespace client.Data
                 throw new Exception("Failed to Get Borrow Records filtered by date.");
             }
         }
-
+        */
         public async Task<List<Borrow>> GetAllDepositedByDate(DateTime date)
         {
             try

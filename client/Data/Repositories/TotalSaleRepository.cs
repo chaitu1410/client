@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using iTextSharp.text;
@@ -112,7 +114,6 @@ namespace client.Data
             List<Borrow> borrowsUndeposited = await borrowRepository.GetAllUndepositedByDate(date);
             List<Borrow> borrowsDeposited = await borrowRepository.GetAllDepositedByDate(date);
             IEnumerable<SaleReturn> saleReturns = await saleReturnRepository.GetAllByDate(date);
-
             double CashPayment = await Task.Run(() => (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Cash).Sum(row => row.Amount));
             double CardPayment = await Task.Run(() => (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Card).Sum(row => row.Amount));
             double UPIPayment = await Task.Run(() => (double)transactions.Where(row => row.PaymentMethod == PaymentMethods.Online).Sum(row => row.Amount));
@@ -144,7 +145,8 @@ namespace client.Data
             if (await isNotAvailable(date))
             {
                 TotalSale totalSale = await CalculateTotalSale(date);
-                await Add(totalSale);
+                if(Convert.ToInt32(totalSale.TotalSaleAmount) != 0)
+                    await Add(totalSale);
             }
             else if (date.Date.Equals(DateTime.Today))
             {
@@ -186,7 +188,7 @@ namespace client.Data
         }
         */
 
-        public async Task GeneratePdf(TotalSale totalSale)
+        public async Task<string> GeneratePdf(TotalSale totalSale)
         {
             Document document = new Document(PageSize.A4, 20f, 20f, 20f, 20f);
             FileStream fs = null;
@@ -359,6 +361,8 @@ namespace client.Data
                 /////////////////////////////////////////// END Credit Deposit Table ////////////////////////////////////////
                 document.Close();
                 fs.Close();
+                return path;
+                
             }
             catch (DirectoryNotFoundException)
             {
@@ -382,7 +386,6 @@ namespace client.Data
                     fs.Close();
                 }
             }
-            System.Diagnostics.Process.Start(path);
         }
     }
 }
