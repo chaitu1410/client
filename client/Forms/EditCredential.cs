@@ -130,5 +130,19 @@ namespace client.Forms
                 this.errorProvider1.SetError(this.txtConfirmPassword, "");
             }
         }
+
+        private void cbVisibility_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbVisibility.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+                txtConfirmPassword.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '●';
+                txtConfirmPassword.PasswordChar = '●';
+            }
+        }
     }
 }

@@ -49,12 +49,12 @@ namespace client.Data
             }
         }
 
-        public async Task<string[]> GetAllName(string name)
+        public async Task<string[]> GetAllName()
         {
             try
             {
                 AppDbContext _db = new AppDbContext();
-                return await Task.Run(() => _db.SaleReturns.Where(t => t.CustomerName.Contains(name)).Select(t => t.CustomerName).ToArray());
+                return await Task.Run(() => _db.SaleReturns.Select(t => t.CustomerName).ToArray());
             }
             catch (Exception)
             {
@@ -133,6 +133,7 @@ namespace client.Data
             {
                 AppDbContext _db = new AppDbContext();
                 await Task.Run(() => _db.SaleReturns.Remove(saleReturn));
+                await _db.SaveChangesAsync();
             }
             catch (Exception)
             {

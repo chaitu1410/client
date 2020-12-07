@@ -50,9 +50,9 @@ namespace client.Forms
             this.lblSaleReturn.AutoSize = true;
             this.lblSaleReturn.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblSaleReturn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblSaleReturn.Location = new System.Drawing.Point(21, 26);
+            this.lblSaleReturn.Location = new System.Drawing.Point(24, 35);
             this.lblSaleReturn.Name = "lblSaleReturn";
-            this.lblSaleReturn.Size = new System.Drawing.Size(125, 25);
+            this.lblSaleReturn.Size = new System.Drawing.Size(156, 32);
             this.lblSaleReturn.TabIndex = 0;
             this.lblSaleReturn.Text = "Sale Return";
             // 
@@ -90,7 +90,8 @@ namespace client.Forms
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSaleReturn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSaleReturn.GridColor = System.Drawing.Color.LightGray;
-            this.dgvSaleReturn.Location = new System.Drawing.Point(2, 140);
+            this.dgvSaleReturn.Location = new System.Drawing.Point(2, 187);
+            this.dgvSaleReturn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dgvSaleReturn.Name = "dgvSaleReturn";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -103,7 +104,7 @@ namespace client.Forms
             this.dgvSaleReturn.RowHeadersVisible = false;
             this.dgvSaleReturn.RowHeadersWidth = 50;
             this.dgvSaleReturn.RowTemplate.Height = 30;
-            this.dgvSaleReturn.Size = new System.Drawing.Size(980, 486);
+            this.dgvSaleReturn.Size = new System.Drawing.Size(1120, 648);
             this.dgvSaleReturn.TabIndex = 1;
             this.dgvSaleReturn.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSaleReturn_CellDoubleClick);
             // 
@@ -111,9 +112,9 @@ namespace client.Forms
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterBy.Location = new System.Drawing.Point(21, 105);
+            this.lblFilterBy.Location = new System.Drawing.Point(24, 140);
             this.lblFilterBy.Name = "lblFilterBy";
-            this.lblFilterBy.Size = new System.Drawing.Size(107, 19);
+            this.lblFilterBy.Size = new System.Drawing.Size(132, 23);
             this.lblFilterBy.TabIndex = 2;
             this.lblFilterBy.Text = "Filter by date";
             // 
@@ -121,9 +122,10 @@ namespace client.Forms
             // 
             this.dtpSaleReturn.CalendarFont = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpSaleReturn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpSaleReturn.Location = new System.Drawing.Point(134, 102);
+            this.dtpSaleReturn.Location = new System.Drawing.Point(153, 136);
+            this.dtpSaleReturn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpSaleReturn.Name = "dtpSaleReturn";
-            this.dtpSaleReturn.Size = new System.Drawing.Size(239, 26);
+            this.dtpSaleReturn.Size = new System.Drawing.Size(273, 31);
             this.dtpSaleReturn.TabIndex = 3;
             this.dtpSaleReturn.ValueChanged += new System.EventHandler(this.dtpSaleReturn_ValueChanged);
             // 
@@ -132,9 +134,10 @@ namespace client.Forms
             this.btnClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnClearFilter.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearFilter.ForeColor = System.Drawing.Color.White;
-            this.btnClearFilter.Location = new System.Drawing.Point(810, 649);
+            this.btnClearFilter.Location = new System.Drawing.Point(926, 865);
+            this.btnClearFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnClearFilter.Name = "btnClearFilter";
-            this.btnClearFilter.Size = new System.Drawing.Size(144, 43);
+            this.btnClearFilter.Size = new System.Drawing.Size(165, 57);
             this.btnClearFilter.TabIndex = 4;
             this.btnClearFilter.Text = "Clear Filter";
             this.btnClearFilter.UseVisualStyleBackColor = false;
@@ -142,9 +145,10 @@ namespace client.Forms
             // 
             // pbxSaleReturn
             // 
-            this.pbxSaleReturn.Location = new System.Drawing.Point(380, 327);
+            this.pbxSaleReturn.Location = new System.Drawing.Point(434, 436);
+            this.pbxSaleReturn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pbxSaleReturn.Name = "pbxSaleReturn";
-            this.pbxSaleReturn.Size = new System.Drawing.Size(217, 24);
+            this.pbxSaleReturn.Size = new System.Drawing.Size(248, 32);
             this.pbxSaleReturn.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.pbxSaleReturn.TabIndex = 5;
             // 
@@ -152,9 +156,9 @@ namespace client.Forms
             // 
             this.lblFilterByName.AutoSize = true;
             this.lblFilterByName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterByName.Location = new System.Drawing.Point(593, 105);
+            this.lblFilterByName.Location = new System.Drawing.Point(678, 140);
             this.lblFilterByName.Name = "lblFilterByName";
-            this.lblFilterByName.Size = new System.Drawing.Size(115, 19);
+            this.lblFilterByName.Size = new System.Drawing.Size(143, 23);
             this.lblFilterByName.TabIndex = 6;
             this.lblFilterByName.Text = "Filter by name";
             // 
@@ -163,9 +167,10 @@ namespace client.Forms
             this.txtFilterByName.BackColor = System.Drawing.Color.White;
             this.txtFilterByName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtFilterByName.ForeColor = System.Drawing.Color.Black;
-            this.txtFilterByName.Location = new System.Drawing.Point(714, 102);
+            this.txtFilterByName.Location = new System.Drawing.Point(816, 136);
+            this.txtFilterByName.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtFilterByName.Name = "txtFilterByName";
-            this.txtFilterByName.Size = new System.Drawing.Size(151, 26);
+            this.txtFilterByName.Size = new System.Drawing.Size(172, 31);
             this.txtFilterByName.TabIndex = 7;
             // 
             // btnSearch
@@ -173,18 +178,20 @@ namespace client.Forms
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnSearch.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(871, 95);
+            this.btnSearch.Location = new System.Drawing.Point(995, 127);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(91, 38);
+            this.btnSearch.Size = new System.Drawing.Size(104, 51);
             this.btnSearch.TabIndex = 8;
             this.btnSearch.Text = "Search";
             this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // SaleReturnDashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 742);
+            this.ClientSize = new System.Drawing.Size(1123, 989);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtFilterByName);
             this.Controls.Add(this.lblFilterByName);
@@ -195,6 +202,7 @@ namespace client.Forms
             this.Controls.Add(this.dgvSaleReturn);
             this.Controls.Add(this.lblSaleReturn);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SaleReturnDashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SaleReturnDashboard";

@@ -9,6 +9,8 @@ namespace client.Data
     public class User
     {
         [Key]
+        public int Id { get; set; }
+
         [Required]
         [StringLength(100)]
         [DisplayName("Email Address")]

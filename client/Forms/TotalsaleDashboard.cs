@@ -20,7 +20,8 @@ namespace client.Forms
             InitializeComponent();
             _totalsalerepository = new TotalSaleRepository();
             _totalsale = new TotalSale();
-
+            EditTotalSale.OnLoadData += SetupDatetimepicker;
+            EditTotalSale.OnLoadData += Load_Datagridview_Data;
         }
 
         private async void dgvTotalSale_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -73,6 +74,11 @@ namespace client.Forms
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void SetupDatetimepicker()
+        {
+            dtpTotalSale.Value = DateTime.Now;
         }
 
         private async void btnClearFilter_Click(object sender, EventArgs e)

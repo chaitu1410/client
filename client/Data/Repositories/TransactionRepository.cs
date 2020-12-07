@@ -12,6 +12,7 @@ namespace client.Data
      */
     class TransactionRepository
     {
+        /*
         public async Task<IEnumerable<Transaction>> GetAll()
         {
             try
@@ -24,7 +25,7 @@ namespace client.Data
                 throw new Exception("Failed to load Daily Transaction Records.");
             }
         }
-
+        */
         public async Task<IEnumerable<Transaction>> GetAllByDate(DateTime date) 
         {
             try

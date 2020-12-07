@@ -31,6 +31,7 @@ namespace client.Forms
         {
             this.components = new System.ComponentModel.Container();
             this.pnlBody = new System.Windows.Forms.Panel();
+            this.cbVisibility = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtConfirmPassword = new System.Windows.Forms.TextBox();
@@ -47,6 +48,7 @@ namespace client.Forms
             // 
             // pnlBody
             // 
+            this.pnlBody.Controls.Add(this.cbVisibility);
             this.pnlBody.Controls.Add(this.btnCancel);
             this.pnlBody.Controls.Add(this.btnUpdate);
             this.pnlBody.Controls.Add(this.txtConfirmPassword);
@@ -57,22 +59,34 @@ namespace client.Forms
             this.pnlBody.Controls.Add(this.lblEmailAddress);
             this.pnlBody.Controls.Add(this.lblEditCredential);
             this.pnlBody.Location = new System.Drawing.Point(1, 1);
+            this.pnlBody.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(501, 435);
+            this.pnlBody.Size = new System.Drawing.Size(573, 580);
             this.pnlBody.TabIndex = 0;
             this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlBody_Paint);
             this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);
             this.pnlBody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseMove);
             this.pnlBody.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseUp);
             // 
+            // cbVisibility
+            // 
+            this.cbVisibility.AutoSize = true;
+            this.cbVisibility.Location = new System.Drawing.Point(499, 270);
+            this.cbVisibility.Name = "cbVisibility";
+            this.cbVisibility.Size = new System.Drawing.Size(18, 17);
+            this.cbVisibility.TabIndex = 6;
+            this.cbVisibility.UseVisualStyleBackColor = true;
+            this.cbVisibility.CheckedChanged += new System.EventHandler(this.cbVisibility_CheckedChanged);
+            // 
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnCancel.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCancel.ForeColor = System.Drawing.Color.White;
-            this.btnCancel.Location = new System.Drawing.Point(364, 343);
+            this.btnCancel.Location = new System.Drawing.Point(416, 457);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(88, 35);
+            this.btnCancel.Size = new System.Drawing.Size(101, 47);
             this.btnCancel.TabIndex = 4;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -83,9 +97,10 @@ namespace client.Forms
             this.btnUpdate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnUpdate.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
-            this.btnUpdate.Location = new System.Drawing.Point(262, 343);
+            this.btnUpdate.Location = new System.Drawing.Point(299, 457);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(96, 35);
+            this.btnUpdate.Size = new System.Drawing.Size(110, 47);
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = false;
@@ -95,10 +110,11 @@ namespace client.Forms
             // 
             this.txtConfirmPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtConfirmPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtConfirmPassword.Location = new System.Drawing.Point(182, 277);
+            this.txtConfirmPassword.Location = new System.Drawing.Point(208, 369);
+            this.txtConfirmPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(270, 26);
+            this.txtConfirmPassword.PasswordChar = '●';
+            this.txtConfirmPassword.Size = new System.Drawing.Size(286, 31);
             this.txtConfirmPassword.TabIndex = 2;
             this.txtConfirmPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtConfirmPassword_Validating);
             // 
@@ -107,9 +123,9 @@ namespace client.Forms
             this.lblConfirmPassword.AutoSize = true;
             this.lblConfirmPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblConfirmPassword.ForeColor = System.Drawing.Color.Black;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(15, 284);
+            this.lblConfirmPassword.Location = new System.Drawing.Point(17, 379);
             this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(144, 19);
+            this.lblConfirmPassword.Size = new System.Drawing.Size(177, 23);
             this.lblConfirmPassword.TabIndex = 5;
             this.lblConfirmPassword.Text = "Confirm Password";
             // 
@@ -117,10 +133,11 @@ namespace client.Forms
             // 
             this.txtPassword.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtPassword.ForeColor = System.Drawing.Color.Black;
-            this.txtPassword.Location = new System.Drawing.Point(182, 196);
+            this.txtPassword.Location = new System.Drawing.Point(208, 261);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(270, 26);
+            this.txtPassword.PasswordChar = '●';
+            this.txtPassword.Size = new System.Drawing.Size(286, 31);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.Validating += new System.ComponentModel.CancelEventHandler(this.txtPassword_Validating);
             // 
@@ -129,9 +146,9 @@ namespace client.Forms
             this.lblPassowrd.AutoSize = true;
             this.lblPassowrd.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblPassowrd.ForeColor = System.Drawing.Color.Black;
-            this.lblPassowrd.Location = new System.Drawing.Point(78, 203);
+            this.lblPassowrd.Location = new System.Drawing.Point(89, 271);
             this.lblPassowrd.Name = "lblPassowrd";
-            this.lblPassowrd.Size = new System.Drawing.Size(81, 19);
+            this.lblPassowrd.Size = new System.Drawing.Size(99, 23);
             this.lblPassowrd.TabIndex = 3;
             this.lblPassowrd.Text = "Password";
             // 
@@ -139,9 +156,10 @@ namespace client.Forms
             // 
             this.txtEmailAddress.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtEmailAddress.ForeColor = System.Drawing.Color.Black;
-            this.txtEmailAddress.Location = new System.Drawing.Point(182, 114);
+            this.txtEmailAddress.Location = new System.Drawing.Point(208, 152);
+            this.txtEmailAddress.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtEmailAddress.Name = "txtEmailAddress";
-            this.txtEmailAddress.Size = new System.Drawing.Size(270, 26);
+            this.txtEmailAddress.Size = new System.Drawing.Size(286, 31);
             this.txtEmailAddress.TabIndex = 0;
             // 
             // lblEmailAddress
@@ -149,9 +167,9 @@ namespace client.Forms
             this.lblEmailAddress.AutoSize = true;
             this.lblEmailAddress.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblEmailAddress.ForeColor = System.Drawing.Color.Black;
-            this.lblEmailAddress.Location = new System.Drawing.Point(45, 117);
+            this.lblEmailAddress.Location = new System.Drawing.Point(51, 156);
             this.lblEmailAddress.Name = "lblEmailAddress";
-            this.lblEmailAddress.Size = new System.Drawing.Size(114, 19);
+            this.lblEmailAddress.Size = new System.Drawing.Size(142, 23);
             this.lblEmailAddress.TabIndex = 1;
             this.lblEmailAddress.Text = "Email Address";
             // 
@@ -160,9 +178,9 @@ namespace client.Forms
             this.lblEditCredential.AutoSize = true;
             this.lblEditCredential.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblEditCredential.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblEditCredential.Location = new System.Drawing.Point(169, 27);
+            this.lblEditCredential.Location = new System.Drawing.Point(193, 36);
             this.lblEditCredential.Name = "lblEditCredential";
-            this.lblEditCredential.Size = new System.Drawing.Size(159, 25);
+            this.lblEditCredential.Size = new System.Drawing.Size(197, 32);
             this.lblEditCredential.TabIndex = 0;
             this.lblEditCredential.Text = "Edit Credential";
             // 
@@ -172,12 +190,13 @@ namespace client.Forms
             // 
             // EditCredential
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(229)))), ((int)(((byte)(231)))), ((int)(((byte)(233)))));
-            this.ClientSize = new System.Drawing.Size(504, 438);
+            this.ClientSize = new System.Drawing.Size(576, 584);
             this.Controls.Add(this.pnlBody);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "EditCredential";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditCredential";
@@ -202,5 +221,6 @@ namespace client.Forms
         private System.Windows.Forms.Label lblEmailAddress;
         private System.Windows.Forms.Label lblEditCredential;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.CheckBox cbVisibility;
     }
 }

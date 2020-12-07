@@ -105,6 +105,8 @@ namespace client.Forms
         private void pnlBody_Paint(object sender, PaintEventArgs e)
         {
             ControlPaint.DrawBorder(e.Graphics, this.pnlBody.ClientRectangle, Color.DarkSlateBlue, ButtonBorderStyle.None);
+            if (_borrow.IsReturned == true)
+                cbxIsDeposited.Enabled = false;
         }
 
         private void pnlBody_MouseDown(object sender, MouseEventArgs e)

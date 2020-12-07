@@ -56,7 +56,7 @@ namespace client.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Invaild Username and Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invaild Username or Password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -70,9 +70,9 @@ namespace client.Forms
         {
             this.Dispose();
         }
-        public int ValidateEmailId(string emailId)
+/*        public int ValidateEmailId(string emailId)
         {
-            /*Regular Expressions for email id*/
+            // Regular Expressions for email id
             System.Text.RegularExpressions.Regex rEMail = new System.Text.RegularExpressions.Regex(@"^[a-zA-Z][\w\.-]{2,28}[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$");
             if (emailId.Length > 0)
             {
@@ -87,7 +87,7 @@ namespace client.Forms
             }
             return 2;
         }
-
+*/
         private void txtPassword_Validating(object sender, CancelEventArgs e)
         {
             if (this.txtPassword.TextLength < 5)
@@ -98,6 +98,20 @@ namespace client.Forms
             else
             {
                 this.errorProvider1.SetError(this.txtPassword, "");
+            }
+        }
+
+        private void cbVisibility_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbVisibility.Checked)
+            {
+                txtPassword.PasswordChar = '\0';
+                lblForgotPwd.Text = "Hide Password";
+            }
+            else
+            {
+                txtPassword.PasswordChar = '●';
+                lblForgotPwd.Text = "Show Password";
             }
         }
     }
