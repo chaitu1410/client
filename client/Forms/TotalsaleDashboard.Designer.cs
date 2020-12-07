@@ -79,7 +79,7 @@ namespace client.Forms
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTotalSale.DefaultCellStyle = dataGridViewCellStyle3;
@@ -89,8 +89,8 @@ namespace client.Forms
             this.dgvTotalSale.RowHeadersVisible = false;
             this.dgvTotalSale.RowHeadersWidth = 50;
             this.dgvTotalSale.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvTotalSale.RowTemplate.Height = 30;
-            this.dgvTotalSale.Size = new System.Drawing.Size(978, 486);
+            this.dgvTotalSale.RowTemplate.Height = 50;
+            this.dgvTotalSale.Size = new System.Drawing.Size(1036, 486);
             this.dgvTotalSale.TabIndex = 1;
             this.dgvTotalSale.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTotalSale_CellDoubleClick);
             // 
@@ -119,7 +119,7 @@ namespace client.Forms
             this.btnClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnClearFilter.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearFilter.ForeColor = System.Drawing.Color.White;
-            this.btnClearFilter.Location = new System.Drawing.Point(818, 646);
+            this.btnClearFilter.Location = new System.Drawing.Point(886, 645);
             this.btnClearFilter.Name = "btnClearFilter";
             this.btnClearFilter.Size = new System.Drawing.Size(153, 48);
             this.btnClearFilter.TabIndex = 4;
@@ -129,7 +129,7 @@ namespace client.Forms
             // 
             // pbxTotalSale
             // 
-            this.pbxTotalSale.Location = new System.Drawing.Point(368, 343);
+            this.pbxTotalSale.Location = new System.Drawing.Point(415, 348);
             this.pbxTotalSale.Name = "pbxTotalSale";
             this.pbxTotalSale.Size = new System.Drawing.Size(212, 23);
             this.pbxTotalSale.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
@@ -139,7 +139,7 @@ namespace client.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 742);
+            this.ClientSize = new System.Drawing.Size(1042, 742);
             this.Controls.Add(this.pbxTotalSale);
             this.Controls.Add(this.btnClearFilter);
             this.Controls.Add(this.dtpTotalSale);

@@ -82,9 +82,8 @@ namespace client.Forms
             this.pnlDashboard.Controls.Add(this.btnViewBorrows);
             this.pnlDashboard.Controls.Add(this.pnlTopDashboard);
             this.pnlDashboard.Location = new System.Drawing.Point(1, 0);
-            this.pnlDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(323, 1044);
+            this.pnlDashboard.Size = new System.Drawing.Size(283, 783);
             this.pnlDashboard.TabIndex = 0;
             this.pnlDashboard.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlDashboard_MouseDown);
             this.pnlDashboard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlDashboard_MouseMove);
@@ -93,10 +92,9 @@ namespace client.Forms
             // PbxSaleReturn
             // 
             this.PbxSaleReturn.Image = ((System.Drawing.Image)(resources.GetObject("PbxSaleReturn.Image")));
-            this.PbxSaleReturn.Location = new System.Drawing.Point(15, 480);
-            this.PbxSaleReturn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.PbxSaleReturn.Location = new System.Drawing.Point(13, 360);
             this.PbxSaleReturn.Name = "PbxSaleReturn";
-            this.PbxSaleReturn.Size = new System.Drawing.Size(55, 41);
+            this.PbxSaleReturn.Size = new System.Drawing.Size(48, 31);
             this.PbxSaleReturn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PbxSaleReturn.TabIndex = 11;
             this.PbxSaleReturn.TabStop = false;
@@ -109,10 +107,9 @@ namespace client.Forms
             this.btnSaleReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaleReturn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSaleReturn.ForeColor = System.Drawing.Color.White;
-            this.btnSaleReturn.Location = new System.Drawing.Point(-2, 465);
-            this.btnSaleReturn.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSaleReturn.Location = new System.Drawing.Point(-2, 349);
             this.btnSaleReturn.Name = "btnSaleReturn";
-            this.btnSaleReturn.Size = new System.Drawing.Size(323, 77);
+            this.btnSaleReturn.Size = new System.Drawing.Size(283, 58);
             this.btnSaleReturn.TabIndex = 10;
             this.btnSaleReturn.Text = "SALE RETURN";
             this.btnSaleReturn.UseVisualStyleBackColor = true;
@@ -123,10 +120,9 @@ namespace client.Forms
             // pbxHome
             // 
             this.pbxHome.Image = ((System.Drawing.Image)(resources.GetObject("pbxHome.Image")));
-            this.pbxHome.Location = new System.Drawing.Point(15, 227);
-            this.pbxHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbxHome.Location = new System.Drawing.Point(13, 170);
             this.pbxHome.Name = "pbxHome";
-            this.pbxHome.Size = new System.Drawing.Size(55, 41);
+            this.pbxHome.Size = new System.Drawing.Size(48, 31);
             this.pbxHome.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxHome.TabIndex = 9;
             this.pbxHome.TabStop = false;
@@ -139,10 +135,9 @@ namespace client.Forms
             this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnHome.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Location = new System.Drawing.Point(-2, 209);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnHome.Location = new System.Drawing.Point(-2, 157);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(323, 77);
+            this.btnHome.Size = new System.Drawing.Size(283, 58);
             this.btnHome.TabIndex = 8;
             this.btnHome.Text = "HOME";
             this.btnHome.UseVisualStyleBackColor = true;
@@ -153,10 +148,9 @@ namespace client.Forms
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 357);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(13, 268);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 41);
+            this.pictureBox1.Size = new System.Drawing.Size(48, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -164,10 +158,9 @@ namespace client.Forms
             // pbxCredentials
             // 
             this.pbxCredentials.Image = ((System.Drawing.Image)(resources.GetObject("pbxCredentials.Image")));
-            this.pbxCredentials.Location = new System.Drawing.Point(15, 740);
-            this.pbxCredentials.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbxCredentials.Location = new System.Drawing.Point(13, 555);
             this.pbxCredentials.Name = "pbxCredentials";
-            this.pbxCredentials.Size = new System.Drawing.Size(55, 41);
+            this.pbxCredentials.Size = new System.Drawing.Size(48, 31);
             this.pbxCredentials.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxCredentials.TabIndex = 6;
             this.pbxCredentials.TabStop = false;
@@ -180,10 +173,9 @@ namespace client.Forms
             this.btnCredentials.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCredentials.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnCredentials.ForeColor = System.Drawing.Color.White;
-            this.btnCredentials.Location = new System.Drawing.Point(0, 725);
-            this.btnCredentials.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnCredentials.Location = new System.Drawing.Point(0, 544);
             this.btnCredentials.Name = "btnCredentials";
-            this.btnCredentials.Size = new System.Drawing.Size(321, 77);
+            this.btnCredentials.Size = new System.Drawing.Size(281, 58);
             this.btnCredentials.TabIndex = 5;
             this.btnCredentials.Text = "CREDENTIALS";
             this.btnCredentials.UseVisualStyleBackColor = true;
@@ -194,10 +186,9 @@ namespace client.Forms
             // pbxDailySale
             // 
             this.pbxDailySale.Image = ((System.Drawing.Image)(resources.GetObject("pbxDailySale.Image")));
-            this.pbxDailySale.Location = new System.Drawing.Point(15, 609);
-            this.pbxDailySale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbxDailySale.Location = new System.Drawing.Point(13, 457);
             this.pbxDailySale.Name = "pbxDailySale";
-            this.pbxDailySale.Size = new System.Drawing.Size(55, 41);
+            this.pbxDailySale.Size = new System.Drawing.Size(48, 31);
             this.pbxDailySale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxDailySale.TabIndex = 4;
             this.pbxDailySale.TabStop = false;
@@ -210,10 +201,9 @@ namespace client.Forms
             this.btnViewTotalSale.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewTotalSale.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnViewTotalSale.ForeColor = System.Drawing.Color.White;
-            this.btnViewTotalSale.Location = new System.Drawing.Point(0, 595);
-            this.btnViewTotalSale.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnViewTotalSale.Location = new System.Drawing.Point(0, 446);
             this.btnViewTotalSale.Name = "btnViewTotalSale";
-            this.btnViewTotalSale.Size = new System.Drawing.Size(323, 77);
+            this.btnViewTotalSale.Size = new System.Drawing.Size(283, 58);
             this.btnViewTotalSale.TabIndex = 3;
             this.btnViewTotalSale.Text = "TOTAL SALE";
             this.btnViewTotalSale.UseVisualStyleBackColor = true;
@@ -224,10 +214,9 @@ namespace client.Forms
             // pbxRecords
             // 
             this.pbxRecords.Image = ((System.Drawing.Image)(resources.GetObject("pbxRecords.Image")));
-            this.pbxRecords.Location = new System.Drawing.Point(719, 612);
-            this.pbxRecords.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbxRecords.Location = new System.Drawing.Point(629, 459);
             this.pbxRecords.Name = "pbxRecords";
-            this.pbxRecords.Size = new System.Drawing.Size(55, 41);
+            this.pbxRecords.Size = new System.Drawing.Size(48, 31);
             this.pbxRecords.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbxRecords.TabIndex = 2;
             this.pbxRecords.TabStop = false;
@@ -240,10 +229,9 @@ namespace client.Forms
             this.btnViewBorrows.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnViewBorrows.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnViewBorrows.ForeColor = System.Drawing.Color.White;
-            this.btnViewBorrows.Location = new System.Drawing.Point(-2, 340);
-            this.btnViewBorrows.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnViewBorrows.Location = new System.Drawing.Point(-2, 255);
             this.btnViewBorrows.Name = "btnViewBorrows";
-            this.btnViewBorrows.Size = new System.Drawing.Size(323, 77);
+            this.btnViewBorrows.Size = new System.Drawing.Size(283, 58);
             this.btnViewBorrows.TabIndex = 1;
             this.btnViewBorrows.Text = "BORROW";
             this.btnViewBorrows.UseVisualStyleBackColor = true;
@@ -257,9 +245,8 @@ namespace client.Forms
             this.pnlTopDashboard.Controls.Add(this.label1);
             this.pnlTopDashboard.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTopDashboard.Location = new System.Drawing.Point(0, 0);
-            this.pnlTopDashboard.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pnlTopDashboard.Name = "pnlTopDashboard";
-            this.pnlTopDashboard.Size = new System.Drawing.Size(323, 136);
+            this.pnlTopDashboard.Size = new System.Drawing.Size(283, 102);
             this.pnlTopDashboard.TabIndex = 0;
             this.pnlTopDashboard.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTopDashboard_MouseDown);
             this.pnlTopDashboard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlTopDashboard_MouseMove);
@@ -270,9 +257,9 @@ namespace client.Forms
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Verdana", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(47, 55);
+            this.label1.Location = new System.Drawing.Point(41, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 32);
+            this.label1.Size = new System.Drawing.Size(184, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "Aditya Medical";
             // 
@@ -281,10 +268,9 @@ namespace client.Forms
             this.btnClose.BackColor = System.Drawing.Color.White;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(1431, 0);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnClose.Location = new System.Drawing.Point(1312, 0);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(39, 35);
+            this.btnClose.Size = new System.Drawing.Size(34, 26);
             this.btnClose.TabIndex = 7;
             this.btnClose.UseVisualStyleBackColor = false;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
@@ -293,10 +279,9 @@ namespace client.Forms
             // 
             // pnlBody
             // 
-            this.pnlBody.Location = new System.Drawing.Point(333, 43);
-            this.pnlBody.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pnlBody.Location = new System.Drawing.Point(291, 32);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(1123, 989);
+            this.pnlBody.Size = new System.Drawing.Size(1042, 742);
             this.pnlBody.TabIndex = 8;
             this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);
             this.pnlBody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseMove);
@@ -307,25 +292,23 @@ namespace client.Forms
             this.btnMinimize.BackColor = System.Drawing.Color.White;
             this.btnMinimize.FlatAppearance.BorderSize = 0;
             this.btnMinimize.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimize.Image")));
-            this.btnMinimize.Location = new System.Drawing.Point(1399, 0);
-            this.btnMinimize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnMinimize.Location = new System.Drawing.Point(1286, 0);
             this.btnMinimize.Name = "btnMinimize";
-            this.btnMinimize.Size = new System.Drawing.Size(35, 35);
+            this.btnMinimize.Size = new System.Drawing.Size(31, 26);
             this.btnMinimize.TabIndex = 9;
             this.btnMinimize.UseVisualStyleBackColor = false;
             this.btnMinimize.Click += new System.EventHandler(this.btnMinimize_Click);
             // 
             // Dashboard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1470, 1048);
+            this.ClientSize = new System.Drawing.Size(1345, 786);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.pnlDashboard);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "Dashboard";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dashboard";

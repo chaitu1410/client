@@ -43,7 +43,7 @@ namespace client.Forms
             this.lblEditCredentials.AutoSize = true;
             this.lblEditCredentials.Font = new System.Drawing.Font("Cambria", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblEditCredentials.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
-            this.lblEditCredentials.Location = new System.Drawing.Point(21, 25);
+            this.lblEditCredentials.Location = new System.Drawing.Point(25, 36);
             this.lblEditCredentials.Name = "lblEditCredentials";
             this.lblEditCredentials.Size = new System.Drawing.Size(169, 25);
             this.lblEditCredentials.TabIndex = 0;
@@ -77,7 +77,7 @@ namespace client.Forms
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEditCredentials.DefaultCellStyle = dataGridViewCellStyle3;
@@ -94,8 +94,8 @@ namespace client.Forms
             this.dgvEditCredentials.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvEditCredentials.RowHeadersVisible = false;
             this.dgvEditCredentials.RowHeadersWidth = 50;
-            this.dgvEditCredentials.RowTemplate.Height = 30;
-            this.dgvEditCredentials.Size = new System.Drawing.Size(980, 486);
+            this.dgvEditCredentials.RowTemplate.Height = 50;
+            this.dgvEditCredentials.Size = new System.Drawing.Size(1039, 486);
             this.dgvEditCredentials.TabIndex = 1;
             this.dgvEditCredentials.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEditCredentials_CellDoubleClick);
             // 
@@ -103,7 +103,7 @@ namespace client.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(983, 742);
+            this.ClientSize = new System.Drawing.Size(1042, 742);
             this.Controls.Add(this.dgvEditCredentials);
             this.Controls.Add(this.lblEditCredentials);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -149,5 +149,10 @@ namespace client.Forms
                 await Load_Datagridview_Data_By_Name();
             }
         }
+
+        private void txtFilterByName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
