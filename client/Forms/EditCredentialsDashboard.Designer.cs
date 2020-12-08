@@ -82,7 +82,7 @@ namespace client.Forms
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvEditCredentials.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvEditCredentials.GridColor = System.Drawing.Color.LightGray;
-            this.dgvEditCredentials.Location = new System.Drawing.Point(1, 134);
+            this.dgvEditCredentials.Location = new System.Drawing.Point(1, 104);
             this.dgvEditCredentials.Name = "dgvEditCredentials";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -103,7 +103,7 @@ namespace client.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 742);
+            this.ClientSize = new System.Drawing.Size(1042, 681);
             this.Controls.Add(this.dgvEditCredentials);
             this.Controls.Add(this.lblEditCredentials);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

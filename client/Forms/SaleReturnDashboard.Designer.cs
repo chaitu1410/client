@@ -90,7 +90,7 @@ namespace client.Forms
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvSaleReturn.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvSaleReturn.GridColor = System.Drawing.Color.LightGray;
-            this.dgvSaleReturn.Location = new System.Drawing.Point(2, 140);
+            this.dgvSaleReturn.Location = new System.Drawing.Point(2, 122);
             this.dgvSaleReturn.Name = "dgvSaleReturn";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -111,7 +111,7 @@ namespace client.Forms
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterBy.Location = new System.Drawing.Point(21, 105);
+            this.lblFilterBy.Location = new System.Drawing.Point(21, 86);
             this.lblFilterBy.Name = "lblFilterBy";
             this.lblFilterBy.Size = new System.Drawing.Size(107, 19);
             this.lblFilterBy.TabIndex = 2;
@@ -121,7 +121,7 @@ namespace client.Forms
             // 
             this.dtpSaleReturn.CalendarFont = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpSaleReturn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpSaleReturn.Location = new System.Drawing.Point(134, 102);
+            this.dtpSaleReturn.Location = new System.Drawing.Point(134, 83);
             this.dtpSaleReturn.Name = "dtpSaleReturn";
             this.dtpSaleReturn.Size = new System.Drawing.Size(239, 26);
             this.dtpSaleReturn.TabIndex = 3;
@@ -132,7 +132,7 @@ namespace client.Forms
             this.btnClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnClearFilter.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearFilter.ForeColor = System.Drawing.Color.White;
-            this.btnClearFilter.Location = new System.Drawing.Point(886, 643);
+            this.btnClearFilter.Location = new System.Drawing.Point(886, 614);
             this.btnClearFilter.Name = "btnClearFilter";
             this.btnClearFilter.Size = new System.Drawing.Size(144, 43);
             this.btnClearFilter.TabIndex = 4;
@@ -152,7 +152,7 @@ namespace client.Forms
             // 
             this.lblFilterByName.AutoSize = true;
             this.lblFilterByName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterByName.Location = new System.Drawing.Point(661, 100);
+            this.lblFilterByName.Location = new System.Drawing.Point(661, 89);
             this.lblFilterByName.Name = "lblFilterByName";
             this.lblFilterByName.Size = new System.Drawing.Size(115, 19);
             this.lblFilterByName.TabIndex = 6;
@@ -163,7 +163,7 @@ namespace client.Forms
             this.txtFilterByName.BackColor = System.Drawing.Color.White;
             this.txtFilterByName.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtFilterByName.ForeColor = System.Drawing.Color.Black;
-            this.txtFilterByName.Location = new System.Drawing.Point(782, 97);
+            this.txtFilterByName.Location = new System.Drawing.Point(782, 86);
             this.txtFilterByName.Name = "txtFilterByName";
             this.txtFilterByName.Size = new System.Drawing.Size(151, 26);
             this.txtFilterByName.TabIndex = 7;
@@ -174,7 +174,7 @@ namespace client.Forms
             this.btnSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnSearch.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSearch.ForeColor = System.Drawing.Color.White;
-            this.btnSearch.Location = new System.Drawing.Point(939, 90);
+            this.btnSearch.Location = new System.Drawing.Point(939, 79);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(91, 38);
             this.btnSearch.TabIndex = 8;
@@ -186,7 +186,7 @@ namespace client.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 742);
+            this.ClientSize = new System.Drawing.Size(1042, 681);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.txtFilterByName);
             this.Controls.Add(this.lblFilterByName);

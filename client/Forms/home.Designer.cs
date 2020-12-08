@@ -58,7 +58,7 @@ namespace client.Forms
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterBy.Location = new System.Drawing.Point(12, 102);
+            this.lblFilterBy.Location = new System.Drawing.Point(12, 81);
             this.lblFilterBy.Name = "lblFilterBy";
             this.lblFilterBy.Size = new System.Drawing.Size(66, 17);
             this.lblFilterBy.TabIndex = 2;
@@ -68,7 +68,7 @@ namespace client.Forms
             // 
             this.dtpRecords.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpRecords.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpRecords.Location = new System.Drawing.Point(88, 96);
+            this.dtpRecords.Location = new System.Drawing.Point(84, 77);
             this.dtpRecords.Name = "dtpRecords";
             this.dtpRecords.Size = new System.Drawing.Size(242, 25);
             this.dtpRecords.TabIndex = 3;
@@ -102,7 +102,7 @@ namespace client.Forms
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvRecords.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvRecords.GridColor = System.Drawing.Color.LightGray;
-            this.dgvRecords.Location = new System.Drawing.Point(1, 134);
+            this.dgvRecords.Location = new System.Drawing.Point(3, 108);
             this.dgvRecords.Name = "dgvRecords";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
@@ -124,7 +124,7 @@ namespace client.Forms
             this.btnAddBorrow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnAddBorrow.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddBorrow.ForeColor = System.Drawing.Color.White;
-            this.btnAddBorrow.Location = new System.Drawing.Point(16, 645);
+            this.btnAddBorrow.Location = new System.Drawing.Point(12, 600);
             this.btnAddBorrow.Name = "btnAddBorrow";
             this.btnAddBorrow.Size = new System.Drawing.Size(245, 52);
             this.btnAddBorrow.TabIndex = 7;
@@ -137,7 +137,7 @@ namespace client.Forms
             this.btnSaleReturn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnSaleReturn.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnSaleReturn.ForeColor = System.Drawing.Color.White;
-            this.btnSaleReturn.Location = new System.Drawing.Point(406, 645);
+            this.btnSaleReturn.Location = new System.Drawing.Point(406, 600);
             this.btnSaleReturn.Name = "btnSaleReturn";
             this.btnSaleReturn.Size = new System.Drawing.Size(245, 52);
             this.btnSaleReturn.TabIndex = 8;
@@ -159,7 +159,7 @@ namespace client.Forms
             this.btnAddRecords.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnAddRecords.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnAddRecords.ForeColor = System.Drawing.Color.White;
-            this.btnAddRecords.Location = new System.Drawing.Point(785, 645);
+            this.btnAddRecords.Location = new System.Drawing.Point(785, 600);
             this.btnAddRecords.Name = "btnAddRecords";
             this.btnAddRecords.Size = new System.Drawing.Size(245, 52);
             this.btnAddRecords.TabIndex = 10;
@@ -171,7 +171,7 @@ namespace client.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 742);
+            this.ClientSize = new System.Drawing.Size(1042, 681);
             this.Controls.Add(this.btnAddRecords);
             this.Controls.Add(this.pbxHome);
             this.Controls.Add(this.btnSaleReturn);
