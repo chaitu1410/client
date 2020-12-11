@@ -66,6 +66,8 @@ namespace client.Forms
             // 
             // pnlDashboard
             // 
+            this.pnlDashboard.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pnlDashboard.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(53)))), ((int)(((byte)(92)))));
             this.pnlDashboard.Controls.Add(this.PbxSaleReturn);
             this.pnlDashboard.Controls.Add(this.btnSaleReturn);
@@ -79,10 +81,9 @@ namespace client.Forms
             this.pnlDashboard.Controls.Add(this.pbxRecords);
             this.pnlDashboard.Controls.Add(this.btnViewBorrows);
             this.pnlDashboard.Controls.Add(this.pnlTopDashboard);
-            this.pnlDashboard.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlDashboard.Location = new System.Drawing.Point(0, 0);
+            this.pnlDashboard.Location = new System.Drawing.Point(1, 0);
             this.pnlDashboard.Name = "pnlDashboard";
-            this.pnlDashboard.Size = new System.Drawing.Size(283, 723);
+            this.pnlDashboard.Size = new System.Drawing.Size(283, 783);
             this.pnlDashboard.TabIndex = 0;
             this.pnlDashboard.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlDashboard_MouseDown);
             this.pnlDashboard.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlDashboard_MouseMove);
@@ -280,7 +281,7 @@ namespace client.Forms
             // 
             this.pnlBody.Location = new System.Drawing.Point(291, 32);
             this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(1042, 681);
+            this.pnlBody.Size = new System.Drawing.Size(1042, 742);
             this.pnlBody.TabIndex = 8;
             this.pnlBody.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseDown);
             this.pnlBody.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnlBody_MouseMove);
@@ -302,7 +303,7 @@ namespace client.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1345, 723);
+            this.ClientSize = new System.Drawing.Size(1345, 786);
             this.Controls.Add(this.btnMinimize);
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.btnClose);
