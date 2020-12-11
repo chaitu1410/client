@@ -84,7 +84,7 @@ namespace client.Forms
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvTotalSale.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTotalSale.GridColor = System.Drawing.Color.LightGray;
-            this.dgvTotalSale.Location = new System.Drawing.Point(3, 144);
+            this.dgvTotalSale.Location = new System.Drawing.Point(3, 120);
             this.dgvTotalSale.Name = "dgvTotalSale";
             this.dgvTotalSale.RowHeadersVisible = false;
             this.dgvTotalSale.RowHeadersWidth = 50;
@@ -98,7 +98,7 @@ namespace client.Forms
             // 
             this.lblFilterBy.AutoSize = true;
             this.lblFilterBy.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblFilterBy.Location = new System.Drawing.Point(12, 107);
+            this.lblFilterBy.Location = new System.Drawing.Point(12, 92);
             this.lblFilterBy.Name = "lblFilterBy";
             this.lblFilterBy.Size = new System.Drawing.Size(67, 17);
             this.lblFilterBy.TabIndex = 2;
@@ -108,7 +108,7 @@ namespace client.Forms
             // 
             this.dtpTotalSale.CalendarFont = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.dtpTotalSale.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.dtpTotalSale.Location = new System.Drawing.Point(85, 104);
+            this.dtpTotalSale.Location = new System.Drawing.Point(85, 89);
             this.dtpTotalSale.Name = "dtpTotalSale";
             this.dtpTotalSale.Size = new System.Drawing.Size(234, 25);
             this.dtpTotalSale.TabIndex = 3;
@@ -119,9 +119,9 @@ namespace client.Forms
             this.btnClearFilter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.btnClearFilter.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnClearFilter.ForeColor = System.Drawing.Color.White;
-            this.btnClearFilter.Location = new System.Drawing.Point(886, 645);
+            this.btnClearFilter.Location = new System.Drawing.Point(920, 612);
             this.btnClearFilter.Name = "btnClearFilter";
-            this.btnClearFilter.Size = new System.Drawing.Size(153, 48);
+            this.btnClearFilter.Size = new System.Drawing.Size(119, 41);
             this.btnClearFilter.TabIndex = 4;
             this.btnClearFilter.Text = "View All";
             this.btnClearFilter.UseVisualStyleBackColor = false;
@@ -139,7 +139,7 @@ namespace client.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 742);
+            this.ClientSize = new System.Drawing.Size(1042, 681);
             this.Controls.Add(this.pbxTotalSale);
             this.Controls.Add(this.btnClearFilter);
             this.Controls.Add(this.dtpTotalSale);
