@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace client {
+namespace Aditya_Medical {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

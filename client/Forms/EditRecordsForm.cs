@@ -79,10 +79,6 @@ namespace client.Forms
                     MessageBox.Show(ex.Message);
                 }
             }
-            else
-            {
-                
-            }
         }
 
         private  async void btnUpdate_Click_1(object sender, EventArgs e)

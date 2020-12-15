@@ -13,7 +13,11 @@ namespace client.Data
             try
             {
                 AppDbContext _db = new AppDbContext();
-                return await Task.Run(() => _db.Users.First());
+                return await Task.Run(() => {
+                    if(_db.Users.Any())
+                        return _db.Users.First();
+                    return null;
+                });
             }
             catch (Exception)
             {

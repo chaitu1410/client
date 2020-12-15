@@ -32,6 +32,7 @@ namespace client.Forms
                 try
                 {
                     await _saleReturnRepository.Remove(_saleReturn);
+                    OnLoadData();
                     this.Dispose();
                 }
                 catch (Exception ex)

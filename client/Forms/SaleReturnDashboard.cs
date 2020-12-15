@@ -150,9 +150,15 @@ namespace client.Forms
             }
         }
 
-        private void txtFilterByName_TextChanged(object sender, EventArgs e)
+        private async void txtFilterByName_KeyUp(object sender, KeyEventArgs e)
         {
-
+            if(e.KeyCode == Keys.Enter)
+            {
+                if (txtFilterByName.Text.Trim() != "")
+                {
+                    await Load_Datagridview_Data_By_Name();
+                }
+            }
         }
     }
 }

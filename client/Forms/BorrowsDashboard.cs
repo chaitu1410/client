@@ -280,5 +280,23 @@ namespace client.Forms
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private async void txtFilterByName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtFilterByName.Text.Trim() != "")
+                    await Load_Datagridview1_Data_By_Name();
+            }
+        }
+
+        private async void txtFilterName_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                if (txtFilterName.Text.Trim() != "")
+                    await Load_Datagridview2_Data_By_Name();
+            }
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace client.Forms
             this.progessBar = new System.Windows.Forms.ProgressBar();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnGeneratePdf = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.txtTotalSale = new System.Windows.Forms.TextBox();
             this.txtExtraAmount = new System.Windows.Forms.TextBox();
@@ -48,7 +49,6 @@ namespace client.Forms
             this.lblSaleReturnAmount = new System.Windows.Forms.Label();
             this.lblCashAmount = new System.Windows.Forms.Label();
             this.lblEditTotalSale = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.pnlBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -95,7 +95,7 @@ namespace client.Forms
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(354, 153);
+            this.pictureBox1.Location = new System.Drawing.Point(339, 155);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(40, 33);
@@ -109,15 +109,29 @@ namespace client.Forms
             this.btnGeneratePdf.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnGeneratePdf.ForeColor = System.Drawing.Color.White;
             this.btnGeneratePdf.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGeneratePdf.Location = new System.Drawing.Point(343, 141);
+            this.btnGeneratePdf.Location = new System.Drawing.Point(323, 141);
             this.btnGeneratePdf.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGeneratePdf.Name = "btnGeneratePdf";
-            this.btnGeneratePdf.Size = new System.Drawing.Size(182, 61);
+            this.btnGeneratePdf.Size = new System.Drawing.Size(202, 61);
             this.btnGeneratePdf.TabIndex = 0;
             this.btnGeneratePdf.Text = "Generate PDF";
             this.btnGeneratePdf.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGeneratePdf.UseVisualStyleBackColor = false;
             this.btnGeneratePdf.Click += new System.EventHandler(this.btnGeneratePdf_Click);
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
+            this.btnDelete.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(256, 787);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(122, 59);
+            this.btnDelete.TabIndex = 7;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -281,20 +295,6 @@ namespace client.Forms
             this.lblEditTotalSale.Size = new System.Drawing.Size(188, 32);
             this.lblEditTotalSale.TabIndex = 0;
             this.lblEditTotalSale.Text = "Edit Total Sale";
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(152)))), ((int)(((byte)(207)))));
-            this.btnDelete.Font = new System.Drawing.Font("Cambria", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnDelete.ForeColor = System.Drawing.Color.White;
-            this.btnDelete.Location = new System.Drawing.Point(256, 787);
-            this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(122, 59);
-            this.btnDelete.TabIndex = 7;
-            this.btnDelete.Text = "Delete";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // EditTotalSale
             // 

@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using client.Data;
+using Squirrel;
+
 namespace client.Forms
 {
     public delegate void LoadData();
@@ -86,7 +89,6 @@ namespace client.Forms
         private void btnHome_MouseLeave(object sender, EventArgs e)
         {
             btnHome.BackColor = Color.FromArgb(0, 0, 53, 92);
-
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -134,6 +136,22 @@ namespace client.Forms
                 home.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
                 home.Dock = DockStyle.Fill;
                 home.Show();
+
+                txtVersion.Text = "1.0.2";
+
+                string path1 = @"c:\AdityaMedical\Update";
+                string path2 = @"c:\AdityaMedical\Backup";
+
+                if (!Directory.Exists(path1))
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(path1);
+                }
+
+                if (!Directory.Exists(path2))
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(path2);
+                }
+
             }
             catch (Exception ex)
             {
@@ -279,5 +297,24 @@ namespace client.Forms
             flag = false;
         }
 
-     }
+        private async void btnUpdate_Click(object sender, EventArgs e)
+        {
+            string path = @"c:\AdityaMedical\Update";
+            try
+            {
+                using(UpdateManager manager = new UpdateManager(path))
+                {
+                    await manager.UpdateApp();
+                    var res = MessageBox.Show("Press Yes to restart Suit","Updated Successfully!!!",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                    if(res == DialogResult.Yes)
+                    {
+                        Application.Restart();
+                    }
+                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Failed To Update");
+            }
+        }
+    }
 }
